@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomaroli — Sua plataforma de questões com a sua marca</title>
+  <meta name="description" content="Lance uma plataforma de questões para concursos com a marca do seu curso: banco de questões, simulados, app próprio e relatórios. Teste por 7 dias grátis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=1.1" />
+  <link rel="icon" type="image/png" href="cubo-pomaroli-preto.png" />
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#noiseFilter)"/></svg></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="nav__inner container">
+      <a href="#" class="logo" aria-label="Pomaroli — início">
+        <img src="cubo-pomaroli-preto.png" alt="Pomaroli" class="logo__img" width="35" height="40" />
+      </a>
+
+      <nav class="nav__pill" aria-label="Navegação principal">
+        <a href="#funcoes">Funções</a>
+        <a href="#marca">Sua marca</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="#entrar" class="btn btn--ghost btn--nav">Entrar</a>
+        <a href="demo.html" class="btn btn--lime btn--sm nav__cta-scroll" hidden><span class="btn__label">Testar grátis</span></a>
+        <button class="nav__burger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav__mobile" hidden>
+      <a href="#funcoes">Funções</a>
+      <a href="#marca">Sua marca</a>
+      <a href="#planos">Planos</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="blog.html">Blog</a>
+      <a href="demo.html" class="btn btn--lime btn--block"><span class="btn__label">Testar grátis</span></a>
+      <a href="#entrar" class="btn btn--ghost">Entrar</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="aurora" aria-hidden="true">
+        <i class="aurora__blob aurora__blob--a"></i>
+        <i class="aurora__blob aurora__blob--b"></i>
+        <i class="aurora__blob aurora__blob--c"></i>
+      </div>
+
+      <div class="container hero__content">
+        <a href="#demoApp" class="hero__badge">
+          <span class="hero__badge-dot" aria-hidden="true"></span>
+          Plataforma white-label em ação
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+        <h1 class="hero__title">
+          <span class="line"><span>Sua plataforma de questões</span></span>
+          <span class="line"><span>com a <em>sua marca</em></span></span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Banco de questões, simulados e app próprio<br />
+          para o curso de concurso que você construiu
+        </p>
+
+        <div class="hero__cta">
+          <a href="demo.html" class="btn btn--lime btn--lg"><span class="btn__label">Testar por 7 dias Grátis</span><svg viewBox="0 0 24 24" fill="none" class="btn__arrow"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#como-funciona" class="btn btn--ghost btn--lg btn--play">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l10-6.5-10-6.5Z" fill="currentColor"/></svg>
+            Ver como funciona
+          </a>
+        </div>
+
+        <ul class="hero__proof">
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Sem cartão de crédito</li>
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Cancele quando quiser</li>
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>No ar em até 7 dias</li>
+        </ul>
+      </div>
+
+      <div class="container hero__demo">
+        <div class="demo reveal" id="demoApp">
+          <div class="demo__stage">
+            <span class="hero__chip hero__chip--q" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Questão resolvida
+            </span>
+            <span class="hero__chip hero__chip--acc" aria-hidden="true">
+              <b>92%</b> de acertos
+            </span>
+            <span class="hero__chip hero__chip--chart" aria-hidden="true">
+              <i style="--h: 40%"></i><i style="--h: 62%"></i><i style="--h: 48%"></i><i style="--h: 80%"></i><i style="--h: 96%"></i>
+              +38 alunos hoje
+            </span>
+            <span class="hero__chip hero__chip--note" aria-hidden="true">
+              <span class="hero__chip-avatar">M</span>
+              Marina gabaritou o simulado
+            </span>
+
+            <div class="demo__app" id="demoPhone">
+              <div class="demo__chrome" id="demoHeader" aria-hidden="true">
+                <span class="demo__dots"><i></i><i></i><i></i></span>
+                <span class="demo__chrome-title">aprovatotal.com.br</span>
+              </div>
+
+              <aside class="demo__sidebar">
+                <div class="demo__side-brand">
+                  <span class="demo__logo" id="demoLogo">A</span>
+                  <strong id="demoBrand">Aprova Total</strong>
+                </div>
+                <p class="demo__side-label">Plataforma</p>
+                <nav class="demo__side-nav">
+                  <a><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="4" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg>Visão geral</a>
+                  <a class="is-active"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H19v14H6.5A2.5 2.5 0 0 0 4 20.5V6.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.5h6M9 11.5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Questões</a>
+                  <a><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="7.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 9.5V13l2.5 1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Simulados</a>
+                  <a><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.7-3 2.9-4.5 5.5-4.5s4.8 1.5 5.5 4.5M16 11a3 3 0 1 0 0-6M17.5 19c-.2-1.6-.8-2.9-1.8-3.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Alunos</a>
+                  <a><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5M4 19h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 15v-4M12.5 15V8M17 15v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Relatórios</a>
+                </nav>
+                <div class="demo__side-foot">Plano Marca Própria</div>
+              </aside>
+
+              <div class="demo__main">
+                <header class="demo__topbar">
+                  <span class="demo__crumb">Dashboard › Banco de questões</span>
+                  <span class="demo__user">
+                    <span class="demo__avatar" id="demoAvatar">A</span>
+                    <span class="demo__user-meta">
+                      <b id="demoUser">Aprova Total</b>
+                      <small>Admin</small>
+                    </span>
+                    <span class="demo__live">ao vivo</span>
+                  </span>
+                </header>
+
+                <div class="demo__content" id="demoBody">
+                  <div class="demo__head-row">
+                    <h3>Banco de questões</h3>
+                    <div class="demo__chips">
+                      <span>Matéria</span>
+                      <span>Banca</span>
+                      <span>Dificuldade</span>
+                    </div>
+                  </div>
+
+                  <div class="demo__progress" aria-hidden="true">
+                    <div class="demo__progress-meta"><span>Simulado · Direito Constitucional</span><b>8/12</b></div>
+                    <div class="demo__progress-track"><i style="width: 66%"></i></div>
+                  </div>
+
+                  <div class="demo__stats" id="demoStats">
+                    <div class="demo__stat">
+                      <small>Publicadas</small>
+                      <b id="statPub">1.248</b>
+                    </div>
+                    <div class="demo__stat">
+                      <small>Simulados</small>
+                      <b id="statSim">12</b>
+                    </div>
+                    <div class="demo__stat demo__stat--accent">
+                      <small>Aproveitamento</small>
+                      <b><span id="statAcc">78</span>%</b>
+                    </div>
+                  </div>
+
+                  <div class="demo__cards" id="demoOptions"></div>
+
+                  <div class="demo__cursor" id="demoCursor" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M5.5 3.5 19 12.2l-6.1 1.1-2.8 5.9L5.5 3.5Z" fill="#14331c" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
+                  </div>
+
+                  <div class="demo__toast" id="demoFeedback" hidden>
+                    <span class="demo__toast-icon" id="demoFeedbackIcon"></span>
+                    <span id="demoFeedbackText"></span>
+                    <small id="demoCommentText"></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="demo__caption">Painel do aluno com a sua marca · roda automaticamente</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOCIAL PROOF ============ -->
+    <section class="proof">
+      <div class="container">
+        <p class="proof__label">Cursos que já preparam alunos com a nossa estrutura</p>
+        <div class="proof__row">
+          <span class="proof__item">Aprovação Total</span>
+          <span class="proof__item">Direito Fácil</span>
+          <span class="proof__item">Estratégia Concursos</span>
+          <span class="proof__item">Alvo TRT</span>
+          <span class="proof__item">Questões da Caixa</span>
+          <span class="proof__item">Bom Estudo</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FUNÇÕES ============ -->
+    <section class="section" id="funcoes">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Funções</p>
+          <h2 class="section__title">Tudo que um curso de concurso precisa,<br />em uma <em>única</em> plataforma</h2>
+          <p class="section__desc">Você foca em produzir conteúdo e vender. A gente cuida da tecnologia.</p>
+        </div>
+
+        <div class="features">
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H19v14H6.5A2.5 2.5 0 0 0 4 20.5V6.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H19" stroke="currentColor" stroke-width="1.8"/><path d="M9 8.5h6M9 11.5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feature__title">Banco de questões ilimitado</h3>
+            <p class="feature__text">Importe suas questões em massa (PDF, DOCX ou planilha) e organize por banca, órgão, matéria e nível de dificuldade.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="7.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 9.5V13l2.5 1.5M9.5 3.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feature__title">Simulados automáticos</h3>
+            <p class="feature__text">Monte simulados cronometrados, provas anteriores e maratonas com correção instantânea e ranking entre alunos.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="7" y="3" width="10" height="18" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M11 17.5h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feature__title">App com a sua marca</h3>
+            <p class="feature__text">Seu aluno baixa um app com o nome, o logo e as cores do seu curso — na Play Store e na App Store.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5 13.6 8l4.4 1.6-4.4 1.6L12 15.6 10.4 11.2 6 9.6 10.4 8 12 3.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="feature__title">Gabarito comentado com IA</h3>
+            <p class="feature__text">Gere comentários para suas questões em segundos e revise antes de publicar. Você mantém o controle editorial.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5M4 19h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 15v-4M12.5 15V8M17 15v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feature__title">Painel de desempenho</h3>
+            <p class="feature__text">Veja acerto por matéria, evolução por aluno e retenção da turma. Relatórios prontos para a sua equipe comercial.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 4.5 19 11l-7 6.5L5 11l7-6.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 8 12 11.5 15.5 8M8.5 14 12 10.5 15.5 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="feature__title">Checkout e Pix integrados</h3>
+            <p class="feature__text">Venda assinaturas e avulsos direto na sua plataforma, com Pix, cartão e recuperação automática de inadimplência.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SUA MARCA / WHITE-LABEL ============ -->
+    <section class="section section--soft" id="marca">
+      <div class="container split">
+        <div class="split__text reveal">
+          <p class="eyebrow">Sua marca, em tudo</p>
+          <h2 class="section__title">O aluno <em>nunca</em> vai saber que a tecnologia é nossa</h2>
+          <p class="section__desc">Do login ao boleto, tudo leva o nome do seu curso. Você é a marca — a gente fica nos bastidores.</p>
+
+          <ul class="checklist">
+            <li>
+              <span class="checklist__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <strong>Domínio próprio</strong>
+                <span>questoes.seucurso.com.br ou seu domínio completo</span>
+              </div>
+            </li>
+            <li>
+              <span class="checklist__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <strong>Cores, logo e tipografia</strong>
+                <span>Visual alinhado ao seu curso, sem “pega-pra-taqui”</span>
+              </div>
+            </li>
+            <li>
+              <span class="checklist__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <strong>E-mails transacionais customizados</strong>
+                <span>Boas-vindas, cobranças e lembretes com a sua identidade</span>
+              </div>
+            </li>
+            <li>
+              <span class="checklist__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <strong>Seus dados são seus</strong>
+                <span>Exporte alunos e respostas quando quiser. Sem lock-in.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="split__visual reveal">
+          <div class="brandcard">
+            <div class="brandcard__phone">
+              <div class="brandcard__status">
+                <span>9:41</span>
+                <span class="brandcard__dots"><i></i><i></i><i></i></span>
+              </div>
+              <div class="brandcard__header" id="brandDemo">
+                <span class="brandcard__logo" id="brandLogo">A</span>
+                <div>
+                  <strong id="brandName">Aprova Total</strong>
+                  <small>Plataforma do aluno</small>
+                </div>
+              </div>
+              <div class="brandcard__body">
+                <div class="brandcard__card">
+                  <small>Simulado TRT 2ª Região</small>
+                  <strong>Questão 12 de 50</strong>
+                  <div class="brandcard__bar"><i style="width:24%"></i></div>
+                </div>
+                <div class="brandcard__options">
+                  <span>A) Princípio da legalidade</span>
+                  <span class="is-correct">B) Princípio da impessoalidade ✓</span>
+                  <span>C) Princípio da moralidade</span>
+                </div>
+                <div class="brandcard__chip">Comentário da questão</div>
+              </div>
+            </div>
+
+            <div class="brandcard__switch">
+              <p>Veja a plataforma mudar de marca</p>
+              <div class="brandcard__btns">
+                <button class="brand-dot is-active" data-brand="0" style="--c:#7BC51F" data-name="Aprova Total" data-letter="A" aria-label="Marca Aprova Total"></button>
+                <button class="brand-dot" data-brand="1" style="--c:#2563EB" data-name="Direito Fácil" data-letter="D" aria-label="Marca Direito Fácil"></button>
+                <button class="brand-dot" data-brand="2" style="--c:#DB2777" data-name="Alvo TRT" data-letter="T" aria-label="Marca Alvo TRT"></button>
+                <button class="brand-dot" data-brand="3" style="--c:#D97706" data-name="Bom Estudo" data-letter="B" aria-label="Marca Bom Estudo"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMO FUNCIONA ============ -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Como funciona</p>
+          <h2 class="section__title">Do zero ao ar em <em>3 passos</em></h2>
+          <p class="section__desc">Sem time de TI, sem projeto de meses, sem dor de cabeça.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">1</span>
+            <h3 class="step__title">Conte sua marca</h3>
+            <p class="step__text">Você nos manda logo, cores e domínio. Nossa equipe monta o ambiente com a sua identidade.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">2</span>
+            <h3 class="step__title">Suba suas questões</h3>
+            <p class="step__text">Importe o banco em massa ou cadastre com IA. Organize por banca, órgão e disciplina.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">3</span>
+            <h3 class="step__title">Venda e cresça</h3>
+            <p class="step__text">Ative o checkout, divulgue para sua lista e acompanhe cada aluno pelo painel.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ DEPOIMENTOS ============ -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Quem já usa</p>
+          <h2 class="section__title">Donos de curso que <em>pararam</em> de “alugar” plataforma</h2>
+        </div>
+
+        <div class="quotes">
+          <figure class="quote reveal">
+            <blockquote>“Em 10 dias estávamos com app na loja e 800 alunos migrando. Hoje o aluno só conhece a nossa marca — e o churn caiu pela metade.”</blockquote>
+            <figcaption>
+              <span class="quote__avatar" style="--c:#7BC51F">R</span>
+              <div>
+                <strong>Rafael Menezes</strong>
+                <small>Fundador · Aprova Total</small>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="quote reveal">
+            <blockquote>“Eu pagava plataforma genérica e ainda perdia o aluno no meio do caminho. Aqui, checkout, app e relatório falam a língua do meu curso.”</blockquote>
+            <figcaption>
+              <span class="quote__avatar" style="--c:#2563EB">C</span>
+              <div>
+                <strong>Carla Bastos</strong>
+                <small>Diretora · Direito Fácil</small>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="quote reveal">
+            <blockquote>“A importação do meu banco de 12 mil questões levou uma tarde. O suporte responde no WhatsApp — isso pra mim vale mais que qualquer feature.”</blockquote>
+            <figcaption>
+              <span class="quote__avatar" style="--c:#DB2777">T</span>
+              <div>
+                <strong>Thiago Ramos</strong>
+                <small>CEO · Alvo TRT</small>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLANOS ============ -->
+    <section class="section" id="planos">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Planos</p>
+          <h2 class="section__title">Preço que <em>cabe</em> no seu faturamento</h2>
+          <p class="section__desc">Sem taxa sobre a sua venda. Você paga a plataforma, o aluno é 100% seu.</p>
+        </div>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <h3 class="plan__name">Início</h3>
+            <p class="plan__for">Para quem está começando a digitalizar o curso</p>
+            <p class="plan__price"><small>R$</small>297<span>/mês</span></p>
+            <ul class="plan__list">
+              <li>Até 1.000 alunos ativos</li>
+              <li>Banco de questões ilimitado</li>
+              <li>Simulados e correção automática</li>
+              <li>Site com a sua marca</li>
+              <li>Suporte por WhatsApp</li>
+            </ul>
+            <a href="#entrar" class="btn btn--outline btn--block">Começar agora</a>
+          </article>
+
+          <article class="plan plan--featured reveal">
+            <span class="plan__tag">Mais escolhido</span>
+            <h3 class="plan__name">Marca Própria</h3>
+            <p class="plan__for">Para o curso que quer app e domínio próprio</p>
+            <p class="plan__price"><small>R$</small>597<span>/mês</span></p>
+            <ul class="plan__list">
+              <li>Alunos ilimitados</li>
+              <li>App iOS e Android com sua marca</li>
+              <li>Domínio e e-mails customizados</li>
+              <li>Checkout com Pix e cartão</li>
+              <li>Painel de desempenho avançado</li>
+              <li>Onboarding assistido</li>
+            </ul>
+            <a href="demo.html" class="btn btn--lime btn--block"><span class="btn__label">Testar por 7 dias Grátis</span><svg viewBox="0 0 24 24" fill="none" class="btn__arrow"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </article>
+
+          <article class="plan reveal">
+            <h3 class="plan__name">Grupo</h3>
+            <p class="plan__for">Para operações com várias marcas ou franquias</p>
+            <p class="plan__price plan__price--custom">Sob consulta</p>
+            <ul class="plan__list">
+              <li>Múltiplas marcas na mesma conta</li>
+              <li>API e integrações sob medida</li>
+              <li>Gerente de conta dedicado</li>
+              <li>SLA e treinamento da equipe</li>
+            </ul>
+            <a href="#entrar" class="btn btn--outline btn--block">Falar com vendas</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--soft" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <p class="eyebrow">Dúvidas</p>
+          <h2 class="section__title">Perguntas <em>frequentes</em></h2>
+        </div>
+
+        <div class="faq reveal">
+          <details class="faq__item">
+            <summary>Em quanto tempo a plataforma fica no ar?<span class="faq__chev"></span></summary>
+            <p>Planos pagos entram em produção em até 7 dias úteis, contando a partir do envio da sua marca e do domínio.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Consigo migrar minhas questões de outra plataforma?<span class="faq__chev"></span></summary>
+            <p>Sim. Importamos bancos em PDF, DOCX, CSV e exportações de sistemas concorrentes. Migração acompanhada pela nossa equipe está incluída nos planos.</p>
+          </details>
+          <details class="faq__item">
+            <summary>O aluno vai saber que a tecnologia é de vocês?<span class="faq__chev"></span></summary>
+            <p>Não. Marca, domínio, e-mails e app são 100% do seu curso. Não exibimos nenhum selo ou menção à Pomaroli dentro da plataforma.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Vocês cobram comissão sobre minhas vendas?<span class="faq__chev"></span></summary>
+            <p>Não. Você paga apenas a mensalidade da plataforma. As vendas do checkout caem direto na sua conta.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Os dados dos meus alunos ficam no Brasil?<span class="faq__chev"></span></summary>
+            <p>Sim. Todo o dado é armazenado em servidores no Brasil, em conformidade com a LGPD, e pode ser exportado a qualquer momento.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section class="finalcta" id="entrar">
+      <div class="aurora" aria-hidden="true">
+        <i class="aurora__blob aurora__blob--a"></i>
+        <i class="aurora__blob aurora__blob--b"></i>
+      </div>
+      <div class="container finalcta__inner reveal">
+        <p class="eyebrow eyebrow--light">Comece hoje</p>
+        <h2 class="finalcta__title">Seu curso merece uma plataforma<br />que tenha o <em>seu nome</em> na fachada</h2>
+        <p class="finalcta__desc">7 dias grátis, sem cartão. Se não gostar, você sai sem pagar nada.</p>
+        <div class="hero__cta">
+          <a href="demo.html" class="btn btn--lime btn--lg"><span class="btn__label">Testar por 7 dias Grátis</span><svg viewBox="0 0 24 24" fill="none" class="btn__arrow"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="btn btn--ghost btn--lg">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="logo">
+          <img src="cubo-pomaroli-preto.png" alt="Pomaroli" class="logo__img" width="35" height="40" />
+        </a>
+        <p>Plataforma white-label de questões para cursos de concurso.</p>
+      </div>
+
+      <div class="footer__cols">
+        <div>
+          <h4>Produto</h4>
+          <a href="#funcoes">Funções</a>
+          <a href="#marca">Sua marca</a>
+          <a href="#planos">Planos</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="#">Sobre</a>
+          <a href="blog.html">Blog</a>
+          <a href="#">Trabalhe conosco</a>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <a href="demo.html">Agendar demonstração</a>
+          <a href="#">WhatsApp</a>
+          <a href="mailto:contato@pomaroli.com">contato@pomaroli.com</a>
+          <a href="#">Suporte</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 Pomaroli Tecnologia. Todos os direitos reservados.</span>
+      <span>
+        <a href="#">Termos</a>
+        <a href="#">Privacidade</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Pomaroli</title>
+  <meta name="description" content="Estratégia, produto e bastidores do mercado de concursos: como cursos constroem bancos de questões, apps próprios e alunos fiéis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=1.1" />
+  <link rel="icon" type="image/png" href="cubo-pomaroli-preto.png" />
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#noiseFilter)"/></svg></div>
+
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="ico-estrategia" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4.6" /><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none" />
+    </symbol>
+    <symbol id="ico-produto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.4 20.6 8 12 12.6 3.4 8z" /><path d="M3.4 12.2 12 16.8l8.6-4.6" /><path d="M3.4 16.4 12 21l8.6-4.6" />
+    </symbol>
+    <symbol id="ico-concursos" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4.6" y="3.4" width="14.8" height="17.2" rx="2.6" />
+      <circle cx="8.7" cy="8.6" r="1" fill="currentColor" stroke="none" /><path d="M11.6 8.6h4.8" />
+      <circle cx="8.7" cy="12" r="1" fill="currentColor" stroke="none" /><path d="M11.6 12h4.8" />
+      <circle cx="8.7" cy="15.4" r="1" fill="currentColor" stroke="none" /><path d="M11.6 15.4h3" />
+    </symbol>
+    <symbol id="ico-marketing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 10.2v3.6a1.2 1.2 0 0 0 1.2 1.2H7l6 3.6V5.4L7 9H5.2A1.2 1.2 0 0 0 4 10.2z" />
+      <path d="M16.8 9.4a4.2 4.2 0 0 1 0 5.2" />
+    </symbol>
+  </svg>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="nav__inner container">
+      <a href="index.html" class="logo" aria-label="Pomaroli — início">
+        <img src="cubo-pomaroli-preto.png" alt="Pomaroli" class="logo__img" width="35" height="40" />
+      </a>
+
+      <nav class="nav__pill" aria-label="Navegação principal">
+        <a href="index.html#funcoes">Funções</a>
+        <a href="index.html#marca">Sua marca</a>
+        <a href="index.html#planos">Planos</a>
+        <a href="index.html#faq">Dúvidas</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="demo.html" class="btn btn--lime btn--nav"><span class="btn__label">Testar grátis</span></a>
+        <button class="nav__burger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav__mobile" hidden>
+      <a href="index.html#funcoes">Funções</a>
+      <a href="index.html#marca">Sua marca</a>
+      <a href="index.html#planos">Planos</a>
+      <a href="index.html#faq">Dúvidas</a>
+      <a href="demo.html" class="btn btn--lime btn--block"><span class="btn__label">Testar grátis</span></a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO DO BLOG ============ -->
+    <section class="bloghero">
+      <div class="aurora" aria-hidden="true">
+        <i class="aurora__blob aurora__blob--a"></i>
+        <i class="aurora__blob aurora__blob--c"></i>
+      </div>
+      <div class="container bloghero__inner">
+        <p class="eyebrow">Blog</p>
+        <h1 class="section__title">Estratégia, produto e bastidores do <em>mercado de concursos</em></h1>
+        <p class="bloghero__sub">O que aprendemos construindo plataformas de questões para cursos que querem marca própria — e o que isso diz sobre o seu negócio.</p>
+      </div>
+    </section>
+
+    <!-- ============ ARTIGOS ============ -->
+    <section class="section blog">
+      <div class="container">
+        <div class="blog__cats" role="tablist" aria-label="Filtrar por categoria">
+          <button class="blog__cat is-active" data-filter="all" role="tab" aria-selected="true">Todas</button>
+          <button class="blog__cat" data-filter="estrategia" role="tab" aria-selected="false">Estratégia</button>
+          <button class="blog__cat" data-filter="produto" role="tab" aria-selected="false">Produto</button>
+          <button class="blog__cat" data-filter="concursos" role="tab" aria-selected="false">Concursos</button>
+          <button class="blog__cat" data-filter="marketing" role="tab" aria-selected="false">Marketing</button>
+        </div>
+
+        <div class="postgrid" id="blogGrid">
+          <a href="post.html" class="postcard postcard--hero reveal" data-cat="estrategia">
+            <div class="postcard__cover postcard__cover--estrategia" style="--gx: 22%; --gy: 18%" aria-hidden="true">
+              <span class="postcard__idx">01</span>
+              <span class="postcard__glyph"><svg viewBox="0 0 24 24"><use href="#ico-estrategia" /></svg></span>
+              <span class="postcard__tag">Em destaque</span>
+            </div>
+            <div class="postcard__body">
+              <div class="postcard__top">
+                <span class="postcard__cat">Estratégia</span>
+                <span class="postcard__meta">02 out 2026 · 12 min</span>
+              </div>
+              <h3 class="postcard__title">Como montar seu banco de questões com marca própria em 7 dias</h3>
+              <p class="postcard__excerpt">Do primeiro gabarito ao app no ar: o roteiro que usamos para colocar cursos na tela do aluno — domínio próprio, cores da marca e cobrança recorrente desde o dia um.</p>
+              <span class="postcard__read">Ler artigo<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+
+          <a href="post.html" class="postcard reveal" data-cat="estrategia">
+            <div class="postcard__cover postcard__cover--estrategia" style="--gx: 75%; --gy: 25%" aria-hidden="true"><span class="postcard__idx">02</span><span class="postcard__glyph"><svg viewBox="0 0 24 24"><use href="#ico-estrategia" /></svg></span></div>
+            <div class="postcard__body">
+              <div class="postcard__top">
+                <span class="postcard__cat">Estratégia</span>
+                <span class="postcard__meta">25 set · 8 min</span>
+              </div>
+              <h3 class="postcard__title">White-label ou plataforma genérica? A conta que todo curso deveria fazer</h3>
+              <p class="postcard__excerpt">Aluguel de ferramenta x ativo próprio: por que o curso que controla marca e dados cresce o triplo.</p>
+              <span class="postcard__read">Ler artigo<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+
+          <a href="post.html" class="postcard reveal" data-cat="concursos">
+            <div class="postcard__cover postcard__cover--concursos" style="--gx: 30%; --gy: 70%" aria-hidden="true"><span class="postcard__idx">03</span><span class="postcard__glyph"><svg viewBox="0 0 24 24"><use href="#ico-concursos" /></svg></span></div>
+            <div class="postcard__body">
+              <div class="postcard__top">
+                <span class="postcard__cat">Concursos</span>
+                <span class="postcard__meta">18 set · 6 min</span>
+              </div>
+              <h3 class="postcard__title">PFN 2026: o que muda no formato da prova e como preparar seu aluno</h3>
+              <p class="postcard__excerpt">Nova banca, novas armadilhas. O que o seu banco de questões precisa cobrir agora.</p>
+              <span class="postcard__read">Ler artigo<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+
+          <a href="post.html" class="postcard reveal" data-cat="produto">
+            <div class="postcard__cover postcard__cover--produto" style="--gx: 80%; --gy: 65%" aria-hidden="true"><span class="postcard__idx">04</span><span class="postcard__glyph"><svg viewBox="0 0 24 24"><use href="#ico-produto" /></svg></span></div>
+            <div class="postcard__body">
+              <div class="postcard__top">
+                <span class="postcard__cat">Produto</span>
+                <span class="postcard__meta">11 set · 7 min</span>
+              </div>
+              <h3 class="postcard__title">5 métricas que todo curso de concurso deveria acompanhar</h3>
+              <p class="postcard__excerpt">Os números que revelam risco de evasão antes do aluno sumir.</p>
+              <span class="postcard__read">Ler artigo<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+
+          <a href="post.html" class="postcard reveal" data-cat="marketing">
+            <div class="postcard__cover postcard__cover--marketing" style="--gx: 50%; --gy: 15%" aria-hidden="true"><span class="postcard__idx">05</span><span class="postcard__glyph"><svg viewBox="0 0 24 24"><use href="#ico-marketing" /></svg></span></div>
+            <div class="postcard__body">
+              <div class="postcard__top">
+                <span class="postcard__cat">Marketing</span>
+                <span class="postcard__meta">04 set · 9 min</span>
+              </div>
+              <h3 class="postcard__title">WhatsApp no atendimento: como automatizar sem perder o toque humano</h3>
+              <p class="postcard__excerpt">Fluxos que respondem o recorrente e passam o resto para o humano certo.</p>
+              <span class="postcard__read">Ler artigo<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+
+          <a href="post.html" class="postcard reveal" data-cat="produto">
+            <div class="postcard__cover postcard__cover--produto" style="--gx: 15%; --gy: 80%" aria-hidden="true"><span class="postcard__idx">06</span><span class="postcard__glyph"><svg viewBox="0 0 24 24"><use href="#ico-produto" /></svg></span></div>
+            <div class="postcard__body">
+              <div class="postcard__top">
+                <span class="postcard__cat">Produto</span>
+                <span class="postcard__meta">28 ago · 6 min</span>
+              </div>
+              <h3 class="postcard__title">Por que seu aluno abandona o estudo — e o que a plataforma pode fazer</h3>
+              <p class="postcard__excerpt">Evasão é micro-frustração: busca ruim, feedback lento, progresso invisível.</p>
+              <span class="postcard__read">Ler artigo<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+
+          <a href="post.html" class="postcard reveal" data-cat="marketing">
+            <div class="postcard__cover postcard__cover--marketing" style="--gx: 60%; --gy: 40%" aria-hidden="true"><span class="postcard__idx">07</span><span class="postcard__glyph"><svg viewBox="0 0 24 24"><use href="#ico-marketing" /></svg></span></div>
+            <div class="postcard__body">
+              <div class="postcard__top">
+                <span class="postcard__cat">Marketing</span>
+                <span class="postcard__meta">21 ago · 5 min</span>
+              </div>
+              <h3 class="postcard__title">App próprio ou rede social? Onde seu aluno realmente estuda</h3>
+              <p class="postcard__excerpt">Comparativo de engajamento entre feed, stories e app de verdade.</p>
+              <span class="postcard__read">Ler artigo<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+
+          <a href="post.html" class="postcard reveal" data-cat="estrategia">
+            <div class="postcard__cover postcard__cover--estrategia" style="--gx: 35%; --gy: 50%" aria-hidden="true"><span class="postcard__idx">08</span><span class="postcard__glyph"><svg viewBox="0 0 24 24"><use href="#ico-estrategia" /></svg></span></div>
+            <div class="postcard__body">
+              <div class="postcard__top">
+                <span class="postcard__cat">Estratégia</span>
+                <span class="postcard__meta">14 ago · 10 min</span>
+              </div>
+              <h3 class="postcard__title">Como precificar sua plataforma sem competir por preço</h3>
+              <p class="postcard__excerpt">Modelos de cobrança para sair da guerra de planos de R$ 19,90.</p>
+              <span class="postcard__read">Ler artigo<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+
+          <a href="post.html" class="postcard reveal" data-cat="concursos">
+            <div class="postcard__cover postcard__cover--concursos" style="--gx: 85%; --gy: 85%" aria-hidden="true"><span class="postcard__idx">09</span><span class="postcard__glyph"><svg viewBox="0 0 24 24"><use href="#ico-concursos" /></svg></span></div>
+            <div class="postcard__body">
+              <div class="postcard__top">
+                <span class="postcard__cat">Concursos</span>
+                <span class="postcard__meta">07 ago · 7 min</span>
+              </div>
+              <h3 class="postcard__title">Correção inteligente: o que sua plataforma precisa entregar além do gabarito</h3>
+              <p class="postcard__excerpt">Comentário por alternativa, referência legal e trilha de revisão.</p>
+              <span class="postcard__read">Ler artigo<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+        </div>
+
+        <p class="blog__empty" id="blogEmpty" hidden>Nenhum artigo nesta categoria ainda.</p>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="finalcta">
+      <div class="aurora" aria-hidden="true">
+        <i class="aurora__blob aurora__blob--a"></i>
+        <i class="aurora__blob aurora__blob--b"></i>
+      </div>
+      <div class="container finalcta__inner reveal">
+        <p class="eyebrow eyebrow--light">Newsletter</p>
+        <h2 class="finalcta__title">Um e-mail por semana.<br />Só o que <em>muda o jogo</em> no seu curso</h2>
+        <p class="finalcta__desc">Sem spam, sem pitch diário. Artigos, dados de editais e bastidores de produto — direto no seu inbox.</p>
+        <form class="newsletter" action="#" method="post">
+          <input class="newsletter__input" type="email" name="email" placeholder="seu@email.com" aria-label="Seu e-mail" required />
+          <button class="btn btn--lime" type="submit"><span class="btn__label">Quero receber</span><svg viewBox="0 0 24 24" fill="none" class="btn__arrow"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="logo">
+          <img src="cubo-pomaroli-preto.png" alt="Pomaroli" class="logo__img" width="35" height="40" />
+        </a>
+        <p>Plataforma white-label de questões para cursos de concurso.</p>
+      </div>
+
+      <div class="footer__cols">
+        <div>
+          <h4>Produto</h4>
+          <a href="index.html#funcoes">Funções</a>
+          <a href="index.html#marca">Sua marca</a>
+          <a href="index.html#planos">Planos</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="#">Sobre</a>
+          <a href="blog.html" aria-current="page">Blog</a>
+          <a href="#">Trabalhe conosco</a>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <a href="demo.html">Agendar demonstração</a>
+          <a href="#">WhatsApp</a>
+          <a href="mailto:contato@pomaroli.com">contato@pomaroli.com</a>
+          <a href="#">Suporte</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 Pomaroli Tecnologia. Todos os direitos reservados.</span>
+      <span>
+        <a href="#">Termos</a>
+        <a href="#">Privacidade</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

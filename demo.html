@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teste grátis — Pomaroli</title>
+  <meta name="description" content="Solicite acesso à plataforma white-label de questões da Pomaroli. Preencha os dados e comece pelo WhatsApp — no ar em até 7 dias." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=1.1" />
+  <link rel="icon" type="image/png" href="cubo-pomaroli-preto.png" />
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#noiseFilter)"/></svg></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="nav__inner container">
+      <a href="index.html" class="logo" aria-label="Pomaroli — início">
+        <img src="cubo-pomaroli-preto.png" alt="Pomaroli" class="logo__img" width="35" height="40" />
+      </a>
+
+      <nav class="nav__pill" aria-label="Navegação principal">
+        <a href="index.html#funcoes">Funções</a>
+        <a href="index.html#marca">Sua marca</a>
+        <a href="index.html#planos">Planos</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="demo.html" class="btn btn--lime btn--nav" aria-current="page"><span class="btn__label">Testar grátis</span></a>
+        <button class="nav__burger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav__mobile" hidden>
+      <a href="index.html#funcoes">Funções</a>
+      <a href="index.html#marca">Sua marca</a>
+      <a href="index.html#planos">Planos</a>
+      <a href="blog.html">Blog</a>
+      <a href="demo.html" class="btn btn--lime btn--block" aria-current="page"><span class="btn__label">Testar grátis</span></a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ PÁGINA DE DEMO / LEAD ============ -->
+    <section class="leadpage">
+      <div class="aurora" aria-hidden="true">
+        <i class="aurora__blob aurora__blob--a"></i>
+        <i class="aurora__blob aurora__blob--c"></i>
+      </div>
+
+      <div class="container leadpage__grid">
+        <div class="leadpage__copy">
+          <p class="eyebrow">Teste grátis</p>
+          <h1 class="section__title">Veja a plataforma com a <em>sua marca</em> em até 7 dias</h1>
+          <p class="leadpage__desc">Preencha os dados e continue direto no WhatsApp. A gente monta um ambiente de demonstração com o nome e as cores do seu curso — sem cartão, sem compromisso.</p>
+
+          <ul class="leadpage__list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>
+                <strong>Ambiente com a sua marca</strong>
+                <span>Domínio, cores e logo do seu curso no painel e no app.</span>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>
+                <strong>Banco de questões de verdade</strong>
+                <span>Simulado respondido, correção comentada e relatórios no mesmo lugar.</span>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>
+                <strong>Resposta no mesmo dia</strong>
+                <span>Falamos com você pelo WhatsApp em horário comercial.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <form class="leadform" id="leadForm" data-wa="5511999999999" novalidate>
+          <h2 class="leadform__title">Solicitar demonstração</h2>
+          <p class="leadform__sub">Leva menos de 1 minuto.</p>
+
+          <div class="leadform__row">
+            <label class="leadform__field">
+              <span>Nome</span>
+              <input type="text" name="nome" autocomplete="name" placeholder="Seu nome completo" required />
+            </label>
+          </div>
+
+          <div class="leadform__row leadform__row--2">
+            <label class="leadform__field">
+              <span>E-mail</span>
+              <input type="email" name="email" autocomplete="email" placeholder="voce@seudominio.com" required />
+            </label>
+            <label class="leadform__field">
+              <span>WhatsApp</span>
+              <input type="tel" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" required />
+            </label>
+          </div>
+
+          <div class="leadform__row leadform__row--2">
+            <label class="leadform__field">
+              <span>Nome do curso</span>
+              <input type="text" name="curso" placeholder="Ex.: Aprova Total" required />
+            </label>
+            <label class="leadform__field">
+              <span>Alunos hoje</span>
+              <select name="alunos">
+                <option value="">Prefiro não dizer</option>
+                <option value="Menos de 100">Menos de 100</option>
+                <option value="100 a 500">100 a 500</option>
+                <option value="500 a 2.000">500 a 2.000</option>
+                <option value="Mais de 2.000">Mais de 2.000</option>
+              </select>
+            </label>
+          </div>
+
+          <p class="leadform__error" id="leadFormError" hidden>Preencha os campos destacados para continuar.</p>
+
+          <button class="btn btn--lime btn--block" type="submit">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="btn__wa"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+            <span class="btn__label">Continuar no WhatsApp</span>
+          </button>
+
+          <p class="leadform__fine">Seus dados vão só para a conversa no WhatsApp. Sem newsletter automática.</p>
+
+          <div class="leadform__ok" id="leadFormOk" hidden>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <strong>WhatsApp aberto com seus dados</strong>
+              <span>Se a janela não abriu, <a id="leadFormWaLink" href="#">clique aqui</a>.</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="logo">
+          <img src="cubo-pomaroli-preto.png" alt="Pomaroli" class="logo__img" width="35" height="40" />
+        </a>
+        <p>Plataforma white-label de questões para cursos de concurso.</p>
+      </div>
+
+      <div class="footer__cols">
+        <div>
+          <h4>Produto</h4>
+          <a href="index.html#funcoes">Funções</a>
+          <a href="index.html#marca">Sua marca</a>
+          <a href="index.html#planos">Planos</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="#">Sobre</a>
+          <a href="blog.html">Blog</a>
+          <a href="#">Trabalhe conosco</a>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <a href="demo.html" aria-current="page">Agendar demonstração</a>
+          <a href="mailto:contato@pomaroli.com">contato@pomaroli.com</a>
+          <a href="#">Suporte</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 Pomaroli Tecnologia. Todos os direitos reservados.</span>
+      <span>
+        <a href="#">Termos</a>
+        <a href="#">Privacidade</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
