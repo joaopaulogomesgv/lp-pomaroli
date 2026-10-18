@@ -1,0 +1,2485 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Programa de Afiliados Pomaroli — Ganhe Comissões Recorrentes Todo Mês</title>
+  <meta name="description" content="Seja um afiliado da Pomaroli e venda a infraestrutura white-label de questões que todo curso preparatório precisa. Até 30% de comissão recorrente mensal via Hotmart.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+/* ==============================================================
+   POMAROLI — PROGRAMA DE AFILIADOS & PARCEIROS (B2B SAAS)
+   Design System Editorial · Light & Dark Mode · 100% Responsivo
+   ============================================================== */
+
+:root,
+html,
+body,
+[data-theme="light"],
+[data-theme="dark"],
+.interage-dark-mode {
+  color-scheme: light !important;
+  --bg: #f5f6f1;
+  --bg-trans: rgba(245, 246, 241, 0.92);
+  --bg-card: #ffffff;
+  --bg-subtle: #eeefe8;
+  --border: rgba(16, 18, 10, 0.1);
+  --border-strong: rgba(16, 18, 10, 0.18);
+  --border-hover: rgba(16, 18, 10, 0.28);
+  --text-1: #10120a;
+  --text-2: rgba(16, 18, 10, 0.68);
+  --text-3: rgba(16, 18, 10, 0.44);
+  --accent: #b9d806;
+  --accent-ink: #0c0f02;
+  --accent-text: #5a6e05;
+  --accent-soft: rgba(185, 216, 6, 0.16);
+  --dot-grid: rgba(16, 18, 10, 0.06);
+  --shadow-sm: 0 1px 3px rgba(16, 18, 10, 0.05);
+  --shadow-card: 0 12px 32px -8px rgba(16, 18, 10, 0.06);
+  --shadow-featured: 0 18px 48px -12px rgba(16, 18, 10, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  color-scheme: light !important;
+  background-color: var(--bg) !important;
+  background-image: radial-gradient(var(--dot-grid) 1px, transparent 1px) !important;
+  background-size: 24px 24px !important;
+  color: var(--text-1) !important;
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==============================================================
+   CONTAINER & LAYOUT
+   ============================================================== */
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==============================================================
+   HEADER DE NAVEGAÇÃO
+   ============================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: var(--bg-trans);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-cube {
+  position: relative;
+  width: 35px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 35px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-img--dark { display: none !important; }
+.logo-img--light { display: block !important; }
+
+
+
+.brand-text {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+}
+
+.brand-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  background: var(--accent-soft);
+  border: 1px solid var(--border-hover);
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.brand-badge::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-2);
+  transition: color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-1);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-btn { display: none !important; }
+
+
+
+
+
+
+
+
+
+
+.btn-cta-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 4px 14px -3px rgba(185, 216, 6, 0.45);
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-cta-nav:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -4px rgba(185, 216, 6, 0.6);
+  filter: brightness(1.04);
+}
+
+.btn-cta-nav svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.btn-cta-nav:hover svg {
+  transform: translateX(3px);
+}
+
+/* ==============================================================
+   HERO SECTION
+   ============================================================== */
+.hero {
+  padding: 72px 0 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-text);
+  background: var(--accent-soft);
+  border: 1px solid var(--border-hover);
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulseGreen 1.8s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(0.9); opacity: 0.8; box-shadow: 0 0 0 0 rgba(185, 216, 6, 0.6); }
+  70% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 0 7px rgba(185, 216, 6, 0); }
+  100% { transform: scale(0.9); opacity: 0.8; box-shadow: 0 0 0 0 rgba(185, 216, 6, 0); }
+}
+
+.hero-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: var(--text-1);
+  margin-bottom: 20px;
+}
+
+.hero-serif {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-text);
+  display: block;
+}
+
+
+
+.hero-desc {
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: var(--text-2);
+  margin-bottom: 32px;
+  max-width: 540px;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.h-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.h-pill--accent {
+  color: var(--accent-text);
+  border-color: var(--border-hover);
+  background: var(--accent-soft);
+}
+
+
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 28px;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: var(--shadow-featured);
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 28px 60px -16px rgba(185, 216, 6, 0.5);
+}
+
+.btn-primary svg {
+  width: 17px;
+  height: 17px;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  background: var(--bg-card);
+  color: var(--text-1);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #25d366;
+  color: #16a34a;
+  transform: translateY(-2px);
+}
+
+.btn-secondary svg {
+  width: 18px;
+  height: 18px;
+  color: #25d366;
+}
+
+/* ==============================================================
+   HERO VISUAL: NOTIFICATION & SIMULATION MOCKUP
+   ============================================================== */
+.hero-visual {
+  position: relative;
+}
+
+.notification-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.notif-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.notif-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+}
+
+.notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.notif-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notif-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: rgba(255, 90, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff5722;
+  font-size: 11px;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.notif-origin {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.notif-time {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.notif-value-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.notif-value {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #16a34a;
+  letter-spacing: -0.02em;
+}
+
+
+
+.notif-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-text);
+  background: var(--accent-soft);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+
+
+.notif-course {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: 4px;
+}
+
+.notif-detail {
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+/* Card Secundário Flutuante */
+.stats-floating-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px 22px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.stat-item-small {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num-small {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-1);
+}
+
+.stat-label-small {
+  font-size: 11.5px;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+}
+
+/* ==============================================================
+   SECTION HEADERS
+   ============================================================== */
+.section {
+  padding: 84px 0;
+}
+
+.section--alt {
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 52px;
+}
+
+.section-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-text);
+  background: var(--accent-soft);
+  padding: 4px 12px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+
+
+.section-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-1);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.section-title em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-text);
+}
+
+
+
+.section-desc {
+  font-size: 15.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* ==============================================================
+   BENTO GRID: POR QUE VENDER A POMAROLI (VANTAGENS)
+   ============================================================== */
+.bento-features {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.bento-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bento-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-card);
+}
+
+.bento-card--8 { grid-column: span 8; }
+.bento-card--4 { grid-column: span 4; }
+.bento-card--6 { grid-column: span 6; }
+
+.bento-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  border: 1px solid var(--border-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--accent-text);
+}
+
+
+
+.bento-icon-circle svg {
+  width: 24px;
+  height: 24px;
+}
+
+.bento-card-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 10px;
+  letter-spacing: -0.015em;
+}
+
+.bento-card-text {
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.bento-badge-footer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+/* ==============================================================
+   TABELA DE COMISSÕES E PLANOS
+   ============================================================== */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.plan-aff-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.plan-aff-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-card);
+}
+
+.plan-aff-card--popular {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-featured);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(185, 216, 6, 0.4);
+}
+
+.plan-aff-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.plan-aff-name {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-1);
+  margin-bottom: 12px;
+}
+
+.plan-aff-price {
+  font-size: 13px;
+  color: var(--text-3);
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.plan-aff-price strong {
+  font-size: 18px;
+  color: var(--text-1);
+}
+
+.comm-highlight-box {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.comm-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.comm-amount {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent-text);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+
+
+.comm-sub {
+  font-size: 11.5px;
+  color: var(--text-3);
+  margin-top: 4px;
+}
+
+.plan-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+  font-size: 13.5px;
+  color: var(--text-2);
+}
+
+.plan-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.plan-feature-item svg {
+  width: 16px;
+  height: 16px;
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+/* Informações extras da Hotmart */
+.hotmart-rules-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.h-rule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.h-rule-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+
+.h-rule-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.h-rule-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 2px;
+}
+
+.h-rule-desc {
+  font-size: 12px;
+  color: var(--text-3);
+  line-height: 1.4;
+}
+
+/* ==============================================================
+   SIMULADOR INTERATIVO DE GANHOS
+   ============================================================== */
+.simulator-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  padding: 40px;
+  box-shadow: var(--shadow-card);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.sim-control-group {
+  margin-bottom: 30px;
+}
+
+.sim-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.sim-label {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.sim-badge-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--accent-text);
+  background: var(--accent-soft);
+  padding: 3px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-hover);
+}
+
+
+
+.sim-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--bg-subtle);
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.sim-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.sim-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.plan-select-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.plan-tab-btn {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.plan-tab-btn.is-active {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px -2px rgba(185, 216, 6, 0.4);
+}
+
+/* Display de Resultados do Simulador */
+.sim-result-card {
+  background: linear-gradient(145deg, var(--bg-subtle) 0%, var(--bg-card) 100%);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sim-result-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+}
+
+.sim-result-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.sim-result-value {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--accent-text);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 6px;
+}
+
+
+
+.sim-result-period {
+  font-size: 13px;
+  color: var(--text-3);
+  margin-bottom: 24px;
+}
+
+.sim-annual-metric {
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sim-annual-label {
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+
+.sim-annual-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-1);
+}
+
+/* ==============================================================
+   PÚBLICO-ALVO: PARA QUEM VENDER (NICHOS PRONTOS)
+   ============================================================== */
+.niches-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.niche-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.niche-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-card);
+}
+
+.niche-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin-bottom: 8px;
+  display: block;
+}
+
+
+
+.niche-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 10px;
+  letter-spacing: -0.015em;
+}
+
+.niche-desc {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* ==============================================================
+   KIT DE MATERIAIS DE DIVULGAÇÃO
+   ============================================================== */
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.material-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 26px 22px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.material-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-card);
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+
+
+.material-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.material-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 8px;
+}
+
+.material-desc {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+.material-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent-text);
+}
+
+
+
+.material-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.material-card:hover .material-link svg {
+  transform: translateX(3px);
+}
+
+/* ==============================================================
+   PASSO A PASSO
+   ============================================================== */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 32px 26px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.step-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent-text);
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+
+
+.step-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 10px;
+}
+
+.step-text {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* ==============================================================
+   FAQ ACCORDION
+   ============================================================== */
+.faq-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faq-item.is-open {
+  border-color: var(--border-hover);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--text-1);
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-toggle-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.faq-toggle-icon svg {
+  width: 12px;
+  height: 12px;
+  color: var(--text-2);
+}
+
+.faq-item.is-open .faq-toggle-icon {
+  transform: rotate(180deg);
+  background: var(--accent);
+}
+
+.faq-item.is-open .faq-toggle-icon svg {
+  color: var(--accent-ink);
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 24px 22px;
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+.faq-item.is-open .faq-answer {
+  display: block;
+}
+
+/* ==============================================================
+   CTA FINAL BANNER
+   ============================================================== */
+.cta-banner {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-subtle) 100%);
+  border: 1px solid var(--border-hover);
+  border-radius: 30px;
+  padding: 64px 48px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.cta-banner-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-1);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-banner-title em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-text);
+}
+
+
+
+.cta-banner-desc {
+  font-size: 16px;
+  color: var(--text-2);
+  max-width: 580px;
+  margin: 0 auto 36px;
+}
+
+.cta-banner-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ==============================================================
+   COMPATIBILIDADE DE LARGURA TOTAL COM ELEMENTOR & WORDPRESS
+   ============================================================== */
+.elementor,
+.elementor-element,
+.elementor-section,
+.elementor-section-wrap,
+.elementor-container,
+.elementor-column,
+.elementor-widget-wrap,
+.elementor-widget,
+.elementor-widget-html,
+.elementor-widget-container,
+.elementor-widget-html .elementor-widget-container,
+.e-con,
+.e-con-inner,
+.e-con-boxed,
+.e-con-full,
+.e-parent {
+  --content-width: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* ==============================================================
+   FOOTER (LARGURA TOTAL 100% DE PONTA A PONTA)
+   ============================================================== */
+.site-footer {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border-top: 1px solid var(--border);
+  padding: 64px 0 36px;
+  background: var(--bg-subtle) !important;
+  margin-top: 80px;
+  box-sizing: border-box;
+}
+
+.site-footer .container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 2.4fr;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+
+.footer-brand-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-brand-box .nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.55;
+  max-width: 320px;
+}
+
+.footer-columns-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.footer-col-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 14px;
+}
+
+.footer-col-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col-nav a {
+  font-size: 13.5px;
+  color: var(--text-2);
+  transition: color 0.15s ease;
+  display: inline-block;
+  line-height: 1.4;
+}
+
+.footer-col-nav a:hover {
+  color: var(--text-1);
+}
+
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: var(--text-3);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-links a {
+  color: var(--text-3);
+  transition: color 0.15s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--text-1);
+}
+
+@media (max-width: 960px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .footer-columns-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-columns-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+  .footer-bottom-links {
+    justify-content: center;
+  }
+}
+
+/* ==============================================================
+   RESPONSIVIDADE
+   ============================================================== */
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .bento-card--8, .bento-card--4, .bento-card--6 {
+    grid-column: span 12;
+  }
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+  .hotmart-rules-box {
+    grid-template-columns: 1fr;
+  }
+  .simulator-box {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 28px;
+  }
+  .niches-grid {
+    grid-template-columns: 1fr;
+  }
+  .materials-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 34px;
+  }
+  .section-title {
+    font-size: 28px;
+  }
+  .cta-banner-title {
+    font-size: 28px;
+  }
+  .cta-banner {
+    padding: 40px 20px;
+  }
+  .materials-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-actions, .cta-banner-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+  </style>
+  <script>
+    (function() {
+      try {
+        localStorage.setItem('pomaroli_theme', 'light');
+        localStorage.setItem('interage_dark_mode', 'no');
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.classList.remove('interage-dark-mode');
+        document.documentElement.classList.add('interage-light-mode');
+        if (document.body) {
+          document.body.setAttribute('data-theme', 'light');
+          document.body.classList.remove('interage-dark-mode');
+          document.body.classList.add('interage-light-mode');
+        }
+      } catch(e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER DE NAVEGAÇÃO
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="/plataforma-de-questoes/" class="nav-brand" aria-label="Pomaroli — Início">
+        <div class="logo-cube">
+          <img src="data:image/png;base64,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YCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACwEBY8AACAhbDgAQAALIQFDwAAYCEseAAAAAthwQMAAFgICx4AAMBCWPAAAAAWwoIHAACw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" alt="Pomaroli" class="logo-img" width="32" height="36" />
+          </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#por-que-vender" class="nav-link">Por Que Vender</a></li>
+        <li><a href="#comissoes" class="nav-link">Comissões</a></li>
+        <li><a href="#simulador" class="nav-link">Simulador</a></li>
+        <li><a href="#publico-alvo" class="nav-link">Públicos</a></li>
+        <li><a href="#materiais" class="nav-link">Materiais</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        
+
+        <a href="https://app-vlc.hotmart.com/affiliate-recruiting/view/F107350441I" target="_blank" rel="noopener noreferrer" class="btn-cta-nav">
+          Seja um Afiliado
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          <span class="pulse-dot"></span>
+          Afiliação Oficial Hotmart · Comissões Recorrentes
+        </div>
+        <h1 class="hero-title">
+          Venda a infraestrutura que todo curso preparatório precisa.
+          <span class="hero-serif">E receba comissões recorrentes todo mês.</span>
+        </h1>
+        <p class="hero-desc">
+          Cursos de concursos, OAB e vestibulares estão exaustos de mandar PDFs pelo WhatsApp e perder alunos para plataformas gigantes. Apresente a plataforma white-label da Pomaroli com 100k+ questões e ganhe até 30% de comissão mensalmente.
+        </p>
+
+        <div class="hero-pills">
+          <span class="h-pill h-pill--accent">30% Comissão Mensal</span>
+          <span class="h-pill">Planos de R$ 197 a R$ 497/mês</span>
+          <span class="h-pill">Retenção de 14+ Meses</span>
+          <span class="h-pill">+100k Questões Prontas</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="https://app-vlc.hotmart.com/affiliate-recruiting/view/F107350441I" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            Quero me Afiliar na Hotmart
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=5533999999999&text=Ol%C3%A1%2C%20tenho%20interesse%20em%20ser%20afiliado%20da%20Pomaroli%20e%20gostaria%20de%20falar%20com%20o%20gerente%20de%20parcerias." target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Falar com Gerente no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Card Notificação Visual -->
+      <div class="hero-visual">
+        <div class="notification-stack">
+          <!-- Card de Venda Recorrente Hotmart -->
+          <div class="notif-card">
+            <div class="notif-header">
+              <div class="notif-brand">
+                <span class="notif-icon">H</span>
+                <span class="notif-origin">Hotmart Notificações</span>
+              </div>
+              <span class="notif-time">Agora mesmo</span>
+            </div>
+            <div class="notif-value-row">
+              <div class="notif-value">+ R$ 89,10</div>
+              <span class="notif-type">Recorrência Mensal</span>
+            </div>
+            <div class="notif-course">Curso Preparatório Alfa renovou a mensalidade</div>
+            <div class="notif-detail">Plano Intermediário (R$ 297/mês) · Comissão de 30% creditada na sua conta.</div>
+          </div>
+
+          <!-- Card de Venda 2 -->
+          <div class="notif-card" style="opacity: 0.95;">
+            <div class="notif-header">
+              <div class="notif-brand">
+                <span class="notif-icon">H</span>
+                <span class="notif-origin">Hotmart Notificações</span>
+              </div>
+              <span class="notif-time">Há 42 min</span>
+            </div>
+            <div class="notif-value-row">
+              <div class="notif-value">+ R$ 149,10</div>
+              <span class="notif-type">Plano Avançado</span>
+            </div>
+            <div class="notif-course">Academia Militar Bravo ativou o sistema</div>
+            <div class="notif-detail">Assinatura anual de R$ 497/mês aprovada via Pix.</div>
+          </div>
+
+          <!-- Box de Métricas Flutuante -->
+          <div class="stats-floating-box">
+            <div class="stat-item-small">
+              <span class="stat-num-small">30%</span>
+              <span class="stat-label-small">Comissão Recorrente</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item-small">
+              <span class="stat-num-small">14 meses</span>
+              <span class="stat-label-small">LTV Médio do Curso</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item-small">
+              <span class="stat-num-small">&lt; 3%</span>
+              <span class="stat-label-small">Cancelamento (Churn)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 1: POR QUE VENDER A POMAROLI (VANTAGENS B2B)
+       ============================================================ -->
+  <section class="section section--alt" id="por-que-vender">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">A Força do Modelo B2B SaaS</span>
+        <h2 class="section-title">Por que a Pomaroli é <em>muito mais lucrativa</em> que vender cursos comuns?</h2>
+        <p class="section-desc">
+          Afiliados inteligentes não perdem tempo vendendo e-books de compra única com reembolso alto. Eles constroem carteiras de mensalidades recorrentes com software essencial.
+        </p>
+      </div>
+
+      <div class="bento-features">
+        <!-- Card 1 (Span 8) -->
+        <div class="bento-card bento-card--8">
+          <div>
+            <div class="bento-icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3 class="bento-card-title">1. Venda Uma Única Vez e Receba Mês Após Mês</h3>
+            <p class="bento-card-text">
+              Em infoprodutos tradicionais, se você não vender amanhã, você não ganha nada. Na Pomaroli, quando um curso preparatório sobe seus simulados, turmas e alunos para o sistema, ele não cancela. A retenção média é superior a 14 meses. Uma venda de hoje continua pagando suas contas no próximo ano.
+            </p>
+          </div>
+          <span class="bento-badge-footer">LTV Médio de R$ 4.158 por cliente</span>
+        </div>
+
+        <!-- Card 2 (Span 4) -->
+        <div class="bento-card bento-card--4">
+          <div>
+            <div class="bento-icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </div>
+            <h3 class="bento-card-title">2. A Dor Crônica dos PDFs Soltos</h3>
+            <p class="bento-card-text">
+              Todo gestor de curso sofre com apostilas impressas pirateadas e listas soltas no WhatsApp. A Pomaroli resolve isso no ato com login individual e simulados cronometrados.
+            </p>
+          </div>
+          <span class="bento-badge-footer">Fácil de demonstrar e fechar</span>
+        </div>
+
+        <!-- Card 3 (Span 6) -->
+        <div class="bento-card bento-card--6">
+          <div>
+            <div class="bento-icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="bento-card-title">3. White-Label Invisível: Zero Medo do Dono do Curso</h3>
+            <p class="bento-card-text">
+              Se o professor indicar plataformas conhecidas (como Gran ou QConcursos), o aluno sai do curso dele e assina direto com o concorrente. Na Pomaroli, o app leva as cores, logo e nome do curso dele. O dono do curso se apaixona na primeira ligação.
+            </p>
+          </div>
+          <span class="bento-badge-footer">Marca do cliente 100% preservada</span>
+        </div>
+
+        <!-- Card 4 (Span 6) -->
+        <div class="bento-card bento-card--6">
+          <div>
+            <div class="bento-icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="bento-card-title">4. Ticket Acessível de Baixíssima Fricção</h3>
+            <p class="bento-card-text">
+              Planos a partir de R$ 197/mês. Isso custa menos que a mensalidade de UM único aluno do curso preparatório! A decisão de compra não depende de reuniões com 10 diretores: o gestor passa o cartão na hora pela Hotmart.
+            </p>
+          </div>
+          <span class="bento-badge-footer">Ciclo de venda rápido (1 a 3 dias)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 2: PLANOS E TABELA DE COMISSÕES
+       ============================================================ -->
+  <section class="section" id="comissoes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Regras e Valores Transparentes</span>
+        <h2 class="section-title">Quanto você ganha por <em>cada indicação ativa</em></h2>
+        <p class="section-desc">
+          Nossa afiliação é estruturada na Hotmart com pagamento automatizado e seguro. Você recebe 30% sobre todas as mensalidades pagas pelo cliente.
+        </p>
+      </div>
+
+      <div class="plans-grid">
+        <!-- Plano Inicial -->
+        <div class="plan-aff-card">
+          <div>
+            <span class="plan-aff-tag">Para Cursos Menores e Professores</span>
+            <h3 class="plan-aff-name">Plano Inicial</h3>
+            <div class="plan-aff-price">
+              Valor da assinatura: <strong>R$ 197/mês</strong>
+            </div>
+
+            <div class="comm-highlight-box">
+              <div class="comm-label">Sua Comissão Recorrente</div>
+              <div class="comm-amount">R$ 59,10</div>
+              <div class="comm-sub">todo mês por cliente ativo</div>
+            </div>
+
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Banco com +100k questões
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                White-label com logo e cores
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Até 250 alunos simultâneos
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Exportação de relatórios
+              </li>
+            </ul>
+          </div>
+
+          <a href="https://app-vlc.hotmart.com/affiliate-recruiting/view/F107350441I" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: 100%; justify-content: center;">
+            Afiliar-se a este Produto
+          </a>
+        </div>
+
+        <!-- Plano Intermediário (Destaque) -->
+        <div class="plan-aff-card plan-aff-card--popular">
+          <span class="popular-badge">Mais Vendido · Alta Procura</span>
+          <div>
+            <span class="plan-aff-tag">Para Cursos em Crescimento</span>
+            <h3 class="plan-aff-name">Plano Intermediário</h3>
+            <div class="plan-aff-price">
+              Valor da assinatura: <strong>R$ 297/mês</strong>
+            </div>
+
+            <div class="comm-highlight-box" style="background: var(--accent-soft); border-color: var(--border-hover);">
+              <div class="comm-label">Sua Comissão Recorrente</div>
+              <div class="comm-amount">R$ 89,10</div>
+              <div class="comm-sub">todo mês por cliente ativo</div>
+            </div>
+
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Banco completo + atualizações
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Simulados com cronômetro e ranking
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Até 1.000 alunos ativos
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Suporte prioritário e migração assistida
+              </li>
+            </ul>
+          </div>
+
+          <a href="https://app-vlc.hotmart.com/affiliate-recruiting/view/F107350441I" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: 100%; justify-content: center;">
+            Afiliar-se a este Produto
+          </a>
+        </div>
+
+        <!-- Plano Avançado -->
+        <div class="plan-aff-card">
+          <div>
+            <span class="plan-aff-tag">Para Grandes Cursos e Redes</span>
+            <h3 class="plan-aff-name">Plano Avançado</h3>
+            <div class="plan-aff-price">
+              Valor da assinatura: <strong>R$ 497/mês</strong>
+            </div>
+
+            <div class="comm-highlight-box">
+              <div class="comm-label">Sua Comissão Recorrente</div>
+              <div class="comm-amount">R$ 149,10</div>
+              <div class="comm-sub">todo mês por cliente ativo</div>
+            </div>
+
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Alunos e simulados ilimitados
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Múltiplas turmas e polos regionais
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                API para integração com site próprio
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Gerente de sucesso dedicado
+              </li>
+            </ul>
+          </div>
+
+          <a href="https://app-vlc.hotmart.com/affiliate-recruiting/view/F107350441I" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: 100%; justify-content: center;">
+            Afiliar-se a este Produto
+          </a>
+        </div>
+      </div>
+
+      <!-- Regras da Hotmart -->
+      <div class="hotmart-rules-box">
+        <div class="h-rule-item">
+          <div class="h-rule-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          </div>
+          <div>
+            <div class="h-rule-title">Cookie de Longa Duração</div>
+            <div class="h-rule-desc">Se o dono do curso clicar no seu link hoje e assinar em 30 ou 60 dias, a comissão é 100% sua.</div>
+          </div>
+        </div>
+
+        <div class="h-rule-item">
+          <div class="h-rule-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          </div>
+          <div>
+            <div class="h-rule-title">Pagamento 100% Automático</div>
+            <div class="h-rule-desc">A Hotmart divide a assinatura na hora e deposita a comissão direto na sua conta bancária.</div>
+          </div>
+        </div>
+
+        <div class="h-rule-item">
+          <div class="h-rule-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <div>
+            <div class="h-rule-title">Permitido Tráfego Pago</div>
+            <div class="h-rule-desc">Você pode anunciar no Meta Ads e Google Ads direcionando para a landing page com seu hotlink.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 3: SIMULADOR INTERATIVO DE GANHOS
+       ============================================================ -->
+  <section class="section section--alt" id="simulador">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Calculadora Interativa de Lucro</span>
+        <h2 class="section-title">Simule quanto você pode faturar <em>todo mês</em></h2>
+        <p class="section-desc">
+          Arraste a barra para escolher a quantidade de cursos ativos na sua carteira e veja o impacto financeiro no seu faturamento anual.
+        </p>
+      </div>
+
+      <div class="simulator-box">
+        <!-- Controles -->
+        <div class="sim-controls">
+          <div class="sim-control-group">
+            <div class="sim-label-row">
+              <span class="sim-label">Quantos cursos você pretende indicar?</span>
+              <span class="sim-badge-val" id="clientCountVal">15 cursos</span>
+            </div>
+            <input type="range" min="1" max="60" value="15" class="sim-slider" id="clientSlider">
+          </div>
+
+          <div class="sim-control-group">
+            <span class="sim-label">Ticket / Plano mais vendido na sua carteira:</span>
+            <div class="plan-select-tabs">
+              <button type="button" class="plan-tab-btn" data-comm="59.10">Inicial (R$ 197)</button>
+              <button type="button" class="plan-tab-btn is-active" data-comm="89.10">Intermediário (R$ 297)</button>
+              <button type="button" class="plan-tab-btn" data-comm="149.10">Avançado (R$ 497)</button>
+            </div>
+          </div>
+
+          <p style="font-size: 13px; color: var(--text-3); line-height: 1.45;">
+            * Cálculo baseado em 30% de comissão recorrente líquida sobre os planos oficiais da Pomaroli. Clientes ativos permanecem em média 14 meses gerando receita sem esforço adicional de pós-venda.
+          </p>
+        </div>
+
+        <!-- Display do Resultado -->
+        <div class="sim-result-card">
+          <div class="sim-result-label">Sua Renda Mensal Recorrente</div>
+          <div class="sim-result-value" id="monthlyResult">R$ 1.336,50</div>
+          <div class="sim-result-period">pingando todo mês na Hotmart</div>
+
+          <div class="sim-annual-metric">
+            <span class="sim-annual-label">Faturamento Anual Acumulado:</span>
+            <span class="sim-annual-value" id="annualResult">R$ 16.038,00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 4: PÚBLICO-ALVO (PARA QUEM VENDER)
+       ============================================================ -->
+  <section class="section" id="publico-alvo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nichos Prontos para Abordar</span>
+        <h2 class="section-title">Onde estão os clientes que vão <em>comprar de você</em>?</h2>
+        <p class="section-desc">
+          Você não precisa inventar a roda. Esses 6 segmentos têm verba imediata e já sentem a dor de não possuir uma plataforma própria de questões.
+        </p>
+      </div>
+
+      <div class="niches-grid">
+        <div class="niche-card">
+          <span class="niche-tag">Nicho #01 · Alta Demanda</span>
+          <h3 class="niche-title">Cursos para Concursos Públicos</h3>
+          <p class="niche-desc">
+            Preparatórios para Carreiras Policiais (PM, PC, PRF, PF), Fiscais e Tribunais. Os alunos exigem simulados semanais com ranking comparativo.
+          </p>
+        </div>
+
+        <div class="niche-card">
+          <span class="niche-tag">Nicho #02 · Ticket Alto</span>
+          <h3 class="niche-title">Exame de Ordem (OAB) & Carreiras Jurídicas</h3>
+          <p class="niche-desc">
+            Cursos focados na 1ª fase da OAB e carreiras como Magistratura e Defensoria. Precisam de filtragem cirúrgica por disciplina e banca examinadora.
+          </p>
+        </div>
+
+        <div class="niche-card">
+          <span class="niche-tag">Nicho #03 · Alto Volume</span>
+          <h3 class="niche-title">Pré-Vestibulares & Medicina</h3>
+          <p class="niche-desc">
+            Cursos regionais presenciais e turmas ENEM. Buscam modernizar a entrega para não perder alunos para cursinhos 100% online de capitais.
+          </p>
+        </div>
+
+        <div class="niche-card">
+          <span class="niche-tag">Nicho #04 · Disciplina e Fidelidade</span>
+          <h3 class="niche-title">Carreiras Militares</h3>
+          <p class="niche-desc">
+            Cursos preparatórios para EsPCEx, ESA, AFA, Colégio Naval e EPCAr. O público militar é fanático por resolver baterias massivas de exercícios.
+          </p>
+        </div>
+
+        <div class="niche-card">
+          <span class="niche-tag">Nicho #05 · Decisão Ultra Rápida</span>
+          <h3 class="niche-title">Professores Autônomos & Mentores</h3>
+          <p class="niche-desc">
+            Especialistas que vendem mentorias de 10 a 50 alunos no Instagram. Querem parecer uma escola profissional sem gastar R$ 50 mil desenvolvendo software.
+          </p>
+        </div>
+
+        <div class="niche-card">
+          <span class="niche-tag">Nicho #06 · Parcerias B2B</span>
+          <h3 class="niche-title">Agências & Gestores de Tráfego</h3>
+          <p class="niche-desc">
+            Agências de marketing que já atendem escolas e cursos. Eles incluem a plataforma no pacote de serviços e você ganha a comissão pela indicação.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 5: MATERIAIS DE DIVULGAÇÃO & APOIO
+       ============================================================ -->
+  <section class="section section--alt" id="materiais">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Apoio Completo ao Afiliado</span>
+        <h2 class="section-title">Você não começa do zero: <em>tudo pronto</em> para você vender</h2>
+        <p class="section-desc">
+          Disponibilizamos materiais de prospecção profissional, scripts de abordagem e vídeos de demonstração da plataforma.
+        </p>
+      </div>
+
+      <div class="materials-grid">
+        <div class="material-card">
+          <div>
+            <div class="material-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3 class="material-title">Scripts de Abordagem</h3>
+            <p class="material-desc">Modelos de mensagens testados para direct do Instagram e WhatsApp de donos de cursos preparatórios.</p>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=5533999999999&text=Ol%C3%A1%2C%20gostaria%20de%20receber%20os%20scripts%20de%20abordagem%20para%20afiliados%20da%20Pomaroli." target="_blank" rel="noopener noreferrer" class="material-link">
+            Solicitar scripts
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+
+        <div class="material-card">
+          <div>
+            <div class="material-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+            </div>
+            <h3 class="material-title">Vídeos de Demonstração</h3>
+            <p class="material-desc">Gravações da tela do aluno e do painel white-label simulando a marca de um curso fictício em alta definição.</p>
+          </div>
+          <a href="demo.html" target="_blank" class="material-link">
+            Ver demonstração
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+
+        <div class="material-card">
+          <div>
+            <div class="material-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h3 class="material-title">Pitch Deck Comercial</h3>
+            <p class="material-desc">PDF elegante com comparativo técnico: por que enviar PDFs soltos é perigoso e como a Pomaroli valoriza o curso.</p>
+          </div>
+          <a href="https://pomaroli.com.br/plataforma-de-questoes-segredo-grandes-cursos/" target="_blank" rel="noopener noreferrer" class="material-link">
+            Ler artigo base
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+
+        <div class="material-card">
+          <div>
+            <div class="material-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 class="material-title">Suporte e Fechamento B2B</h3>
+            <p class="material-desc">Para contas de redes de ensino ou pedidos corporativos, nosso time entra na call junto com você para fechar o negócio.</p>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=5533999999999&text=Ol%C3%A1%2C%20tenho%20um%20cliente%20grande%20e%20gostaria%20de%20ajuda%20do%20gerente%20de%20parcerias." target="_blank" rel="noopener noreferrer" class="material-link">
+            Chamar gerente
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 6: PASSO A PASSO
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Passo a Passo Descomplicado</span>
+        <h2 class="section-title">Como começar a vender <em>em menos de 5 minutos</em></h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Solicite sua Afiliação na Hotmart</h3>
+          <p class="step-text">Clique no botão abaixo para acessar a página do produto na Hotmart e clique em 'Afiliar-se Agora'. A aprovação é rápida e sem burocracia.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Pegue seus Hotlinks e Materiais</h3>
+          <p class="step-text">Copie seu link rastreado exclusivo na Hotmart. Você pode usar tanto a landing page principal quanto as páginas de demonstração interativa.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Prospecte e Receba Recorrente</h3>
+          <p class="step-text">Aborde donos de cursos pelo Instagram/WhatsApp ou anuncie para públicos segmentados de gestores de educação. As comissões caem no piloto automático.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 7: FAQ DE AFILIADOS
+       ============================================================ -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Dúvidas Frequentes</span>
+        <h2 class="section-title">Perguntas comuns sobre o <em>programa de afiliados</em></h2>
+      </div>
+
+      <div class="faq-wrap">
+        <div class="faq-item is-open">
+          <button type="button" class="faq-question">
+            <span>Preciso pagar alguma taxa para me tornar um afiliado?</span>
+            <span class="faq-toggle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            Não. A afiliação é 100% gratuita. Você só precisa ter uma conta ativa e verificada na plataforma Hotmart para receber seus pagamentos.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>A comissão de 30% é paga apenas na primeira venda ou todo mês?</span>
+            <span class="faq-toggle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            Ela é 100% recorrente! Enquanto o curso preparatório que você indicou continuar com a assinatura ativa (mensal ou anual), a Hotmart debita e credita automaticamente a comissão de 30% na sua conta a cada renovação.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Posso fazer anúncios no Meta Ads (Facebook/Instagram) e Google Ads?</span>
+            <span class="faq-toggle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            Sim! É permitido veicular anúncios para públicos de interesse (donos de cursos, professores, coordenadores pedagógicos) e palavras-chave de intenção (ex: 'plataforma de questões white label', 'sistema de simulados para cursinho'). Não permitimos apenas anúncios com promessas enganosas ou uso indevido da marca.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Quem faz o suporte técnico e a implantação para o cliente?</span>
+            <span class="faq-toggle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            A equipe técnica da Pomaroli cuida de tudo! Configuração da logo, cores da marca, personalização de domínio e suporte ao gestor do curso são de nossa total responsabilidade. Você não precisa prestar suporte técnico ao cliente.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Qual é a regra de comissionamento de cookies da Hotmart?</span>
+            <span class="faq-toggle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            Trabalhamos com cookie de longa duração (eterno enquanto o navegador do usuário não for formatado) e modelo de último clique (last-click), garantindo que o afiliado que conduziu a decisão final de compra receba a comissão integral.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINAL ÉPICO
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner">
+        <h2 class="cta-banner-title">
+          Pronto para construir sua <em>carteira de receita recorrente</em> com a Pomaroli?
+        </h2>
+        <p class="cta-banner-desc">
+          Cadastre-se gratuitamente na Hotmart, acesse nossos roteiros de prospecção e comece a faturar hoje mesmo com o mercado que mais cresce na educação.
+        </p>
+
+        <div class="cta-banner-actions">
+          <a href="https://app-vlc.hotmart.com/affiliate-recruiting/view/F107350441I" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            Quero me Afiliar na Hotmart Agora
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=5533999999999&text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20a%20afilia%C3%A7%C3%A3o%20da%20Pomaroli." target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            Tirar dúvidas no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+        <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div class="footer-brand-box">
+          <a href="/plataforma-de-questoes/" class="nav-brand" aria-label="Pomaroli — Início">
+            <div class="logo-cube">
+              <img src="cubo-pomaroli-verde.png" alt="Pomaroli" class="logo-img" width="32" height="36" />
+            </div>
+            <span class="brand-text">Pomaroli</span>
+          </a>
+          <p class="footer-tagline">Infraestrutura white-label de questões para cursos preparatórios de concursos, OAB e vestibulares.</p>
+        </div>
+
+        <div class="footer-columns-grid">
+          <div class="footer-col">
+            <div class="footer-col-title">Produto</div>
+            <ul class="footer-col-nav">
+              <li><a href="/plataforma-de-questoes/#funcoes">Recursos</a></li>
+              <li><a href="/plataforma-de-questoes/#marca">Sua Marca</a></li>
+              <li><a href="/plataforma-de-questoes/#planos">Planos</a></li>
+              <li><a href="/plataforma-de-questoes/#faq">Dúvidas Frequentes</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Afiliados</div>
+            <ul class="footer-col-nav">
+              <li><a href="#por-que-vender">Por Que Vender</a></li>
+              <li><a href="#comissoes">Comissões Recorrentes</a></li>
+              <li><a href="#simulador">Simulador de Ganhos</a></li>
+              <li><a href="#publico-alvo">Públicos-Alvo</a></li>
+              <li><a href="#materiais">Materiais de Apoio</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Institucional</div>
+            <ul class="footer-col-nav">
+              <li><a href="/plataforma-de-questoes/">Página Principal</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/configuracao-dns">Apontamento DNS</a></li>
+              <li><a href="links.html">Bio / Links</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Legal & Suporte</div>
+            <ul class="footer-col-nav">
+              <li><a href="/termos">Termos de Uso</a></li>
+              <li><a href="/privacidade">Políticas de Privacidade</a></li>
+              <li><a href="https://app-vlc.hotmart.com/affiliate-recruiting/view/F107350441I" target="_blank" rel="noopener noreferrer">Afiliação Hotmart</a></li>
+              <li><a href="mailto:contato@pomaroli.com.br">contato@pomaroli.com.br</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Pomaroli Tecnologia Educacional. Todos os direitos reservados.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="/termos">Termos de Uso</a>
+          <a href="/privacidade">Políticas de Privacidade</a>
+          <a href="/configuracao-dns">Configuração DNS</a>
+          <a href="mailto:contato@pomaroli.com.br">Suporte</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS: TEMA + SIMULADOR + FAQ ACCORDION
+       ============================================================ -->
+  <script>
+  (function() {
+    // 1. TEMA CLARO PADRÃO (MODO ESCURO REMOVIDO)
+    localStorage.setItem('pomaroli_theme', 'light');
+    localStorage.setItem('interage_dark_mode', 'no');
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.remove('interage-dark-mode');
+    document.documentElement.classList.add('interage-light-mode');
+    if (document.body) {
+      document.body.setAttribute('data-theme', 'light');
+      document.body.classList.remove('interage-dark-mode');
+      document.body.classList.add('interage-light-mode');
+    }
+
+    // 2. SIMULADOR DE GANHOS
+    const clientSlider = document.getElementById('clientSlider');
+    const clientCountVal = document.getElementById('clientCountVal');
+    const monthlyResult = document.getElementById('monthlyResult');
+    const annualResult = document.getElementById('annualResult');
+    const tabBtns = document.querySelectorAll('.plan-tab-btn');
+
+    let currentComm = 89.10; // Padrão: Plano Intermediário
+
+    function formatBRL(val) {
+      return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function updateSimulator() {
+      const count = parseInt(clientSlider.value, 10);
+      clientCountVal.textContent = count === 1 ? '1 curso' : count + ' cursos';
+
+      const monthly = count * currentComm;
+      const annual = monthly * 12;
+
+      monthlyResult.textContent = formatBRL(monthly);
+      annualResult.textContent = formatBRL(annual);
+    }
+
+    if (clientSlider) {
+      clientSlider.addEventListener('input', updateSimulator);
+    }
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        currentComm = parseFloat(btn.getAttribute('data-comm'));
+        updateSimulator();
+      });
+    });
+
+    updateSimulator();
+
+    // 3. FAQ ACCORDION
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const q = item.querySelector('.faq-question');
+      if (q) {
+        q.addEventListener('click', () => {
+          const isOpen = item.classList.contains('is-open');
+          // Fecha os outros
+          faqItems.forEach(i => i.classList.remove('is-open'));
+          if (!isOpen) {
+            item.classList.add('is-open');
+          }
+        });
+      }
+    });
+  })();
+  </script>
+
+</body>
+</html>
