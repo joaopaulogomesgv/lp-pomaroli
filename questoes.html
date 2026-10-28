@@ -316,36 +316,310 @@ h1.hero__title {
   box-sizing: border-box !important;
 }
 
-.hero__proof,
-.pomaroli-root .hero__proof {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 1.4rem !important;
-  padding: 0 !important;
-  margin: 0 0 2rem 0 !important;
-  list-style: none !important;
-  flex-wrap: wrap !important;
+/* ==============================================================
+   ADAPTAÇÃO MOBILE COMPLETA E IMPECÁVEL (RESPONSIVIDADE TOTAL)
+   ============================================================== */
+html, body, .pomaroli-root {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  box-sizing: border-box !important;
 }
 
-.stats-counter-bar,
-.pomaroli-root .stats-counter-bar {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 1.5rem !important;
-  background: #101014 !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 12px !important;
-  padding: 1.2rem 1.6rem !important;
-  width: 100% !important;
-  max-width: 440px !important;
-  box-sizing: border-box !important;
+@media (max-width: 960px) {
+  /* 1. Header / Navbar */
+  .nav,
+  .pomaroli-root .nav {
+    height: 64px !important;
+    padding: 0 !important;
+  }
+  .nav__inner,
+  .pomaroli-root .nav__inner {
+    height: 64px !important;
+    padding: 0 1rem !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .nav__pill,
+  .pomaroli-root .nav__pill {
+    display: none !important;
+  }
+  .nav__actions,
+  .pomaroli-root .nav__actions {
+    gap: 0.6rem !important;
+  }
+  .btn--nav-cta,
+  .nav .btn--nav-cta,
+  .pomaroli-root .btn--nav-cta {
+    font-size: 0.78rem !important;
+    padding: 0.45rem 0.85rem !important;
+    gap: 4px !important;
+    border-radius: 6px !important;
+  }
+  .btn--nav-cta svg {
+    display: none !important;
+  }
+  .nav__burger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    gap: 4px !important;
+    flex-direction: column !important;
+  }
+  .nav__burger span {
+    display: block !important;
+    width: 18px !important;
+    height: 2px !important;
+    background: #ffffff !important;
+    border-radius: 2px !important;
+  }
+  .nav__mobile:not([hidden]) {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 64px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgba(10, 10, 14, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 1.2rem 1.5rem 1.5rem !important;
+    gap: 0.5rem !important;
+    z-index: 999998 !important;
+  }
+  .nav__mobile a {
+    color: #e5e7eb !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 0.5rem !important;
+    border-radius: 6px !important;
+  }
+
+  /* 2. Hero Section */
+  .hero,
+  .pomaroli-root .hero {
+    padding-top: 85px !important;
+    padding-bottom: 35px !important;
+    overflow: hidden !important;
+  }
+  .hero__content,
+  .pomaroli-root .hero__content {
+    padding: 0 1rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .hero__layout-split,
+  .pomaroli-root .hero__layout-split {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    width: 100% !important;
+  }
+  .hero__left-copy,
+  .hero__left-main {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .hero__badge {
+    white-space: normal !important;
+    max-width: 100% !important;
+    font-size: 0.72rem !important;
+    line-height: 1.35 !important;
+    padding: 5px 10px !important;
+    margin-bottom: 0.5rem !important;
+    display: inline-flex !important;
+  }
+  .pomaroli-root h1.hero__title,
+  .pomaroli-root .hero__title,
+  h1.hero__title {
+    font-size: clamp(23px, 6.2vw, 32px) !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.02em !important;
+    margin: 0.75rem 0 !important;
+    text-align: left !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .hero__subtitle,
+  .pomaroli-root .hero__subtitle {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    max-width: 100% !important;
+    margin-bottom: 1.25rem !important;
+    text-align: left !important;
+  }
+  .hero__cta,
+  .pomaroli-root .hero__cta {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+    align-items: stretch !important;
+    margin-bottom: 1.2rem !important;
+  }
+  .hero__cta .btn,
+  .hero__cta a.btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.85rem 1rem !important;
+    height: auto !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+  }
+  .hero__proof,
+  .pomaroli-root .hero__proof {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.55rem !important;
+    width: 100% !important;
+    margin: 0 0 1.4rem 0 !important;
+  }
+  .hero__proof li {
+    font-size: 0.78rem !important;
+  }
+  .stats-counter-bar,
+  .pomaroli-root .stats-counter-bar {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.4rem !important;
+    padding: 0.85rem 0.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .stat-counter-item {
+    padding: 0 0.2rem !important;
+  }
+  .stat-counter-item strong {
+    font-size: 1.1rem !important;
+  }
+  .stat-counter-item span {
+    font-size: 0.68rem !important;
+  }
+
+  /* 3. Showcase / Catálogo */
+  .hero__right-showcase {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .courses-showcase {
+    padding: 1rem 0.85rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+  }
+  .courses-window-bar {
+    flex-wrap: wrap !important;
+    gap: 0.6rem !important;
+    padding-bottom: 0.75rem !important;
+    margin-bottom: 1rem !important;
+    justify-content: space-between !important;
+  }
+  .courses-window-url-box {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.6rem !important;
+    max-width: 180px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .courses-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+  }
+  .courses-tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    padding-bottom: 6px !important;
+    gap: 0.45rem !important;
+    scrollbar-width: none !important;
+  }
+  .courses-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+  .course-tab-btn {
+    flex-shrink: 0 !important;
+    font-size: 0.75rem !important;
+    padding: 0.35rem 0.8rem !important;
+  }
+  .courses-grid-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+  }
+
+  /* 4. Planos, Features e Conteúdo Geral */
+  .plans {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    gap: 1.5rem !important;
+  }
+  .plan {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .features {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-grid-cards {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+  .stat-counter-item strong {
+    font-size: 0.98rem !important;
+  }
+  .stat-counter-item span {
+    font-size: 0.64rem !important;
+  }
 }
 
 </style>
   <script id="pomaroli-fullwidth-wp">
     (function () {
+      // Bloqueio imediato de popup de checkout da Hotmart na fase de captura
+      window.addEventListener("click", function(e) {
+        var link = e.target && e.target.closest ? e.target.closest("a[href*='hotmart.com']") : null;
+        if (!link) return;
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        var targetUrl = link.href.replace(/([?&])checkoutMode=\d+(&?)/, function(m, p1, p2) {
+          return p1 === '?' && p2 ? '?' : '';
+        }).replace(/[?&]$/, "");
+        window.open(targetUrl, "_blank", "noopener,noreferrer");
+      }, true);
       function pomaroliFullWidth() {
         var nodes = document.querySelectorAll(".is-layout-constrained, .has-global-padding");
         for (var i = 0; i < nodes.length; i++) {
@@ -3714,30 +3988,14 @@ body, html, .pomaroli-root {
 .hero {
   position: relative !important;
   background: radial-gradient(ellipse 75% 55% at 50% 25%, rgba(200, 230, 42, 0.07), transparent 70%) !important;
-  padding-top: 40px !important;
-  padding-bottom: 70px !important;
+  padding-top: 25px !important;
+  padding-bottom: 40px !important;
 }
 
 .hero__content {
-  max-width: 1280px !important;
+  max-width: 1340px !important;
   margin: 0 auto !important;
   padding: 0 1.5rem !important;
-}
-
-/* Layout Split: 46% texto, 54% mockup */
-.hero__layout-split {
-  display: grid !important;
-  grid-template-columns: 46% 54% !important;
-  gap: 3.5rem !important;
-  align-items: center !important;
-  margin-bottom: 0 !important;
-}
-
-@media (max-width: 1024px) {
-  .hero__layout-split {
-    grid-template-columns: 1fr !important;
-    gap: 2.5rem !important;
-  }
 }
 
 /* Tipografia Fiel ao Modelo Skull Concursos: Sans-serif Limpa e Forte */
@@ -3745,12 +4003,12 @@ body, html, .pomaroli-root {
 .pomaroli-root .hero__title,
 h1.hero__title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  font-size: clamp(38px, 3.4vw, 54px) !important;
+  font-size: clamp(30px, 2.3vw, 38px) !important;
   font-weight: 800 !important;
-  line-height: 1.12 !important;
-  letter-spacing: -0.035em !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
   color: #ffffff !important;
-  margin: 1.2rem 0 !important;
+  margin: 0.65rem 0 0.75rem 0 !important;
   text-shadow: none !important;
 }
 
@@ -3784,41 +4042,42 @@ h1.hero__title {
 
 .hero__subtitle {
   font-family: 'Inter', sans-serif !important;
-  font-size: 1.05rem !important;
-  line-height: 1.6 !important;
-  color: #9ca3af !important;
-  max-width: 520px !important;
-  margin-bottom: 2rem !important;
+  font-size: 0.84rem !important;
+  line-height: 1.45 !important;
+  color: #a1a1aa !important;
+  max-width: 440px !important;
+  margin-bottom: 0.85rem !important;
 }
 
 /* Pílula superior de órgãos */
 .hero__badge {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
-  padding: 6px 14px !important;
+  gap: 6px !important;
+  padding: 4px 11px !important;
   border-radius: 999px !important;
   background: #141418 !important;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
   color: #d1d5db !important;
-  font-size: 0.8rem !important;
+  font-size: 0.72rem !important;
   font-weight: 600 !important;
   text-decoration: none !important;
+  margin-bottom: 0.35rem !important;
 }
 .hero__badge-dot {
-  width: 7px !important;
-  height: 7px !important;
+  width: 5px !important;
+  height: 5px !important;
   border-radius: 50% !important;
   background: #C8E62A !important;
-  box-shadow: 0 0 8px #C8E62A !important;
+  box-shadow: 0 0 6px #C8E62A !important;
 }
 
-/* Botões do Modelo Skull */
+/* Botões Compactos */
 .hero__cta {
   display: flex !important;
   align-items: center !important;
-  gap: 1rem !important;
-  margin-bottom: 1.8rem !important;
+  gap: 0.75rem !important;
+  margin-bottom: 0.85rem !important;
   flex-wrap: wrap !important;
 }
 
@@ -3826,21 +4085,21 @@ h1.hero__title {
   background: #C8E62A !important;
   color: #000000 !important;
   font-weight: 700 !important;
-  font-size: 0.95rem !important;
-  padding: 0.9rem 1.6rem !important;
+  font-size: 0.82rem !important;
+  padding: 0.65rem 1.25rem !important;
   border-radius: 8px !important;
   border: none !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
-  box-shadow: 0 4px 20px rgba(200, 230, 42, 0.25) !important;
+  gap: 7px !important;
+  box-shadow: 0 4px 18px rgba(200, 230, 42, 0.25) !important;
   transition: all 0.2s ease !important;
   text-decoration: none !important;
 }
 .btn--lime:hover {
   background: #d8f533 !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 25px rgba(200, 230, 42, 0.35) !important;
+  box-shadow: 0 6px 22px rgba(200, 230, 42, 0.35) !important;
 }
 
 .btn--ghost {
@@ -3848,8 +4107,8 @@ h1.hero__title {
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
   font-weight: 600 !important;
-  font-size: 0.95rem !important;
-  padding: 0.9rem 1.6rem !important;
+  font-size: 0.82rem !important;
+  padding: 0.65rem 1.25rem !important;
   border-radius: 8px !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -3861,13 +4120,49 @@ h1.hero__title {
   border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
-/* Bullets de Garantia Skull */
+/* =========================================================
+   HERO UNIFORMIZADO: Layout Rítmico, Métricas & Catálogo
+   ========================================================= */
+
+/* Hero Layout Split: Topo e Base Perfeitamente Nivelados */
+.hero__layout-split {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.28fr) !important;
+  gap: 3rem !important;
+  align-items: stretch !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 1080px) {
+  .hero__layout-split {
+    grid-template-columns: 1fr !important;
+    gap: 2.2rem !important;
+    align-items: start !important;
+  }
+}
+
+.hero__left-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  padding: 0.2rem 0 !important;
+}
+
+.hero__left-main {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+/* Bullets de Garantia Compactos */
 .hero__proof {
   display: flex !important;
   flex-direction: row !important;
-  gap: 1.2rem !important;
+  align-items: center !important;
+  gap: 1.1rem !important;
   padding: 0 !important;
-  margin: 0 0 2rem 0 !important;
+  margin: 0 0 1.25rem 0 !important;
   list-style: none !important;
   flex-wrap: wrap !important;
 }
@@ -3875,168 +4170,269 @@ h1.hero__title {
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
-  font-size: 0.82rem !important;
-  color: #9ca3af !important;
+  font-size: 0.76rem !important;
+  color: #a1a1aa !important;
   font-weight: 500 !important;
 }
 .hero__proof svg {
-  width: 16px !important;
-  height: 16px !important;
+  width: 14px !important;
+  height: 14px !important;
   flex-shrink: 0 !important;
 }
 
-/* Caixa de Métricas 3 Colunas Skull */
+/* Caixa de Métricas: Ocupa a base com elegância e alinhamento nivelado */
 .stats-counter-bar {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
-  gap: 1.5rem !important;
-  background: #101014 !important;
+  background: rgba(14, 14, 19, 0.75) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 12px !important;
-  padding: 1.2rem 1.5rem !important;
-  max-width: 440px !important;
+  padding: 0.85rem 1rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+  margin-top: auto !important;
 }
 .stat-counter-item {
   text-align: center !important;
+  padding: 0 0.5rem !important;
+  position: relative !important;
+}
+.stat-counter-item:not(:last-child)::after {
+  content: '' !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 15% !important;
+  height: 70% !important;
+  width: 1px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
 }
 .stat-counter-item strong {
   display: block !important;
-  font-size: 1.7rem !important;
+  font-size: 1.4rem !important;
   font-weight: 800 !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Inter', -apple-system, sans-serif !important;
   color: #ffffff !important;
-  line-height: 1.1 !important;
-  margin-bottom: 0.2rem !important;
+  line-height: 1.15 !important;
+  margin-bottom: 0.15rem !important;
+  letter-spacing: -0.02em !important;
 }
 .stat-counter-item span {
-  font-size: 0.8rem !important;
-  color: #6b7280 !important;
+  font-size: 0.68rem !important;
+  color: #94a3b8 !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
 }
 
-/* Container do Mockup de Janela Skull */
-.courses-showcase {
-  background: #0d0d11 !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 16px !important;
-  padding: 1.2rem 1.4rem 1.4rem !important;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85) !important;
+/* =========================================================
+   MOCKUP DO CATÁLOGO DE CURSOS (AMPLO, MAIOR & ULTRA-PREMIUM)
+   ========================================================= */
+.hero__right-showcase {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
 }
+
+.courses-showcase {
+  background: #0b0b10 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 18px !important;
+  padding: 1.35rem 1.6rem 1.25rem !important;
+  box-shadow: 0 30px 85px rgba(0, 0, 0, 0.9), 0 0 40px rgba(200, 230, 42, 0.06) !important;
+  position: relative !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+/* Barra Superior da Janela */
 .courses-window-bar {
   display: flex !important;
   align-items: center !important;
-  gap: 6px !important;
-  padding-bottom: 0.8rem !important;
-  margin-bottom: 1rem !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
-}
-.courses-window-dot {
-  width: 10px !important;
-  height: 10px !important;
-  border-radius: 50% !important;
-  background: #27272a !important;
-}
-.courses-window-url {
-  font-family: monospace !important;
-  font-size: 0.75rem !important;
-  color: #52525b !important;
-  margin-left: 8px !important;
-}
-.courses-header {
-  display: flex !important;
-  align-items: center !important;
   justify-content: space-between !important;
-  margin-bottom: 1.2rem !important;
-  flex-wrap: wrap !important;
-  gap: 0.8rem !important;
+  padding-bottom: 0.95rem !important;
+  margin-bottom: 1.25rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
 }
-.courses-title {
-  font-size: 1.1rem !important;
-  font-weight: 700 !important;
-  color: #ffffff !important;
+.courses-window-dots {
   display: flex !important;
   align-items: center !important;
   gap: 8px !important;
 }
+.courses-window-dot {
+  width: 11px !important;
+  height: 11px !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+}
+.courses-window-dot:nth-child(1) { background: #ff5f56 !important; opacity: 0.85; }
+.courses-window-dot:nth-child(2) { background: #ffbd2e !important; opacity: 0.85; }
+.courses-window-dot:nth-child(3) { background: #27c93f !important; opacity: 0.85; }
+
+.courses-window-url-box {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 7px !important;
+  padding: 0.35rem 0.95rem !important;
+  font-family: 'JetBrains Mono', monospace, ui-monospace !important;
+  font-size: 0.76rem !important;
+  color: #71717a !important;
+  letter-spacing: 0.01em !important;
+}
+.courses-window-url-box svg {
+  color: #a1a1aa;
+}
+
+.courses-window-status {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  color: #C8E62A !important;
+  background: rgba(200, 230, 42, 0.1) !important;
+  border: 1px solid rgba(200, 230, 42, 0.2) !important;
+  padding: 0.24rem 0.65rem !important;
+  border-radius: 999px !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase !important;
+}
+.courses-window-status::before {
+  content: '' !important;
+  width: 5px !important;
+  height: 5px !important;
+  border-radius: 50% !important;
+  background: #C8E62A !important;
+  box-shadow: 0 0 6px #C8E62A !important;
+}
+
+/* Header com Título e Filtros Pills Padronizados */
+.courses-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 1.3rem !important;
+  flex-wrap: wrap !important;
+  gap: 0.95rem !important;
+}
+.courses-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  letter-spacing: -0.01em !important;
+}
 .courses-title::before {
   content: "" !important;
   display: inline-block !important;
-  width: 7px !important;
-  height: 7px !important;
+  width: 8px !important;
+  height: 8px !important;
   background: #C8E62A !important;
   border-radius: 50% !important;
   box-shadow: 0 0 8px #C8E62A !important;
 }
+
 .courses-tabs {
   display: flex !important;
-  gap: 0.4rem !important;
-  overflow-x: auto !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  flex-wrap: wrap !important;
 }
 .course-tab-btn {
-  background: transparent !important;
-  border: none !important;
-  color: #9ca3af !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #a1a1aa !important;
   font-size: 0.8rem !important;
-  font-weight: 500 !important;
-  padding: 0.35rem 0.75rem !important;
+  font-weight: 600 !important;
+  padding: 0.42rem 0.95rem !important;
   border-radius: 999px !important;
   cursor: pointer !important;
-  transition: all 0.15s ease !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+.course-tab-btn:hover:not(.is-active) {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.09) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
 }
 .course-tab-btn.is-active {
   background: #C8E62A !important;
   color: #000000 !important;
+  border-color: #C8E62A !important;
   font-weight: 700 !important;
-}
-.course-tab-btn:hover:not(.is-active) {
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 2px 10px rgba(200, 230, 42, 0.25) !important;
 }
 
+/* Grid de Cards 3x2 - CARDS MAIORES E ENCORPADOS */
 .courses-grid-cards {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
-  gap: 0.85rem !important;
+  gap: 1.1rem !important;
 }
 @media (max-width: 640px) {
   .courses-grid-cards {
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.85rem !important;
   }
 }
+
 .course-card-item {
-  border-radius: 10px !important;
+  border-radius: 12px !important;
   overflow: hidden !important;
-  background: #141418 !important;
-  border: 1px solid rgba(255, 255, 255, 0.07) !important;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+  background: #121217 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  aspect-ratio: 16 / 9.8 !important;
+  min-height: 125px !important;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease, filter 0.22s ease !important;
+  position: relative !important;
+  display: block !important;
 }
 .course-card-item:hover {
-  transform: translateY(-3px) !important;
-  border-color: rgba(200, 230, 42, 0.5) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+  transform: translateY(-4px) scale(1.025) !important;
+  border-color: rgba(200, 230, 42, 0.6) !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.8), 0 0 20px rgba(200, 230, 42, 0.22) !important;
+  z-index: 2 !important;
+}
+.course-card-item.is-dimmed {
+  opacity: 0.25 !important;
+  transform: scale(0.97) !important;
+  filter: grayscale(0.85) brightness(0.65) !important;
 }
 .course-card-banner-img {
   width: 100% !important;
-  aspect-ratio: 16 / 9 !important;
+  height: 100% !important;
   object-fit: cover !important;
   display: block !important;
 }
 
+/* Rodapé do Catálogo: Uniforme, Limpo e Sem Nenhuma Barra de Rolagem */
 .courses-footer-pills {
   display: flex !important;
   align-items: center !important;
-  gap: 1.2rem !important;
-  margin-top: 1rem !important;
-  padding-top: 0.9rem !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
-  font-size: 0.75rem !important;
-  color: #6b7280 !important;
-  overflow-x: auto !important;
+  justify-content: space-between !important;
+  gap: 0.4rem 0.5rem !important;
+  margin-top: 1.35rem !important;
+  padding-top: 1.05rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
+  font-size: 0.74rem !important;
+  color: #94a3b8 !important;
+  overflow: hidden !important;
+  flex-wrap: nowrap !important;
 }
 .courses-footer-pills span {
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
   white-space: nowrap !important;
+  font-weight: 500 !important;
 }
 .courses-footer-pills span::before {
   content: '' !important;
@@ -4044,6 +4440,7 @@ h1.hero__title {
   height: 4px !important;
   border-radius: 50% !important;
   background: #C8E62A !important;
+  box-shadow: 0 0 6px #C8E62A !important;
 }
 
 /* Header Navbar: Fiel à Skull */
@@ -4138,270 +4535,7 @@ h1.hero__title {
   border-color: #C8E62A !important;
 }
 
-/* Hero layout aprimorado (split lateral em telas largas) */
-.hero__layout-split {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 2.5rem;
-  align-items: center;
-  margin-bottom: 3.5rem;
-}
-@media (max-width: 1024px) {
-  .hero__layout-split {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-}
 
-/* Mockup de Janela / Plataforma Skull Style */
-.courses-showcase {
-  margin-top: 0;
-  padding: 1rem 1.25rem 1.5rem;
-  background: #09090d;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.85), 0 0 30px rgba(200, 230, 42, 0.06);
-  position: relative;
-}
-.courses-window-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding-bottom: 0.85rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-.courses-window-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-}
-.courses-window-url {
-  font-family: monospace;
-  font-size: 0.75rem;
-  color: #71717a;
-  margin-left: 8px;
-  letter-spacing: 0.02em;
-}
-.courses-footer-pills {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  margin-top: 1.2rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  overflow-x: auto;
-  font-size: 0.75rem;
-  color: #71717a;
-}
-.courses-footer-pills span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
-}
-.courses-footer-pills span::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #C8E62A;
-}
-
-.course-card-banner-img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-.course-card-item:hover .course-card-banner-img {
-  transform: scale(1.02);
-  filter: brightness(1.08);
-}
-
-.courses-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.2rem;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
-.courses-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.courses-title::before {
-  content: "";
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background: #C8E62A;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #C8E62A;
-}
-
-.courses-tabs {
-  display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
-  padding-bottom: 4px;
-}
-.course-tab-btn {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #d4d4d8;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-.course-tab-btn.is-active,
-.course-tab-btn:hover {
-  color: #000;
-  background: #C8E62A;
-  border-color: #C8E62A;
-}
-
-.courses-grid-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-@media (max-width: 640px) {
-  .courses-grid-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-.course-card-item {
-  background: #14141b;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  display: flex;
-  flex-direction: column;
-}
-.course-card-item:hover {
-  transform: translateY(-4px);
-  border-color: rgba(200, 230, 42, 0.5);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(200, 230, 42, 0.2);
-}
-.course-card-thumb {
-  position: relative;
-  height: 110px;
-  background: linear-gradient(135deg, #22222e, #111116);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 1rem;
-  text-align: center;
-}
-.course-card-thumb .badge-tag {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: #C8E62A;
-  color: #000;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 2px 7px;
-  border-radius: 4px;
-}
-.course-card-thumb .thumb-title {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: -0.01em;
-  color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-}
-.course-card-thumb .thumb-sub {
-  font-size: 0.72rem;
-  color: #d9f542;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-top: 2px;
-}
-.course-card-info {
-  padding: 0.85rem 1rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.course-card-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 0.3rem;
-}
-.course-card-desc {
-  font-size: 0.78rem;
-  color: #a1a1aa;
-  line-height: 1.4;
-  margin-bottom: 0.6rem;
-}
-.course-card-meta {
-  margin-top: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.72rem;
-  color: #71717a;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding-top: 0.5rem;
-}
-
-/* Metric / Counter Banner */
-.stats-counter-bar {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  background: #09090d;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 1.4rem 1.6rem;
-  margin: 2.2rem 0 0 0;
-  max-width: 440px;
-}
-@media (max-width: 768px) {
-  .stats-counter-bar {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 1.2rem;
-  }
-}
-.stat-counter-item {
-  text-align: center;
-}
-.stat-counter-item strong {
-  display: block;
-  font-size: 2.2rem;
-  font-weight: 800;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  color: #C8E62A;
-  line-height: 1.1;
-  margin-bottom: 0.3rem;
-}
-.stat-counter-item span {
-  font-size: 0.82rem;
-  color: #a1a1aa;
-}
 
 /* Planos em Destaque */
 .plan {
@@ -4733,6 +4867,207 @@ h1.hero__title {
   color: #000000 !important;
   border: none !important;
 }
+
+/* ==============================================================
+   REGRAS FINAIS DE RESPONSIVIDADE E ZERO-OVERFLOW (MOBILE MASTER)
+   ============================================================== */
+@media (max-width: 768px) {
+  /* 1. Reset de Containers e Margens Laterais */
+  .container,
+  .pomaroli-root .container,
+  .hero__content,
+  .pomaroli-root .hero__content {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-inline: 0 !important;
+  }
+
+  .hero,
+  .pomaroli-root .hero {
+    padding-top: 76px !important;
+    padding-bottom: 30px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .hero__layout-split,
+  .pomaroli-root .hero__layout-split {
+    grid-template-columns: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 1.8rem !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hero__left-copy,
+  .pomaroli-root .hero__left-copy,
+  .hero__left-main,
+  .pomaroli-root .hero__left-main {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* 2. Badge e H1 sem corte */
+  .hero__badge,
+  .pomaroli-root .hero__badge {
+    white-space: normal !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
+    font-size: 0.68rem !important;
+    line-height: 1.35 !important;
+    padding: 5px 9px !important;
+    display: inline-flex !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .pomaroli-root h1.hero__title,
+  .pomaroli-root .hero__title,
+  h1.hero__title {
+    font-size: clamp(20px, 5.5vw, 26px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
+    margin: 0.5rem 0 0.65rem 0 !important;
+    text-align: left !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero__subtitle,
+  .pomaroli-root .hero__subtitle {
+    font-size: 0.84rem !important;
+    line-height: 1.45 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+  }
+
+  /* 3. Botões da Hero: 100% de largura sem estourar e sem cortar */
+  .hero__cta,
+  .pomaroli-root .hero__cta {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 0.65rem !important;
+    margin-bottom: 1.1rem !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+  }
+
+  .hero__cta .btn,
+  .hero__cta a.btn,
+  .pomaroli-root .hero__cta .btn,
+  .pomaroli-root .hero__cta a.btn,
+  .hero__cta .btn--lime,
+  .hero__cta .btn--ghost {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.75rem 0.85rem !important;
+    height: auto !important;
+    min-height: 46px !important;
+    font-size: 0.84rem !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+    border-radius: 8px !important;
+  }
+
+  .hero__cta .btn .btn__label,
+  .pomaroli-root .hero__cta .btn .btn__label {
+    white-space: normal !important;
+    word-break: break-word !important;
+    text-align: center !important;
+  }
+
+  .hero__cta .btn .btn__arrow,
+  .pomaroli-root .hero__cta .btn .btn__arrow {
+    flex-shrink: 0 !important;
+    margin-left: 6px !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* 4. Bullets */
+  .hero__proof,
+  .pomaroli-root .hero__proof {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    margin: 0 0 1.2rem 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .hero__proof li {
+    font-size: 0.76rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word !important;
+  }
+
+  /* 5. Caixa de Métricas (100% fluida) */
+  .stats-counter-bar,
+  .pomaroli-root .stats-counter-bar {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.65rem 0.35rem !important;
+    gap: 0.2rem !important;
+    box-sizing: border-box !important;
+  }
+  .stat-counter-item {
+    padding: 0 0.15rem !important;
+    overflow: hidden !important;
+  }
+  .stat-counter-item strong {
+    font-size: 1.05rem !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+  .stat-counter-item span {
+    font-size: 0.62rem !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.01em !important;
+    white-space: nowrap !important;
+    text-transform: uppercase !important;
+  }
+
+  /* 6. Showcase do Catálogo */
+  .hero__right-showcase,
+  .pomaroli-root .hero__right-showcase {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .courses-showcase {
+    padding: 0.85rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+  }
+}
+
 </style>
 
 <!-- Conteúdo da Landing Page -->
@@ -4789,36 +5124,36 @@ h1.hero__title {
         <div class="hero__layout-split">
           <!-- Coluna Esquerda: Copywriting Focado em Vendas e IA (Skull Design) -->
           <div class="hero__left-copy">
-            <a href="#planos" class="hero__badge">
-              <span class="hero__badge-dot" aria-hidden="true"></span>
-              PF · PRF · Polícia Civil · Polícia Militar · Bombeiros · Penal
-            </a>
-
-            <h1 class="hero__title">
-              Quebre as pegadinhas da banca<br />
-              e aprove com<br />
-              <span class="hero__title-highlight">o poder da IA</span>
-            </h1>
-
-            <p class="hero__subtitle">
-              96 mil+ questões reais mapeadas por inteligência artificial para dissecar as armadilhas da banca. A IA identifica o padrão de cobrança do examinador, prevê as pegadinhas e ensina exatamente como pensar para acertar cada questão no dia da prova.
-            </p>
-
-            <div class="hero__cta">
-              <a href="#planos" class="btn btn--lime btn--lg">
-                <span class="btn__label">Hackear o padrão da banca</span>
-                <svg viewBox="0 0 24 24" fill="none" class="btn__arrow"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="hero__left-main">
+              <a href="#planos" class="hero__badge">
+                <span class="hero__badge-dot" aria-hidden="true"></span>
+                PF · PRF · Polícia Civil · Polícia Militar · Bombeiros · Penal
               </a>
-              <a href="#cursos" class="btn btn--ghost btn--lg">
-                Ver carreiras
-              </a>
+
+              <h1 class="hero__title">
+                Quebre as pegadinhas da banca e aprove com <span class="hero__title-highlight">o poder da IA</span>
+              </h1>
+
+              <p class="hero__subtitle">
+                96 mil+ questões mapeadas por inteligência artificial para dissecar as armadilhas da banca, antecipar pegadinhas e acelerar sua aprovação.
+              </p>
+
+              <div class="hero__cta">
+                <a href="#planos" class="btn btn--lime btn--lg">
+                  <span class="btn__label">Hackear o padrão da banca</span>
+                  <svg viewBox="0 0 24 24" fill="none" class="btn__arrow"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#cursos" class="btn btn--ghost btn--lg">
+                  Ver carreiras
+                </a>
+              </div>
+
+              <ul class="hero__proof">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="#C8E62A" stroke-width="2.2"/><path d="m9 12 2 2 4-4" stroke="#C8E62A" stroke-width="2.2"/></svg>Garantia de 7 dias</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z" stroke="#C8E62A" stroke-width="2.2"/></svg>Acesso na hora</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" stroke="#C8E62A" stroke-width="2.2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#C8E62A" stroke-width="2.2"/></svg>Sem renovação automática</li>
+              </ul>
             </div>
-
-            <ul class="hero__proof">
-              <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="#C8E62A" stroke-width="2.2"/><path d="m9 12 2 2 4-4" stroke="#C8E62A" stroke-width="2.2"/></svg>Garantia de 7 dias</li>
-              <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z" stroke="#C8E62A" stroke-width="2.2"/></svg>Acesso na hora</li>
-              <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" stroke="#C8E62A" stroke-width="2.2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#C8E62A" stroke-width="2.2"/></svg>Sem renovação automática</li>
-            </ul>
 
             <!-- Métrica Bar Idêntica ao Modelo Skull -->
             <div class="stats-counter-bar">
@@ -4837,74 +5172,102 @@ h1.hero__title {
             </div>
           </div>
 
-          <!-- Coluna Direita: Janela do Catálogo de Cursos (Modelo Skull Exato) -->
+          <!-- Coluna Direita: Janela do Catálogo de Cursos (Uniformizado & Interativo) -->
           <div class="hero__right-showcase" id="cursos">
             <div class="courses-showcase">
               <!-- Topo da Janela do App -->
               <div class="courses-window-bar">
-                <span class="courses-window-dot"></span>
-                <span class="courses-window-dot"></span>
-                <span class="courses-window-dot"></span>
-                <span class="courses-window-url">pomaroliplatform.lat/catalog</span>
+                <div class="courses-window-dots" aria-hidden="true">
+                  <span class="courses-window-dot"></span>
+                  <span class="courses-window-dot"></span>
+                  <span class="courses-window-dot"></span>
+                </div>
+                <div class="courses-window-url-box">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>pomaroli.com.br/catalogo</span>
+                </div>
+                <div class="courses-window-status">2026 Ativo</div>
               </div>
 
-              <!-- Header com Título e Filtros Pills -->
+              <!-- Header com Título e Filtros Pills Padronizados -->
               <div class="courses-header">
                 <span class="courses-title">Catálogo</span>
-                <div class="courses-tabs">
-                  <button type="button" class="course-tab-btn is-active" data-filter="todos">Todos</button>
-                  <button type="button" class="course-tab-btn" data-filter="policiais">Federal</button>
-                  <button type="button" class="course-tab-btn" data-filter="policiais">Polícia Civil</button>
-                  <button type="button" class="course-tab-btn" data-filter="policiais">Polícia Militar</button>
-                  <button type="button" class="course-tab-btn" data-filter="policiais">Polícia Penal</button>
+                <div class="courses-tabs" role="tablist">
+                  <button type="button" class="course-tab-btn is-active" data-filter="all">Todos</button>
+                  <button type="button" class="course-tab-btn" data-filter="federal">Federal</button>
+                  <button type="button" class="course-tab-btn" data-filter="pc">Polícia Civil</button>
+                  <button type="button" class="course-tab-btn" data-filter="pm">Polícia Militar</button>
+                  <button type="button" class="course-tab-btn" data-filter="outros">Bombeiros &amp; Outros</button>
                 </div>
               </div>
 
-              <!-- Grid 3x2 com os 6 Banners Estilo Skull -->
+              <!-- Grid 3x2 com os 6 Banners Uniformes -->
               <div class="courses-grid-cards">
                 <!-- Card 1: PMMG 2026 -->
-                <div class="course-card-item">
-                  <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_pmmg.jpg" alt="Polícia Militar MG 2026 Pré-Edital" class="course-card-banner-img" />
+                <div class="course-card-item" data-category="pm all" title="Polícia Militar MG 2026">
+                  <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_pmmg.jpg" alt="Polícia Militar MG 2026 Pré-Edital" class="course-card-banner-img" loading="eager" />
                 </div>
 
                 <!-- Card 2: PCMG 2026 -->
-                <div class="course-card-item">
-                  <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_pcmg.jpg" alt="Polícia Civil MG 2026 Autorizado" class="course-card-banner-img" />
+                <div class="course-card-item" data-category="pc all" title="Polícia Civil MG 2026">
+                  <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_pcmg.jpg" alt="Polícia Civil MG 2026 Autorizado" class="course-card-banner-img" loading="eager" />
                 </div>
 
                 <!-- Card 3: PF 2026 -->
-                <div class="course-card-item">
-                  <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_pf.jpg" alt="Polícia Federal 2026 Confirmado" class="course-card-banner-img" />
+                <div class="course-card-item" data-category="federal all" title="Polícia Federal 2026">
+                  <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_pf.jpg" alt="Polícia Federal 2026 Confirmado" class="course-card-banner-img" loading="eager" />
                 </div>
 
                 <!-- Card 4: PRF 2026 -->
-                <div class="course-card-item">
-                  <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_prf.jpg" alt="Polícia Rodoviária Federal 2026 Pré-Edital" class="course-card-banner-img" />
+                <div class="course-card-item" data-category="federal all" title="Polícia Rodoviária Federal 2026">
+                  <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_prf.jpg" alt="Polícia Rodoviária Federal 2026 Pré-Edital" class="course-card-banner-img" loading="eager" />
                 </div>
 
                 <!-- Card 5: CBMMG 2026 -->
-                <div class="course-card-item">
-                  <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_cbmmg.jpg" alt="Corpo de Bombeiros Militar MG 2026" class="course-card-banner-img" />
+                <div class="course-card-item" data-category="pm outros all" title="Bombeiros Militar MG 2026">
+                  <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_cbmmg.jpg" alt="Corpo de Bombeiros Militar MG 2026" class="course-card-banner-img" loading="eager" />
                 </div>
 
                 <!-- Card 6: INSS 2026 -->
-                <div class="course-card-item">
-                  <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_inss.jpg" alt="INSS Seguridade Social 2026" class="course-card-banner-img" />
+                <div class="course-card-item" data-category="outros all" title="INSS Previdência Social 2026">
+                  <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_inss.jpg" alt="INSS Seguridade Social 2026" class="course-card-banner-img" loading="eager" />
                 </div>
               </div>
 
-              <!-- Rodapé de Recursos da Vitrine -->
+              <!-- Rodapé de Recursos da Vitrine (Sem corte ou barra de rolagem) -->
               <div class="courses-footer-pills">
                 <span>Padrão da Banca</span>
-                <span>Banco de questões</span>
+                <span>Banco de Questões</span>
                 <span>Resumos</span>
-                <span>Mapas mentais</span>
+                <span>Mapas Mentais</span>
                 <span>Flashcards</span>
-                <span>Tutor IA</span>
+                <span>Tutor IA 24/7</span>
               </div>
             </div>
           </div>
         </div>
+        <script>
+          (function() {
+            var tabs = document.querySelectorAll('.course-tab-btn');
+            var cards = document.querySelectorAll('.course-card-item');
+            if (!tabs.length || !cards.length) return;
+            tabs.forEach(function(tab) {
+              tab.addEventListener('click', function() {
+                tabs.forEach(function(t) { t.classList.remove('is-active'); });
+                this.classList.add('is-active');
+                var filter = this.getAttribute('data-filter');
+                cards.forEach(function(card) {
+                  var categories = (card.getAttribute('data-category') || '').split(' ');
+                  if (filter === 'all' || categories.indexOf(filter) !== -1) {
+                    card.classList.remove('is-dimmed');
+                  } else {
+                    card.classList.add('is-dimmed');
+                  }
+                });
+              });
+            });
+          })();
+        </script>
 
       </div>
     </section>
@@ -5172,7 +5535,7 @@ h1.hero__title {
               <li>App para celular e computador</li>
               <li>Garantia incondicional de 7 dias</li>
             </ul>
-            <a href="https://pay.hotmart.com/F107350441I?off=02e1pyg9&checkoutMode=6" target="_blank" rel="noopener" class="btn btn--outline btn--block" style="display:block !important;visibility:visible !important;opacity:1 !important;width:100% !important;min-height:50px !important;margin-top:1.5rem !important;padding:14px 20px !important;text-align:center !important;font-size:15px !important;font-weight:700 !important;line-height:1.2 !important;border:2px solid #C8E62A !important;background:rgba(200,230,42,0.15) !important;color:#d9f542 !important;border-radius:10px !important;position:relative !important;z-index:10 !important;overflow:visible !important;max-height:none !important;height:auto !important;transform:none !important;">Assinar Carreira</a>
+            <a href="https://pay.hotmart.com/F107350441I?off=02e1pyg9" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="btn btn--outline btn--block" style="display:block !important;visibility:visible !important;opacity:1 !important;width:100% !important;min-height:50px !important;margin-top:1.5rem !important;padding:14px 20px !important;text-align:center !important;font-size:15px !important;font-weight:700 !important;line-height:1.2 !important;border:2px solid #C8E62A !important;background:rgba(200,230,42,0.15) !important;color:#d9f542 !important;border-radius:10px !important;position:relative !important;z-index:10 !important;overflow:visible !important;max-height:none !important;height:auto !important;transform:none !important;">Assinar Carreira</a>
           </article>
 
           <!-- Plano 2: Policial & Carreiras (Destaque) -->
@@ -5190,7 +5553,7 @@ h1.hero__title {
               <li>Análise de pontos fracos e diagnóstico de nota</li>
               <li>Garantia incondicional de 7 dias</li>
             </ul>
-            <a href="https://pay.hotmart.com/F107350441I?off=9ubsopfi&checkoutMode=6" target="_blank" rel="noopener" class="btn btn--lime btn--block" style="display:block !important;visibility:visible !important;opacity:1 !important;width:100% !important;min-height:50px !important;margin-top:1.5rem !important;padding:14px 20px !important;text-align:center !important;font-size:15px !important;font-weight:700 !important;line-height:1.2 !important;border:none !important;background:#C8E62A !important;color:#000000 !important;border-radius:10px !important;position:relative !important;z-index:10 !important;overflow:visible !important;max-height:none !important;height:auto !important;transform:none !important;">
+            <a href="https://pay.hotmart.com/F107350441I?off=9ubsopfi" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="btn btn--lime btn--block" style="display:block !important;visibility:visible !important;opacity:1 !important;width:100% !important;min-height:50px !important;margin-top:1.5rem !important;padding:14px 20px !important;text-align:center !important;font-size:15px !important;font-weight:700 !important;line-height:1.2 !important;border:none !important;background:#C8E62A !important;color:#000000 !important;border-radius:10px !important;position:relative !important;z-index:10 !important;overflow:visible !important;max-height:none !important;height:auto !important;transform:none !important;">
               <span class="btn__label">Assinar Policial & Carreiras</span>
               <svg viewBox="0 0 24 24" fill="none" class="btn__arrow"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
@@ -5210,7 +5573,7 @@ h1.hero__title {
               <li>Suporte prioritário via WhatsApp</li>
               <li>Garantia incondicional de 7 dias</li>
             </ul>
-            <a href="https://pay.hotmart.com/F107350441I?off=jk7zhfg1&checkoutMode=6" target="_blank" rel="noopener" class="btn btn--outline btn--block" style="display:block !important;visibility:visible !important;opacity:1 !important;width:100% !important;min-height:50px !important;margin-top:1.5rem !important;padding:14px 20px !important;text-align:center !important;font-size:15px !important;font-weight:700 !important;line-height:1.2 !important;border:2px solid #C8E62A !important;background:rgba(200,230,42,0.15) !important;color:#d9f542 !important;border-radius:10px !important;position:relative !important;z-index:10 !important;overflow:visible !important;max-height:none !important;height:auto !important;transform:none !important;">Assinar Black IA</a>
+            <a href="https://pay.hotmart.com/F107350441I?off=jk7zhfg1" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="btn btn--outline btn--block" style="display:block !important;visibility:visible !important;opacity:1 !important;width:100% !important;min-height:50px !important;margin-top:1.5rem !important;padding:14px 20px !important;text-align:center !important;font-size:15px !important;font-weight:700 !important;line-height:1.2 !important;border:2px solid #C8E62A !important;background:rgba(200,230,42,0.15) !important;color:#d9f542 !important;border-radius:10px !important;position:relative !important;z-index:10 !important;overflow:visible !important;max-height:none !important;height:auto !important;transform:none !important;">Assinar Black IA</a>
           </article>
         </div>
 
@@ -6088,9 +6451,9 @@ h1.hero__title {
 
   /* === INJEÇÃO SEGURA DOS BOTÕES DE CHECKOUT === */
   const CHECKOUT_BTNS = [
-    { href: "https://pay.hotmart.com/F107350441I?off=02e1pyg9&checkoutMode=6", label: "Assinar Carreira", type: "outline" },
-    { href: "https://pay.hotmart.com/F107350441I?off=9ubsopfi&checkoutMode=6", label: "Assinar Policial & Carreiras", type: "lime" },
-    { href: "https://pay.hotmart.com/F107350441I?off=jk7zhfg1&checkoutMode=6", label: "Assinar Black IA", type: "outline" }
+    { href: "https://pay.hotmart.com/F107350441I?off=02e1pyg9", label: "Assinar Carreira", type: "outline" },
+    { href: "https://pay.hotmart.com/F107350441I?off=9ubsopfi", label: "Assinar Policial & Carreiras", type: "lime" },
+    { href: "https://pay.hotmart.com/F107350441I?off=jk7zhfg1", label: "Assinar Black IA", type: "outline" }
   ];
   let injectRunning = false;
   const injectCheckoutButtons = () => {
@@ -6102,6 +6465,9 @@ h1.hero__title {
         if (!cfg) return;
         const hasBtn = plan.querySelector("a[data-checkout], a.btn[href*='hotmart']");
         if (hasBtn) {
+          hasBtn.href = cfg.href;
+          hasBtn.target = "_blank";
+          hasBtn.rel = "noopener noreferrer";
           hasBtn.setAttribute("data-checkout", "true");
           hasBtn.style.setProperty("display", "block", "important");
           hasBtn.style.setProperty("visibility", "visible", "important");
@@ -6127,7 +6493,7 @@ h1.hero__title {
         const btn = document.createElement("a");
         btn.href = cfg.href;
         btn.target = "_blank";
-        btn.rel = "noopener";
+        btn.rel = "noopener noreferrer";
         btn.textContent = cfg.label;
         btn.setAttribute("data-checkout", "true");
         btn.className = "btn btn--block " + (cfg.type === "lime" ? "btn--lime" : "btn--outline");
@@ -6146,6 +6512,21 @@ h1.hero__title {
       injectRunning = false;
     }
   };
+
+  const handleDirectCheckoutClick = function(e) {
+    const link = e.target && e.target.closest ? e.target.closest("a[href*='hotmart.com']") : null;
+    if (!link) return;
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    let targetUrl = link.href.replace(/([?&])checkoutMode=\d+(&?)/, function(m, p1, p2) {
+      return p1 === '?' && p2 ? '?' : '';
+    });
+    targetUrl = targetUrl.replace(/[?&]$/, "");
+    window.open(targetUrl, "_blank", "noopener,noreferrer");
+  };
+  window.addEventListener("click", handleDirectCheckoutClick, true);
+  document.addEventListener("click", handleDirectCheckoutClick, true);
 
   injectCheckoutButtons();
   window.addEventListener("load", injectCheckoutButtons);
