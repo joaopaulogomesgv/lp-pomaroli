@@ -1,0 +1,1388 @@
+<!-- ====================================================================
+     POMAROLI — LP "O SISTEMA DA BANCA TEM FALHAS" — VARIANTE C (TESTE A/B)
+     LP de conversão para concurseiros — visual "Glitch Protocol":
+     dark hacker/terminal, neon green + cyan, mono, glitch, console animado.
+     Instruções de uso:
+     1. No WordPress, abra a página com o editor de blocos.
+     2. Adicione o bloco "HTML personalizado" em largura total.
+     3. Copie TODO o conteúdo deste arquivo e cole dentro do bloco.
+     4. Sem Elementor: o CSS embutido ("pomaroli-fullwidth-wp") quebra o
+        max-width do tema, deixa a página em largura total e esconde
+        cabeçalho, título e rodapé do tema WordPress.
+     ==================================================================== -->
+
+<!-- Fontes do Google -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<!-- Largura total no WordPress -->
+<style id="pomaroli-fullwidth-wp">
+  :root {
+    --wp--style--global--content-size: 100% !important;
+    --wp--style--global--wide-size: 100% !important;
+    --wp--style--root--padding-left: 0 !important;
+    --wp--style--root--padding-right: 0 !important;
+    --wp--style--root--padding-top: 0 !important;
+    --wp--style--root--padding-bottom: 0 !important;
+  }
+  main.wp-block-group,
+  main#wp--skip-link--target,
+  .entry-content,
+  .wp-block-post-content,
+  main .is-layout-constrained,
+  main .has-global-padding {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .is-layout-constrained > * { margin-block-start: 0 !important; }
+  .wp-site-blocks > header,
+  .wp-site-blocks > footer,
+  .wp-site-blocks > .wp-block-template-part,
+  header.wp-block-template-part,
+  footer.wp-block-template-part,
+  .wp-block-post-title { display: none !important; }
+</style>
+<script id="pomaroli-fullwidth-wp">
+  (function () {
+    function pomaroliFullWidth() {
+      var nodes = document.querySelectorAll(".is-layout-constrained, .has-global-padding");
+      for (var i = 0; i < nodes.length; i++) {
+        nodes[i].classList.remove("is-layout-constrained", "has-global-padding");
+        nodes[i].style.margin = "0";
+        nodes[i].style.padding = "0";
+        nodes[i].style.maxWidth = "none";
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", pomaroliFullWidth);
+    } else {
+      pomaroliFullWidth();
+    }
+  })();
+</script>
+
+<!-- ====================================================================
+     DESIGN SYSTEM — GLITCH PROTOCOL
+     Deep space green · neon #2bff88 + cyan #22d3ee · mono UI · HUD cards
+     ==================================================================== -->
+<style id="pomaroli-glitch-protocol">
+:root {
+  color-scheme: dark;
+  --bg: #04070a;
+  --bg-2: #070d0b;
+  --surface: rgba(9, 17, 13, 0.72);
+  --surface-solid: #0a120e;
+  --text-1: #e6fff2;
+  --text-2: rgba(230, 255, 242, 0.62);
+  --text-3: rgba(230, 255, 242, 0.38);
+  --neon: #2bff88;
+  --neon-dim: #17b35e;
+  --neon-soft: rgba(43, 255, 136, 0.12);
+  --neon-line: rgba(43, 255, 136, 0.22);
+  --cyan: #22d3ee;
+  --hot: #ff4d6d;
+  --amber: #ffc857;
+  --border: rgba(43, 255, 136, 0.14);
+  --border-strong: rgba(43, 255, 136, 0.35);
+  --shadow-neon: 0 0 24px rgba(43, 255, 136, 0.18);
+  --font-display: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --r: 12px;
+  --container: 1180px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-1);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+ul, ol { list-style: none; }
+button { font: inherit; cursor: pointer; background: none; border: none; color: inherit; }
+
+/* Grid + scanlines */
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(43, 255, 136, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(43, 255, 136, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+body::after {
+  content: "";
+  position: fixed; inset: 0; z-index: 9998; pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.16) 0 1px, transparent 1px 3px);
+  opacity: 0.35;
+}
+
+.container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 1; }
+.container--narrow { max-width: 780px; }
+
+/* ============ BOTÕES ============ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+  font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
+  padding: 0.85rem 1.6rem; border-radius: 8px; border: 1px solid transparent;
+  transition: box-shadow 0.25s var(--ease), background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+.btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.btn--primary { background: var(--neon); color: #03140a; box-shadow: 0 0 0 rgba(43, 255, 136, 0); }
+.btn--primary:hover { background: #5cffa5; box-shadow: 0 0 28px rgba(43, 255, 136, 0.45); }
+.btn--ghost { background: rgba(43, 255, 136, 0.05); color: var(--neon); border-color: var(--border-strong); }
+.btn--ghost:hover { background: rgba(43, 255, 136, 0.12); box-shadow: var(--shadow-neon); }
+.btn--block { width: 100%; }
+.btn--lg { padding: 1rem 1.9rem; font-size: 0.88rem; }
+.btn--sm { padding: 0.55rem 1.1rem; font-size: 0.72rem; }
+
+/* ============ NAV ============ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+  background: rgba(4, 7, 10, 0.82);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(43, 255, 136, 0.1);
+}
+.nav__inner { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 1rem; }
+.logo { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+.logo__cube {
+  width: 20px; height: 20px; border-radius: 4px;
+  background: linear-gradient(135deg, var(--neon), var(--cyan));
+  transform: rotate(45deg);
+  box-shadow: 0 0 14px rgba(43, 255, 136, 0.5);
+}
+.logo__word {
+  font-family: var(--font-mono); font-weight: 700; font-size: 0.95rem;
+  letter-spacing: 0.14em; color: var(--text-1);
+}
+.nav__pill { display: flex; align-items: center; gap: 2rem; }
+.nav__pill a {
+  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em;
+  color: var(--text-2); text-decoration: none; transition: color 0.15s ease;
+}
+.nav__pill a:hover { color: var(--neon); }
+.nav__actions { display: flex; align-items: center; gap: 0.9rem; }
+.nav__burger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
+.nav__burger span { display: block; width: 20px; height: 2px; background: var(--neon); }
+.nav__mobile {
+  display: none; flex-direction: column; gap: 0.4rem;
+  padding: 1rem 1.5rem 1.4rem;
+  background: rgba(4, 7, 10, 0.97); border-top: 1px solid var(--border);
+}
+.nav__mobile a {
+  font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-2);
+  text-decoration: none; padding: 0.55rem 0;
+}
+.nav__mobile .btn { margin-top: 0.5rem; }
+
+/* ============ HERO ============ */
+.hero { position: relative; padding: 132px 0 72px; overflow: hidden; }
+.hero__glow {
+  position: absolute; top: -180px; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 520px; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(43, 255, 136, 0.14), transparent 65%);
+  filter: blur(10px);
+}
+.hero__grid {
+  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; align-items: center;
+}
+.hero__badge {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.05em;
+  color: var(--neon); background: var(--neon-soft);
+  border: 1px solid var(--neon-line); border-radius: 999px;
+  padding: 0.4rem 0.9rem; text-decoration: none; margin-bottom: 1.4rem;
+}
+.hero__badge-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--neon);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+.hero__title {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(34px, 4.4vw, 58px); line-height: 1.06; letter-spacing: -0.025em;
+  color: var(--text-1); margin-bottom: 1.2rem;
+}
+.glitch { position: relative; display: inline-block; color: var(--neon); }
+.glitch::before, .glitch::after {
+  content: attr(data-text); position: absolute; inset: 0; overflow: hidden;
+  opacity: 0.8; pointer-events: none;
+}
+.glitch::before { color: var(--cyan); animation: glitch-a 3.2s infinite steps(1); }
+.glitch::after { color: var(--hot); animation: glitch-b 2.8s infinite steps(1); }
+@keyframes glitch-a {
+  0%, 92%, 100% { clip-path: inset(0 0 100% 0); transform: none; }
+  93% { clip-path: inset(12% 0 58% 0); transform: translate(-3px, -1px); }
+  95% { clip-path: inset(48% 0 22% 0); transform: translate(3px, 1px); }
+  97% { clip-path: inset(70% 0 8% 0); transform: translate(-2px, 0); }
+}
+@keyframes glitch-b {
+  0%, 90%, 100% { clip-path: inset(0 0 100% 0); transform: none; }
+  91% { clip-path: inset(30% 0 40% 0); transform: translate(3px, 1px); }
+  94% { clip-path: inset(62% 0 12% 0); transform: translate(-3px, -1px); }
+  96% { clip-path: inset(8% 0 74% 0); transform: translate(2px, 0); }
+}
+
+.hero__subtitle {
+  font-size: 1.08rem; line-height: 1.65; color: var(--text-2);
+  max-width: 520px; margin-bottom: 1.8rem;
+}
+.hero__cta { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-bottom: 1.6rem; }
+.hero__proof { display: flex; flex-wrap: wrap; gap: 1.1rem; margin-bottom: 2rem; }
+.hero__proof li {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-2);
+}
+.hero__proof svg { width: 15px; height: 15px; color: var(--neon); }
+
+.stats {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+  border-radius: var(--r); overflow: hidden; max-width: 480px;
+}
+.stats__item { background: var(--surface); padding: 0.9rem 1.1rem; text-align: left; }
+.stats__item strong {
+  display: block; font-family: var(--font-mono); font-size: 1.15rem;
+  font-weight: 700; color: var(--neon);
+}
+.stats__item span {
+  font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-3);
+}
+
+/* ============ TERMINAL ============ */
+.terminal {
+  background: #030a06;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r);
+  box-shadow: 0 0 0 1px rgba(43, 255, 136, 0.05), 0 30px 80px -28px rgba(43, 255, 136, 0.25);
+  overflow: hidden;
+}
+.terminal__bar {
+  display: flex; align-items: center; gap: 0.7rem;
+  padding: 0.65rem 1rem; border-bottom: 1px solid var(--border);
+  background: rgba(43, 255, 136, 0.04);
+}
+.terminal__dots { display: flex; gap: 6px; }
+.terminal__dots i { width: 10px; height: 10px; border-radius: 50%; }
+.terminal__dots i:nth-child(1) { background: #ff5f57; }
+.terminal__dots i:nth-child(2) { background: #febc2e; }
+.terminal__dots i:nth-child(3) { background: #28c840; }
+.terminal__title {
+  flex: 1; text-align: center;
+  font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em;
+  color: var(--text-3);
+}
+.terminal__status {
+  font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em;
+  color: var(--neon); background: var(--neon-soft);
+  border: 1px solid var(--neon-line); border-radius: 999px; padding: 0.2rem 0.6rem;
+}
+.terminal__body {
+  padding: 1.3rem 1.4rem 1.5rem; min-height: 300px;
+  font-family: var(--font-mono); font-size: 0.8rem; line-height: 2;
+}
+.t-line { white-space: pre-wrap; word-break: break-word; }
+.t-line .prompt { color: var(--neon); }
+.t-line .path { color: var(--cyan); }
+.t-line.is-out { color: var(--text-2); }
+.t-line.is-hi { color: var(--neon); font-weight: 700; }
+.t-line.is-warn { color: var(--amber); }
+.t-cursor {
+  display: inline-block; width: 9px; height: 15px; vertical-align: -2px;
+  background: var(--neon); margin-left: 2px;
+  animation: blink 0.9s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.terminal__foot {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  padding: 0.85rem 1rem; border-top: 1px solid var(--border);
+  background: rgba(43, 255, 136, 0.03);
+}
+.terminal__foot span {
+  font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.04em;
+  color: var(--text-2); border: 1px solid var(--border);
+  border-radius: 999px; padding: 0.22rem 0.65rem;
+}
+.terminal__foot span::before { content: "▸ "; color: var(--neon); }
+
+/* ============ PROVA SOCIAL ============ */
+.proof { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: rgba(9, 17, 13, 0.5); padding: 1.6rem 0; }
+.proof__label {
+  font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-3); text-align: center; margin-bottom: 1rem;
+}
+.proof__row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem 1.6rem; }
+.proof__item {
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-2);
+  display: inline-flex; align-items: center; gap: 0.45rem;
+}
+.proof__item::before { content: "▮"; color: var(--neon); font-size: 0.6rem; }
+
+/* ============ SEÇÕES ============ */
+.section { padding: 5.5rem 0; position: relative; }
+.section--soft { background: rgba(9, 17, 13, 0.55); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.section__head { text-align: center; max-width: 680px; margin: 0 auto 3rem; }
+.eyebrow {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.72rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--neon);
+  margin-bottom: 0.9rem;
+}
+.eyebrow::before { content: "// "; color: var(--text-3); }
+.section__title {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(26px, 3vw, 38px); line-height: 1.15; letter-spacing: -0.02em;
+  color: var(--text-1); margin-bottom: 1rem;
+}
+.section__title em {
+  font-style: normal; color: var(--neon);
+  text-shadow: 0 0 22px rgba(43, 255, 136, 0.35);
+}
+.section__desc { color: var(--text-2); font-size: 1rem; line-height: 1.65; }
+
+/* ============ FEATURES ============ */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.feature {
+  position: relative; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--r);
+  padding: 1.6rem 1.5rem; transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.feature::before, .feature::after {
+  content: ""; position: absolute; width: 14px; height: 14px;
+  border-color: var(--neon); opacity: 0; transition: opacity 0.25s ease;
+}
+.feature::before { top: -1px; left: -1px; border-top: 2px solid; border-left: 2px solid; border-top-left-radius: var(--r); }
+.feature::after { bottom: -1px; right: -1px; border-bottom: 2px solid; border-right: 2px solid; border-bottom-right-radius: var(--r); }
+.feature:hover { border-color: var(--border-strong); box-shadow: var(--shadow-neon); }
+.feature:hover::before, .feature:hover::after { opacity: 1; }
+.feature__icon {
+  width: 42px; height: 42px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--neon-soft); border: 1px solid var(--neon-line);
+  color: var(--neon); margin-bottom: 1.1rem;
+}
+.feature__icon svg { width: 20px; height: 20px; }
+.feature__title {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.08rem;
+  color: var(--text-1); margin-bottom: 0.55rem; letter-spacing: -0.01em;
+}
+.feature__text { color: var(--text-2); font-size: 0.9rem; line-height: 1.6; }
+
+/* ============ SPLIT / APP ============ */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+.checklist { display: grid; gap: 1.1rem; margin-top: 1.6rem; }
+.checklist li { display: flex; gap: 0.9rem; align-items: flex-start; }
+.checklist__icon {
+  flex-shrink: 0; width: 30px; height: 30px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--neon-soft); border: 1px solid var(--neon-line); color: var(--neon);
+}
+.checklist__icon svg { width: 15px; height: 15px; }
+.checklist strong { display: block; font-size: 0.95rem; color: var(--text-1); margin-bottom: 0.15rem; }
+.checklist span { font-size: 0.85rem; color: var(--text-2); }
+
+/* HUD mock */
+.hud {
+  background: var(--surface); border: 1px solid var(--border-strong);
+  border-radius: var(--r); padding: 1.5rem;
+  box-shadow: 0 30px 80px -30px rgba(43, 255, 136, 0.2);
+}
+.hud__head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.3rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);
+}
+.hud__target { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--text-1); }
+.hud__target small { display: block; font-weight: 400; font-size: 0.68rem; color: var(--text-3); margin-top: 0.15rem; }
+.hud__live {
+  font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em;
+  color: var(--neon); display: inline-flex; align-items: center; gap: 0.4rem;
+}
+.hud__live i { width: 7px; height: 7px; border-radius: 50%; background: var(--neon); animation: pulse 1.4s infinite; }
+.hud__row { margin-bottom: 1.1rem; }
+.hud__row:last-child { margin-bottom: 0; }
+.hud__meta {
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-2); margin-bottom: 0.4rem;
+}
+.hud__meta strong { color: var(--neon); }
+.hud__bar { height: 8px; background: rgba(43, 255, 136, 0.08); border-radius: 999px; overflow: hidden; }
+.hud__bar i {
+  display: block; height: 100%; border-radius: 999px;
+  background: linear-gradient(90deg, var(--neon-dim), var(--neon));
+  box-shadow: 0 0 12px rgba(43, 255, 136, 0.5);
+}
+.hud__log {
+  margin-top: 1.3rem; padding: 0.9rem 1rem; border-radius: 8px;
+  background: rgba(3, 10, 6, 0.8); border: 1px solid var(--border);
+  font-family: var(--font-mono); font-size: 0.7rem; line-height: 1.9; color: var(--text-2);
+}
+.hud__log .ok { color: var(--neon); }
+
+/* ============ STEPS ============ */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; counter-reset: step; }
+.step {
+  position: relative; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--r); padding: 1.7rem 1.5rem;
+}
+.step__num {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-weight: 700; font-size: 0.85rem;
+  color: var(--neon); background: #03140a;
+  border: 1px solid var(--border-strong); border-radius: 10px;
+  width: 40px; height: 40px; margin-bottom: 1.1rem;
+  box-shadow: inset 0 0 12px rgba(43, 255, 136, 0.15);
+}
+.step__title {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+  color: var(--text-1); margin-bottom: 0.5rem;
+}
+.step__text { color: var(--text-2); font-size: 0.9rem; line-height: 1.6; }
+
+/* ============ CARREIRAS ============ */
+.carreiras-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.55rem; margin-bottom: 2rem; }
+.carreiras-tabs button {
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em;
+  color: var(--text-2); border: 1px solid var(--border);
+  border-radius: 999px; padding: 0.45rem 1rem;
+  transition: all 0.2s ease;
+}
+.carreiras-tabs button:hover { color: var(--text-1); border-color: var(--border-strong); }
+.carreiras-tabs button.is-active { background: var(--neon); color: #03140a; border-color: var(--neon); font-weight: 700; }
+.carreiras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.carreira-card {
+  position: relative; border-radius: var(--r); overflow: hidden;
+  border: 1px solid var(--border); background: var(--surface-solid);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease;
+}
+.carreira-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-neon); }
+.carreira-card.is-hidden { display: none; }
+.carreira-card img { width: 100%; height: 170px; object-fit: cover; }
+.carreira-card__meta {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.75rem 1rem; border-top: 1px solid var(--border);
+  font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-2);
+}
+.carreira-card__meta strong { color: var(--neon); }
+
+/* ============ QUOTES ============ */
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.quote {
+  position: relative; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--r); padding: 1.6rem 1.5rem;
+}
+.quote::before {
+  content: "“"; position: absolute; top: 0.6rem; right: 1.1rem;
+  font-family: var(--font-display); font-size: 3rem; line-height: 1;
+  color: rgba(43, 255, 136, 0.18);
+}
+.quote blockquote { color: var(--text-2); font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.2rem; }
+.quote figcaption { display: flex; align-items: center; gap: 0.75rem; }
+.quote__avatar {
+  width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-weight: 700; font-size: 0.9rem;
+  background: var(--neon-soft); border: 1px solid var(--neon-line); color: var(--neon);
+}
+.quote figcaption strong { display: block; font-size: 0.9rem; color: var(--text-1); }
+.quote figcaption small { font-family: var(--font-mono); font-size: 0.68rem; color: var(--neon); }
+
+/* ============ PLANOS ============ */
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; align-items: stretch; }
+.plan {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 1.8rem 1.6rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.plan:hover { border-color: var(--border-strong); }
+.plan--featured {
+  border-color: var(--border-strong);
+  background: radial-gradient(circle at 50% 0%, rgba(43, 255, 136, 0.14), var(--surface-solid) 62%);
+  box-shadow: 0 0 40px rgba(43, 255, 136, 0.12);
+}
+.plan__tag {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--neon); color: #03140a;
+  border-radius: 999px; padding: 0.3rem 0.85rem; white-space: nowrap;
+}
+.plan__name {
+  font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--neon);
+  margin-bottom: 0.4rem;
+}
+.plan__for { font-size: 0.85rem; color: var(--text-2); margin-bottom: 1.2rem; }
+.plan__price {
+  font-family: var(--font-display); font-weight: 800; font-size: 2.4rem;
+  color: var(--text-1); line-height: 1; margin-bottom: 1.3rem;
+}
+.plan__price small { font-size: 1rem; color: var(--cyan); font-weight: 700; margin-right: 0.15rem; }
+.plan__price span { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 400; color: var(--text-3); }
+.plan__list { display: grid; gap: 0.6rem; margin-bottom: 1.6rem; flex: 1; }
+.plan__list li {
+  position: relative; padding-left: 1.4rem;
+  font-size: 0.87rem; color: var(--text-2); line-height: 1.5;
+}
+.plan__list li::before { content: "▹"; position: absolute; left: 0; color: var(--neon); }
+.plan__list li strong { color: var(--text-1); }
+.plan .btn { margin-top: auto; }
+
+.warranty {
+  display: flex; gap: 1rem; align-items: flex-start;
+  margin-top: 2rem; padding: 1.2rem 1.4rem;
+  background: rgba(43, 255, 136, 0.06); border: 1px dashed var(--border-strong);
+  border-radius: var(--r);
+}
+.warranty svg { width: 22px; height: 22px; color: var(--neon); flex-shrink: 0; margin-top: 2px; }
+.warranty div { font-size: 0.88rem; color: var(--text-2); line-height: 1.6; }
+.warranty strong { color: var(--text-1); }
+
+/* ============ FAQ ============ */
+.faq { display: grid; gap: 0.7rem; }
+.faq__item {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r); transition: border-color 0.2s ease;
+}
+.faq__item:hover { border-color: var(--border-strong); }
+.faq__item summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1.1rem 1.3rem; cursor: pointer; list-style: none;
+  font-size: 0.95rem; font-weight: 600; color: var(--text-1);
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__chev {
+  flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+  border: 1px solid var(--border); background: rgba(43, 255, 136, 0.06);
+  position: relative; transition: background 0.2s ease, transform 0.25s var(--ease);
+}
+.faq__chev::before, .faq__chev::after {
+  content: ""; position: absolute; top: 50%; left: 50%; background: var(--neon);
+  transform: translate(-50%, -50%);
+}
+.faq__chev::before { width: 10px; height: 1.6px; }
+.faq__chev::after { width: 1.6px; height: 10px; transition: opacity 0.2s ease; }
+.faq__item[open] .faq__chev { background: var(--neon-soft); }
+.faq__item[open] .faq__chev::after { opacity: 0; }
+.faq__item p { padding: 0 1.3rem 1.2rem; color: var(--text-2); font-size: 0.9rem; line-height: 1.65; }
+
+/* ============ CTA FINAL (inversão neon) ============ */
+.finalcta {
+  position: relative; overflow: hidden;
+  background:
+    linear-gradient(to right, rgba(3, 20, 10, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(3, 20, 10, 0.07) 1px, transparent 1px),
+    var(--neon);
+  background-size: 40px 40px, 40px 40px, auto;
+  padding: 5rem 0; text-align: center;
+}
+.finalcta .eyebrow { color: #0a5c30; }
+.finalcta .eyebrow::before { color: rgba(3, 20, 10, 0.4); }
+.finalcta__title {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(28px, 3.4vw, 44px); line-height: 1.12; letter-spacing: -0.02em;
+  color: #03140a; margin-bottom: 1rem;
+}
+.finalcta__title em { font-style: normal; color: #ffffff; text-shadow: 0 2px 12px rgba(3, 20, 10, 0.3); }
+.finalcta__desc {
+  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.03em;
+  color: rgba(3, 20, 10, 0.7); margin-bottom: 1.8rem;
+}
+.finalcta .hero__cta { justify-content: center; margin-bottom: 0; }
+.finalcta .btn--primary { background: #03140a; color: var(--neon); box-shadow: 0 10px 30px rgba(3, 20, 10, 0.35); }
+.finalcta .btn--primary:hover { background: #0a2414; box-shadow: 0 14px 36px rgba(3, 20, 10, 0.45); }
+.finalcta .btn--ghost { background: transparent; color: #03140a; border-color: rgba(3, 20, 10, 0.4); }
+.finalcta .btn--ghost:hover { background: rgba(3, 20, 10, 0.1); box-shadow: none; }
+
+/* ============ FOOTER ============ */
+.footer { background: #020504; border-top: 1px solid var(--border); padding: 3rem 0 1.5rem; }
+.footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+.footer__tag { color: var(--text-2); font-size: 0.88rem; margin-top: 0.9rem; max-width: 260px; }
+.footer h4 {
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--neon); margin-bottom: 0.9rem;
+}
+.footer__col { display: grid; gap: 0.5rem; align-content: start; }
+.footer__col a { color: var(--text-2); text-decoration: none; font-size: 0.87rem; transition: color 0.15s ease; }
+.footer__col a:hover { color: var(--neon); }
+.footer__bottom {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.8rem;
+  padding-top: 1.4rem; border-top: 1px solid var(--border);
+  font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-3);
+}
+.footer__bottom a { color: var(--text-3); text-decoration: none; margin-left: 1rem; }
+.footer__bottom a:hover { color: var(--neon); }
+
+/* ============ REVEAL ============ */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ============ RESPONSIVO ============ */
+@media (max-width: 1020px) {
+  .hero__grid { grid-template-columns: 1fr; gap: 2.8rem; }
+  .features, .steps, .quotes, .plans, .carreiras-grid { grid-template-columns: repeat(2, 1fr); }
+  .split { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .nav__pill { display: none; }
+  .nav__actions .btn--nav-cta { display: none; }
+  .nav__burger { display: flex; }
+  .nav__mobile.is-open { display: flex; }
+  .hero { padding-top: 108px; }
+  .features, .steps, .quotes, .plans, .carreiras-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(3, 1fr); max-width: none; }
+  .stats__item { padding: 0.7rem 0.6rem; }
+  .stats__item strong { font-size: 0.95rem; }
+  .hero__cta .btn { width: 100%; }
+  .footer__grid { grid-template-columns: 1fr; }
+  .section { padding: 4rem 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+  .glitch::before, .glitch::after { display: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+
+<!-- Conteúdo da LP -->
+<div class="pomaroli-root" id="pomaroliRoot">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="nav__inner container">
+      <a href="/plataforma-de-questoes/" class="logo" aria-label="Pomaroli — início">
+        <span class="logo__cube" aria-hidden="true"></span>
+        <span class="logo__word">POMAROLI</span>
+      </a>
+
+      <nav class="nav__pill" aria-label="Navegação principal">
+        <a href="#arsenal">Arsenal</a>
+        <a href="#protocolo">Protocolo</a>
+        <a href="#carreiras">Carreiras</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">Dúvidas</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="#planos" class="btn btn--primary btn--sm btn--nav-cta">Liberar acesso</a>
+        <button class="nav__burger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav__mobile" id="navMobile">
+      <a href="#arsenal">Arsenal</a>
+      <a href="#protocolo">Protocolo</a>
+      <a href="#carreiras">Carreiras</a>
+      <a href="#planos">Planos</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#planos" class="btn btn--primary btn--block">Liberar acesso</a>
+      <a href="/plataforma-de-questoes/">Entrar na plataforma</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <i class="hero__glow" aria-hidden="true"></i>
+      <div class="container hero__grid">
+        <div>
+          <a href="#planos" class="hero__badge">
+            <span class="hero__badge-dot" aria-hidden="true"></span>
+            140+ bancas já mapeadas pela IA
+          </a>
+
+          <h1 class="hero__title">
+            O sistema da banca tem falhas.<br />
+            Nós encontramos <span class="glitch" data-text="todas.">todas.</span>
+          </h1>
+
+          <p class="hero__subtitle">
+            Uma IA treinada em 96 mil+ questões reais decifra o padrão de cobrança da sua banca,
+            expõe cada pegadinha e transforma seus erros em acerto. Você entra na prova deixando de ser o alvo.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#planos" class="btn btn--primary btn--lg">
+              Iniciar infiltração
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#protocolo" class="btn btn--ghost btn--lg">Ver o método</a>
+          </div>
+
+          <ul class="hero__proof">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="2"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2"/></svg>
+              Garantia de 7 dias
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z" stroke="currentColor" stroke-width="2"/></svg>
+              Acesso na hora
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/></svg>
+              Sem renovação automática
+            </li>
+          </ul>
+
+          <div class="stats">
+            <div class="stats__item"><strong>96 mil+</strong><span>questões</span></div>
+            <div class="stats__item"><strong>1.800+</strong><span>simulados</span></div>
+            <div class="stats__item"><strong>140+</strong><span>cursos</span></div>
+          </div>
+        </div>
+
+        <!-- Console de infiltração -->
+        <div class="terminal" aria-label="Console de demonstração da plataforma">
+          <div class="terminal__bar">
+            <div class="terminal__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span class="terminal__title">pomaroli@infiltracao — scan</span>
+            <span class="terminal__status">● AO VIVO</span>
+          </div>
+          <div class="terminal__body" id="termBody" aria-live="off"></div>
+          <div class="terminal__foot">
+            <span>Padrão da banca</span>
+            <span>Banco de questões</span>
+            <span>Flashcards</span>
+            <span>Tutor IA 24/7</span>
+            <span>Simulados</span>
+            <span>Edital vertical</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROVA SOCIAL ============ -->
+    <section class="proof">
+      <div class="container">
+        <p class="proof__label">Protocolo já executado por concurseiros de</p>
+        <div class="proof__row">
+          <span class="proof__item">Polícia Federal</span>
+          <span class="proof__item">PRF</span>
+          <span class="proof__item">Polícia Civil</span>
+          <span class="proof__item">Polícia Militar</span>
+          <span class="proof__item">Bombeiros</span>
+          <span class="proof__item">Tribunais &amp; INSS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ARSENAL / FUNÇÕES ============ -->
+    <section class="section" id="arsenal">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">arsenal_de_exploração</p>
+          <h2 class="section__title">Ferramentas criadas para <em>explorar cada falha do examinador</em></h2>
+          <p class="section__desc">Não é um app de questões comum. É um kit de intrusão no padrão de cobrança da sua banca — e você no controle do ataque.</p>
+        </div>
+
+        <div class="features">
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M8 9l3 3-3 3M13 15h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <h3 class="feature__title">Decrypt de pegadinhas</h3>
+            <p class="feature__text">Em cada questão, a IA abre a armadilha: mostra por que cada alternativa errada funciona e qual truque a banca usa. Você não decora — você entende o exploit.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 4.5 19 11l-7 6.5L5 11l7-6.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 8 12 11.5 15.5 8M8.5 14 12 10.5 15.5 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feature__title">Flashcards de correção</h3>
+            <p class="feature__text">Cada erro vira cartão de repetição espaçada. O algoritmo calcula o momento exato de revisar — até a pegadinha que te derrubou morrer de vez.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m-6 9 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="feature__title">Mapa do terreno</h3>
+            <p class="feature__text">Seu edital verticalizado tópico por tópico, com barra de conclusão. Você vê exatamente o que falta fechar antes do dia D — nada de conteúdo genérico.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="8" ry="3" stroke="currentColor" stroke-width="1.8"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <h3 class="feature__title">Banco comprometido</h3>
+            <p class="feature__text">96 mil+ questões reais das bancas que mais caem — Cebraspe, FGV, FCC, Vunesp. Filtre por cargo, órgão, ano e dificuldade. Zero anúncio, zero enrolação.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="7.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 9.5V13l2.5 1.5M9.5 3.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feature__title">Simulação de intrusão</h3>
+            <p class="feature__text">Simulados no formato exato da sua prova: mesmo tempo, mesmo layout, inclusive modelo Certo/Errado com anulação de questão. Treino sob fogo real.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="7" y="3" width="10" height="18" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M11 17.5h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feature__title">Acesso remoto</h3>
+            <p class="feature__text">10 questões no intervalo do almoço, revisão das pegadinhas no trânsito. Progresso sincronizado entre celular e computador, sem perder o fio da operação.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROTOCOLO / MÉTODO ============ -->
+    <section class="section section--soft" id="protocolo">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">protocolo_de_3_etapas</p>
+          <h2 class="section__title">Como explorar a banca da sua prova em <em>3 etapas</em></h2>
+          <p class="section__desc">Nada de 400 horas de vídeoaula. Você entra no sistema e ataca o ponto fraco.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <h3 class="step__title">Escolha o alvo</h3>
+            <p class="step__text">Selecione banca e carreira. O sistema carrega só as questões, editais e pegadinhas que a SUA prova cobra.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">02</span>
+            <h3 class="step__title">Execute o script</h3>
+            <p class="step__text">Responda questões com a IA dissecando cada alternativa em tempo real e revelando a lógica do examinador.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">03</span>
+            <h3 class="step__title">Domine o sistema</h3>
+            <p class="step__text">Seus erros viram flashcards; seus pontos cegos somem. No dia D, você já conhece o código da banca.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ APP / HUD ============ -->
+    <section class="section" id="app">
+      <div class="container split">
+        <div class="reveal">
+          <p class="eyebrow">qualquer_terminal</p>
+          <h2 class="section__title">Opere de onde estiver — <em>sem perder o fio da operação</em></h2>
+          <p class="section__desc">Abra, escolha a carreira e caia direto nas questões que importam. Sem enrolação, sem conteúdo que não cai na sua banca.</p>
+
+          <ul class="checklist">
+            <li>
+              <span class="checklist__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <strong>Questões no formato da sua banca</strong>
+                <span>Filtre por cargo, órgão e matéria — estudando só o que cai na SUA prova</span>
+              </div>
+            </li>
+            <li>
+              <span class="checklist__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <strong>Simulado idêntico ao dia da prova</strong>
+                <span>Mesmo tempo, mesmo layout — inclusive Certo/Errado com anulação</span>
+              </div>
+            </li>
+            <li>
+              <span class="checklist__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <strong>Pegadinhas salvas para revisão</strong>
+                <span>Marque as questões que te pegaram e refaça até a falha não se repetir</span>
+              </div>
+            </li>
+            <li>
+              <span class="checklist__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <strong>IA disponível 24/7 no meio do treino</strong>
+                <span>Travou? O tutor abre a pegadinha e resume a jurisprudência na hora</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hud reveal" aria-hidden="true">
+          <div class="hud__head">
+            <div class="hud__target">
+              ALVO: PF 2026 — Agente
+              <small>banca: cebraspe · status: comprometida</small>
+            </div>
+            <span class="hud__live"><i></i> INFILTRAÇÃO ATIVA</span>
+          </div>
+          <div class="hud__row">
+            <div class="hud__meta"><span>Taxa de acerto</span><strong>84%</strong></div>
+            <div class="hud__bar"><i style="width: 84%"></i></div>
+          </div>
+          <div class="hud__row">
+            <div class="hud__meta"><span>Edital coberto</span><strong>62%</strong></div>
+            <div class="hud__bar"><i style="width: 62%"></i></div>
+          </div>
+          <div class="hud__row">
+            <div class="hud__meta"><span>Pegadinhas neutralizadas</span><strong>217</strong></div>
+            <div class="hud__bar"><i style="width: 73%"></i></div>
+          </div>
+          <div class="hud__log">
+            <div>&gt; flashcard_erro_048 <span class="ok">revisado ✓</span></div>
+            <div>&gt; simulado_cronometrado <span class="ok">concluído · 91%</span></div>
+            <div>&gt; ponto_cego_direito_admin <span class="ok">neutralizado ✓</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CARREIRAS ============ -->
+    <section class="section section--soft" id="carreiras">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">alvos_disponíveis</p>
+          <h2 class="section__title">140+ carreiras já <em>infiltradas</em></h2>
+          <p class="section__desc">Edtais verticalizados e coleções de questões das bancas que mais caem — atualizados para os concursos de 2026.</p>
+        </div>
+
+        <div class="carreiras-tabs reveal" role="tablist" aria-label="Filtrar carreiras">
+          <button type="button" class="is-active" data-filter="all">Todos</button>
+          <button type="button" data-filter="federal">Federal</button>
+          <button type="button" data-filter="pc">Polícia Civil</button>
+          <button type="button" data-filter="pm">Polícia Militar</button>
+          <button type="button" data-filter="outros">Bombeiros &amp; Outros</button>
+        </div>
+
+        <div class="carreiras-grid reveal">
+          <div class="carreira-card" data-category="pm">
+            <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_pmmg.jpg" alt="Polícia Militar de MG 2026" loading="lazy" />
+            <div class="carreira-card__meta"><span>PMMG · Soldado &amp; CFO</span><strong>Incluso</strong></div>
+          </div>
+          <div class="carreira-card" data-category="pc">
+            <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_pcmg.jpg" alt="Polícia Civil de MG 2026" loading="lazy" />
+            <div class="carreira-card__meta"><span>PCMG · Investigador</span><strong>Incluso</strong></div>
+          </div>
+          <div class="carreira-card" data-category="federal">
+            <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_pf.jpg" alt="Polícia Federal 2026" loading="lazy" />
+            <div class="carreira-card__meta"><span>PF · Agente &amp; Escrivão</span><strong>Incluso</strong></div>
+          </div>
+          <div class="carreira-card" data-category="federal">
+            <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_prf.jpg" alt="Polícia Rodoviária Federal 2026" loading="lazy" />
+            <div class="carreira-card__meta"><span>PRF · Policial Rodoviário</span><strong>Incluso</strong></div>
+          </div>
+          <div class="carreira-card" data-category="pm outros">
+            <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_cbmmg.jpg" alt="Corpo de Bombeiros Militar MG 2026" loading="lazy" />
+            <div class="carreira-card__meta"><span>CBMMG · Soldado &amp; CFO</span><strong>Incluso</strong></div>
+          </div>
+          <div class="carreira-card" data-category="outros federal">
+            <img src="https://pomaroli.com.br/wp-content/uploads/2026/10/banner_inss.jpg" alt="INSS 2026" loading="lazy" />
+            <div class="carreira-card__meta"><span>INSS · Técnico</span><strong>Incluso</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEPOIMENTOS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">logs_de_aprovação</p>
+          <h2 class="section__title">Quem já <em>explorou o sistema</em> e saiu aprovado</h2>
+        </div>
+
+        <div class="quotes">
+          <figure class="quote reveal">
+            <blockquote>“A IA mostrou as pegadinhas do Cebraspe que eu jurava serem ‘perguntas de fase’. Em 3 meses, fui de 58% para 84% de acerto em Direito Administrativo.”</blockquote>
+            <figcaption>
+              <span class="quote__avatar">M</span>
+              <div>
+                <strong>Marina S.</strong>
+                <small>aprovada · TRT 2ª Região</small>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="quote reveal">
+            <blockquote>“Parei de estudar genérico. O edital verticalizado mostrou exatamente onde a PRF ataca — e o diagnóstico de pontos fracos confirmou no resultado final.”</blockquote>
+            <figcaption>
+              <span class="quote__avatar">R</span>
+              <div>
+                <strong>Rafael T.</strong>
+                <small>aprovado · PRF</small>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="quote reveal">
+            <blockquote>“Os simulados no formato da PF mudaram o jogo. Cheguei no dia da prova sabendo como a banca pensa — e aprovada de primeira.”</blockquote>
+            <figcaption>
+              <span class="quote__avatar">J</span>
+              <div>
+                <strong>Juliana M.</strong>
+                <small>aprovada · Polícia Federal</small>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLANOS ============ -->
+    <section class="section section--soft" id="planos">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">liberar_acesso</p>
+          <h2 class="section__title">Libere o protocolo e comece a <em>explorar hoje</em></h2>
+          <p class="section__desc">Acesso imediato + garantia incondicional de 7 dias. Sem fidelidade, sem pegadinha (a única que existe aqui é a da banca).</p>
+        </div>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <h3 class="plan__name">Protocolo Carreira</h3>
+            <p class="plan__for">Para quem foca em uma carreira só</p>
+            <p class="plan__price"><small>R$</small>29,90<span>/mês</span></p>
+            <ul class="plan__list">
+              <li>Banco completo com <strong>96 mil+ questões</strong></li>
+              <li>Acesso a <strong>1 carreira de concurso</strong></li>
+              <li>Tutor IA com até 50 consultas/mês</li>
+              <li>Flashcards com repetição espaçada</li>
+              <li>Gabaritos comentados com pegadinhas</li>
+              <li>App para celular e computador</li>
+              <li>Garantia incondicional de 7 dias</li>
+            </ul>
+            <a href="https://pay.hotmart.com/F107350441I?off=02e1pyg9" target="_blank" rel="noopener noreferrer" data-checkout="true" class="btn btn--ghost btn--block">Liberar Carreira</a>
+          </article>
+
+          <article class="plan plan--featured reveal">
+            <span class="plan__tag">Mais escolhido</span>
+            <h3 class="plan__name">Protocolo Policial</h3>
+            <p class="plan__for">Preparação intensiva com IA ilimitada e editais</p>
+            <p class="plan__price"><small>R$</small>49,90<span>/mês</span></p>
+            <ul class="plan__list">
+              <li><strong>Tudo do Protocolo Carreira</strong></li>
+              <li><strong>Tutor IA ilimitado</strong> 24/7</li>
+              <li><strong>Editais verticalizados</strong> da sua prova</li>
+              <li>Simulados cronometrados ilimitados</li>
+              <li>Decks de flashcards prontos por matéria</li>
+              <li>Diagnóstico de pontos fracos e de nota</li>
+              <li>Garantia incondicional de 7 dias</li>
+            </ul>
+            <a href="https://pay.hotmart.com/F107350441I?off=9ubsopfi" target="_blank" rel="noopener noreferrer" data-checkout="true" class="btn btn--primary btn--block">Liberar Policial &amp; Carreiras</a>
+          </article>
+
+          <article class="plan reveal">
+            <h3 class="plan__name">Protocolo Black</h3>
+            <p class="plan__for">Acesso total a todas as carreiras, IA prioritária</p>
+            <p class="plan__price"><small>R$</small>79,90<span>/mês</span></p>
+            <ul class="plan__list">
+              <li><strong>Acesso ilimitado a TODAS as carreiras</strong></li>
+              <li>PF, PRF, PCDF, Tribunais e Fiscais</li>
+              <li>Tutor IA prioritário (alta velocidade)</li>
+              <li>Geração automática de flashcards via IA</li>
+              <li>Editais pós-edital atualizados no mesmo dia</li>
+              <li>Suporte prioritário via WhatsApp</li>
+              <li>Garantia incondicional de 7 dias</li>
+            </ul>
+            <a href="https://pay.hotmart.com/F107350441I?off=jk7zhfg1" target="_blank" rel="noopener noreferrer" data-checkout="true" class="btn btn--ghost btn--block">Liberar Black IA</a>
+          </article>
+        </div>
+
+        <div class="warranty reveal">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <strong>Garantia cega de 7 dias:</strong> use o Tutor IA, faça simulados, explore os editais. Se por qualquer motivo você não gostar, devolvemos 100% do valor — sem perguntas e sem burocracia.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <p class="eyebrow">dúvidas_frequentes</p>
+          <h2 class="section__title">Antes de <em>iniciar a infiltração</em></h2>
+        </div>
+
+        <div class="faq reveal">
+          <details class="faq__item">
+            <summary>A IA realmente expõe as pegadinhas da banca?<span class="faq__chev"></span></summary>
+            <p>Sim. Ela não entrega só o gabarito: abre a pegadinha, explica o porquê de cada alternativa errada e resume a jurisprudência que a sua banca adora cobrar. Você entende o truque — e não cai mais nele.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Preciso assistir videoaulas junto?<span class="faq__chev"></span></summary>
+            <p>Não. O método é estudo ativo por questões: você treina no campo de batalha real da sua banca, e a IA dissecando cada alternativa revela o padrão de cobrança em segundos.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Em quanto tempo recebo o acesso?<span class="faq__chev"></span></summary>
+            <p>Imediato. Assim que o pagamento é confirmado, os dados chegam no seu e-mail. Dá para começar a treinar agora mesmo.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Tem garantia?<span class="faq__chev"></span></summary>
+            <p>Sim: 7 dias incondicionais. Se não comprovar o salto no seu índice de acertos, devolvemos 100% do valor investido.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Funciona no celular?<span class="faq__chev"></span></summary>
+            <p>Sim. A plataforma roda no navegador do celular e também no app para Android e iOS. Suas respostas e estatísticas sincronizam em todos os aparelhos.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Posso cancelar quando quiser?<span class="faq__chev"></span></summary>
+            <p>Pode. Sem fidelidade e sem multa: você gerencia a assinatura em um clique e mantém o acesso até o fim do período contratado.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Qual é a diferença entre os planos?<span class="faq__chev"></span></summary>
+            <p>O Carreira cobre 1 carreira com Tutor IA (50 consultas/mês). O Policial &amp; Carreiras libera IA ilimitada, editais verticalizados e simulados ilimitados. O Black dá acesso a todas as carreiras (PF, PRF, Tribunais, Fiscais) com IA prioritária.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section class="finalcta" id="entrar">
+      <div class="container reveal">
+        <p class="eyebrow">janela_de_oportunidade</p>
+        <h2 class="finalcta__title">O countdown da sua prova já está rodando.<br />Entre no sistema <em>agora</em>.</h2>
+        <p class="finalcta__desc">Acesso imediato · Garantia de 7 dias · Cancele quando quiser</p>
+        <div class="hero__cta">
+          <a href="#planos" class="btn btn--primary btn--lg">
+            Iniciar infiltração
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Quero+saber+mais+sobre+a+plataforma+e+hackear+a+banca+do+meu+concurso." target="_blank" rel="noopener" class="btn btn--ghost btn--lg">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/plataforma-de-questoes/" class="logo" aria-label="Pomaroli — início">
+            <span class="logo__cube" aria-hidden="true"></span>
+            <span class="logo__word">POMAROLI</span>
+          </a>
+          <p class="footer__tag">O sistema que abre a banca da sua prova.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Produto</h4>
+          <a href="#arsenal">Arsenal</a>
+          <a href="#protocolo">Protocolo</a>
+          <a href="#carreiras">Carreiras</a>
+          <a href="#planos">Planos</a>
+        </div>
+        <div class="footer__col">
+          <h4>Empresa</h4>
+          <a href="/blog">Blog</a>
+          <a href="/afiliados">Afiliados</a>
+          <a href="/configuracao-dns">Apontamento DNS</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <a href="#planos">Ver planos</a>
+          <a href="mailto:contato@pomaroli.com.br">contato@pomaroli.com.br</a>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Pomaroli Tecnologia. Todos os direitos reservados.</span>
+        <span>
+          <a href="/termos">Termos</a>
+          <a href="/privacidade">Privacidade</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ============ SCRIPTS ============ -->
+<script id="pomaroli-glitch-protocol-js">
+(function () {
+  "use strict";
+
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- Nav mobile ---- */
+  var burger = document.querySelector(".nav__burger");
+  var mobile = document.getElementById("navMobile");
+  if (burger) if (mobile) {
+    burger.addEventListener("click", function () {
+      var open = mobile.classList.toggle("is-open");
+      burger.setAttribute("aria-expanded", String(open));
+      document.body.style.overflow = open ? "hidden" : "";
+    });
+    mobile.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        mobile.classList.remove("is-open");
+        burger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      });
+    });
+  }
+
+  /* ---- Reveal on scroll ---- */
+  var reveals = document.querySelectorAll(".reveal");
+  var useObserver = false;
+  if ("IntersectionObserver" in window) { if (!reduced) { useObserver = true; } }
+  if (useObserver) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px" }
+    );
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  /* ---- FAQ: só um aberto por vez ---- */
+  var faqItems = document.querySelectorAll(".faq__item");
+  faqItems.forEach(function (item) {
+    item.addEventListener("toggle", function () {
+      if (!item.open) return;
+      faqItems.forEach(function (other) {
+        if (other !== item) other.open = false;
+      });
+    });
+  });
+
+  /* ---- Filtro de carreiras ---- */
+  var tabBtns = document.querySelectorAll(".carreiras-tabs button");
+  var cards = document.querySelectorAll(".carreira-card");
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      tabBtns.forEach(function (b) { b.classList.remove("is-active"); });
+      btn.classList.add("is-active");
+      var filter = btn.getAttribute("data-filter");
+      cards.forEach(function (card) {
+        var cats = (card.getAttribute("data-category") || "").split(" ");
+        var show = filter === "all" || cats.indexOf(filter) !== -1;
+        card.classList.toggle("is-hidden", !show);
+      });
+    });
+  });
+
+  /* ---- Terminal typing ---- */
+  var termBody = document.getElementById("termBody");
+  var LINES = [
+    { html: '<span class="prompt">$</span> pomaroli scan <span class="path">--banca cebraspe --cargo pf</span>', cls: "" },
+    { html: "&gt; conectando ao banco de dados...", cls: "is-out" },
+    { html: "&gt; 14.382 questões da banca carregadas", cls: "is-out" },
+    { html: "&gt; analisando padrão de cobrança...", cls: "is-out" },
+    { html: "&gt; pegadinhas expostas: 2.417", cls: "is-warn" },
+    { html: "&gt; rota de aprovação calculada · confiança 94%", cls: "is-out" },
+    { html: "&gt; EXPOSIÇÃO TOTAL. Sua vez de atacar.", cls: "is-hi" }
+  ];
+
+  function renderStatic() {
+    if (!termBody) return;
+    termBody.innerHTML = LINES.map(function (l) {
+      return '<div class="t-line ' + l.cls + '">' + l.html + "</div>";
+    }).join("");
+  }
+
+  function typeLines() {
+    if (!termBody) return;
+    termBody.innerHTML = "";
+    var lineIdx = 0;
+    var cursor = document.createElement("span");
+    cursor.className = "t-cursor";
+
+    function typeLine() {
+      if (lineIdx >= LINES.length) {
+        setTimeout(function () { typeLines(); }, 4200);
+        return;
+      }
+      var l = LINES[lineIdx];
+      var row = document.createElement("div");
+      row.className = "t-line " + l.cls;
+      termBody.appendChild(row);
+      row.appendChild(cursor);
+
+      var tmp = document.createElement("div");
+      tmp.innerHTML = l.html;
+      var full = tmp.textContent;
+      var charIdx = 0;
+
+      function typeChar() {
+        charIdx++;
+        row.textContent = full.slice(0, charIdx);
+        row.appendChild(cursor);
+        if (charIdx < full.length) {
+          setTimeout(typeChar, 14 + Math.random() * 26);
+        } else {
+          row.innerHTML = l.html;
+          lineIdx++;
+          setTimeout(typeLine, 340);
+        }
+      }
+      typeChar();
+    }
+    typeLine();
+  }
+
+  if (termBody) {
+    if (reduced) renderStatic();
+    else typeLines();
+  }
+
+  /* ---- Blindagem + clique direto nos botões de checkout Hotmart ---- */
+  var handleCheckout = function (e) {
+    if (!e.target) return;
+    if (!e.target.closest) return;
+    var link = e.target.closest("a[href*='hotmart.com']");
+    if (!link) return;
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    window.open(link.href, "_blank", "noopener,noreferrer");
+  };
+  window.addEventListener("click", handleCheckout, true);
+  document.addEventListener("click", handleCheckout, true);
+
+  /* Fallback: garante que todo .plan tenha botão de checkout */
+  var CHECKOUTS = [
+    { href: "https://pay.hotmart.com/F107350441I?off=02e1pyg9", label: "Liberar Carreira", cls: "btn btn--ghost btn--block" },
+    { href: "https://pay.hotmart.com/F107350441I?off=9ubsopfi", label: "Liberar Policial " + String.fromCharCode(38) + " Carreiras", cls: "btn btn--primary btn--block" },
+    { href: "https://pay.hotmart.com/F107350441I?off=jk7zhfg1", label: "Liberar Black IA", cls: "btn btn--ghost btn--block" }
+  ];
+  function ensureCheckoutButtons() {
+    document.querySelectorAll(".plan").forEach(function (plan, i) {
+      var cfg = CHECKOUTS[i];
+      if (!cfg) return;
+      var btn = plan.querySelector("a[data-checkout], a[href*='hotmart']");
+      if (btn) {
+        btn.href = cfg.href;
+        btn.target = "_blank";
+        btn.rel = "noopener noreferrer";
+        btn.setAttribute("data-checkout", "true");
+        return;
+      }
+      var a = document.createElement("a");
+      a.href = cfg.href;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = cfg.label;
+      a.className = cfg.cls;
+      a.setAttribute("data-checkout", "true");
+      plan.appendChild(a);
+    });
+  }
+  ensureCheckoutButtons();
+  window.addEventListener("load", ensureCheckoutButtons);
+})();
+</script>
