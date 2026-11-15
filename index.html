@@ -9,10 +9,12 @@
         cabeçalho, título e rodapé do tema WordPress.
      ==================================================================== -->
 
-<!-- Fontes do Google -->
+<!-- Fontes do Google (Carregamento Assíncrono Não-Bloqueante) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" /></noscript>
 
 <!-- Estilos Completos da LP Pomaroli -->
   <!-- ====================================================================
@@ -3393,7 +3395,7 @@ h2.finalcta__title {
   <header class="nav">
     <div class="nav__inner container">
       <a href="/plataforma-de-questoes/" class="logo" aria-label="Pomaroli — início">
-        <img src="https://pomaroli.com.br/wp-content/uploads/2026/07/cubo-pomaroli-preto.png" alt="Pomaroli" class="logo__img" width="28" height="32" style="width: 28px !important; max-width: 28px !important; height: 32px !important; max-height: 32px !important; object-fit: contain !important; display: block !important; margin: 0 !important;" />
+        <img src="https://pomaroli.com.br/wp-content/uploads/2026/07/cubo-pomaroli-preto.png" alt="Pomaroli" class="logo__img" width="28" height="32" loading="eager" decoding="async" fetchpriority="high" style="width: 28px !important; max-width: 28px !important; height: 32px !important; max-height: 32px !important; object-fit: contain !important; display: block !important; margin: 0 !important;" />
       </a>
 
       <nav class="nav__pill" aria-label="Navegação principal">
@@ -3918,7 +3920,7 @@ h2.finalcta__title {
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="/plataforma-de-questoes/" class="logo">
-          <img src="https://pomaroli.com.br/wp-content/uploads/2026/07/cubo-pomaroli-preto.png" alt="Pomaroli" class="logo__img" width="28" height="32" style="width: 28px !important; max-width: 28px !important; height: 32px !important; max-height: 32px !important; object-fit: contain !important; display: block !important; margin: 0 !important;" />
+          <img src="https://pomaroli.com.br/wp-content/uploads/2026/07/cubo-pomaroli-preto.png" alt="Pomaroli" class="logo__img" width="28" height="32" loading="lazy" decoding="async" style="width: 28px !important; max-width: 28px !important; height: 32px !important; max-height: 32px !important; object-fit: contain !important; display: block !important; margin: 0 !important;" />
         </a>
         <p>Plataforma white-label de questões para cursos de concurso.</p>
       </div>
@@ -3976,18 +3978,24 @@ h2.finalcta__title {
   if (navCta) navCta.hidden = false;
 
   // Nav vira pílula flutuante ao rolar + mockup endireita + CTA do header
+  let scrollTicking = false;
   const onScroll = () => {
-    const y = window.scrollY;
-    nav.classList.toggle("is-scrolled", y > 24);
-    if (mockup) if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      mockup.classList.toggle("is-flat", y > 40);
-    }
-    if (navCta) if (hero) {
-      navCta.classList.toggle(
-        "is-on",
-        hero.getBoundingClientRect().bottom < (nav.offsetHeight || 64)
-      );
-    }
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      nav.classList.toggle("is-scrolled", y > 24);
+      if (mockup) if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        mockup.classList.toggle("is-flat", y > 40);
+      }
+      if (navCta) if (hero) {
+        navCta.classList.toggle(
+          "is-on",
+          hero.getBoundingClientRect().bottom < 64
+        );
+      }
+      scrollTicking = false;
+    });
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -4206,10 +4214,23 @@ h2.finalcta__title {
       });
     };
     const startTitles = () => {
-      titles.forEach(splitTitle);
-      checkTitles();
-      window.addEventListener("scroll", checkTitles, { passive: true });
-      window.addEventListener("resize", checkTitles, { passive: true });
+      if ("IntersectionObserver" in window) {
+        const titleIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              splitTitle(entry.target);
+              entry.target.classList.add("is-in");
+              titleIO.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: "80px" });
+        titles.forEach((t) => titleIO.observe(t));
+      } else {
+        titles.forEach(splitTitle);
+        checkTitles();
+        window.addEventListener("scroll", checkTitles, { passive: true });
+        window.addEventListener("resize", checkTitles, { passive: true });
+      }
     };
     const fontsReady = (document.fonts ? (document.fonts.ready ? document.fonts.ready : Promise.resolve()) : Promise.resolve());
     Promise.race([
@@ -4556,8 +4577,9 @@ h2.finalcta__title {
   const placeCursor = (x, y) => {
     demoCursor.style.transition = "none";
     demoCursor.style.transform = `translate(${x}px, ${y}px)`;
-    void demoCursor.offsetHeight;
-    demoCursor.style.transition = "";
+    requestAnimationFrame(() => {
+      demoCursor.style.transition = "";
+    });
   };
 
   const playRound = (n) => {
