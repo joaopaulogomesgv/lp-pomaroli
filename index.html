@@ -96,6 +96,16 @@
       visibility: hidden !important;
       pointer-events: none !important;
     }
+
+    /* 5) Garantia de pintura imediata (FCP/LCP) para Desktop e Mobile */
+    .hero,
+    .hero__content,
+    .hero__demo,
+    .demo,
+    .demo__app {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
   </style>
   <script id="pomaroli-fullwidth-wp">
     (function () {
@@ -932,14 +942,14 @@ main {
   transition: transform 700ms var(--ease);
   will-change: transform;
 }
-.demo:not(.is-visible) .demo__app {
-  opacity: 0;
-  transform: perspective(1400px) rotateX(8deg) translateY(40px);
+.demo:not(.is-visible) .demo__app,
+.demo .demo__app {
+  opacity: 1;
+  transform: perspective(1400px) rotateX(8deg) translateY(0);
 }
 .demo.is-visible .demo__app {
   opacity: 1;
   transform: perspective(1400px) rotateX(8deg) translateY(0);
-  transition: opacity 900ms var(--ease) 250ms, transform 900ms var(--ease) 250ms;
 }
 .demo__app.is-flat,
 .demo.is-visible .demo__app.is-flat {
@@ -2035,8 +2045,8 @@ main {
   border: 1px solid var(--border);
   border-radius: var(--r-input);
   padding: 13px 15px;
-  opacity: 0;
-  transform: translateY(8px);
+  opacity: 1;
+  transform: none;
   transition: opacity var(--t-med) ease, transform var(--t-med) ease;
 }
 .demo__stat.is-in { opacity: 1; transform: none; }
@@ -2063,8 +2073,8 @@ main {
   border: 1px solid var(--border);
   border-radius: var(--r-input);
   padding: 14px 16px;
-  opacity: 0;
-  transform: translateY(10px);
+  opacity: 1;
+  transform: none;
   transition:
     opacity var(--t-med) ease,
     transform var(--t-med) ease,
@@ -3468,7 +3478,7 @@ h2.finalcta__title {
       </div>
 
       <div class="container hero__demo">
-        <div class="demo reveal" id="demoApp">
+        <div class="demo is-visible" id="demoApp">
           <div class="demo__stage">
             <span class="hero__chip hero__chip--q" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
