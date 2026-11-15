@@ -27,6 +27,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet" />
 
+<!-- Google tag (gtag.js) - GA4 PC MG -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N4SZENDBD0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N4SZENDBD0');
+</script>
+
 <!-- Largura total no WordPress -->
 <style id="pomaroli-fullwidth-wp">
   :root {
@@ -102,7 +111,7 @@
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --r: 12px;
-  --col: 470px;
+  --col: 520px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -313,28 +322,28 @@ body.admin-bar .qtop { padding-top: 48px; }
 }
 .qcount b { color: var(--text-3); font-weight: 500; }
 
-/* Pergunta */
+/* Pergunta — calibrada para enunciados da FGV */
 .qtext {
-  font-family: var(--font-display);
-  font-size: clamp(22px, 4.6vw, 27px);
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  font-family: var(--font-body);
+  font-size: clamp(15.5px, 3.2vw, 17.5px);
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
   color: var(--text-1);
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
-/* Alternativas — estilo referência: cards pêssego + borda laranja */
-.qopts { display: grid; gap: 14px; }
+/* Alternativas — estilo limpo e proporcional */
+.qopts { display: grid; gap: 11px; }
 .qopt {
-  display: flex; align-items: center; gap: 14px;
+  display: flex; align-items: center; gap: 12px;
   width: 100%; text-align: left;
-  padding: 17px 20px;
+  padding: 13px 16px;
   background: #fff7ed;
   border: 1px solid #fdba74;
-  border-radius: 14px;
+  border-radius: 12px;
   color: #334155;
-  font-size: 15.5px;
+  font-size: 14.5px;
   font-weight: 500;
   line-height: 1.4;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -354,13 +363,13 @@ body.admin-bar .qtop { padding-top: 48px; }
 }
 .qopt__key {
   flex-shrink: 0;
-  width: 28px; height: 28px;
+  width: 26px; height: 26px;
   display: inline-flex; align-items: center; justify-content: center;
-  font-family: var(--font-mono); font-size: 13px; font-weight: 700;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 700;
   color: #c2410c;
   background: #ffedd5;
   border: 1px solid #fdba74;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 .qopt.is-selected .qopt__key {
   background: #f97316;
@@ -369,7 +378,7 @@ body.admin-bar .qtop { padding-top: 48px; }
 }
 .qopt__em {
   flex-shrink: 0;
-  font-size: 21px;
+  font-size: 18px;
   line-height: 1;
 }
 .qopt__tx { flex: 1; }
@@ -377,12 +386,12 @@ body.admin-bar .qtop { padding-top: 48px; }
 /* Botão Responder */
 .qsubmit {
   display: flex; align-items: center; justify-content: center; gap: 0.55rem;
-  width: 100%; margin-top: 18px;
-  padding: 16px 20px;
+  width: 100%; margin-top: 16px;
+  padding: 14px 18px;
   background: #f97316; color: #ffffff;
-  font-family: var(--font-mono); font-size: 14px; font-weight: 700;
+  font-family: var(--font-mono); font-size: 13.5px; font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase;
-  border: none; border-radius: 14px;
+  border: none; border-radius: 12px;
   box-shadow: 0 10px 24px -12px rgba(249, 115, 22, 0.65);
   transition: background 0.15s ease, box-shadow 0.25s var(--ease), transform 0.15s ease, opacity 0.15s ease;
 }
@@ -500,6 +509,39 @@ body.admin-bar .qtop { padding-top: 48px; }
 
 /* ============ RESULTADO ============ */
 .result { text-align: center; }
+.result__status {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  border-radius: 999px; padding: 0.45rem 1rem;
+  margin-bottom: 14px;
+}
+.result__status i {
+  width: 8px; height: 8px; border-radius: 50%;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+.result__status--fail {
+  color: #ff6b81; background: rgba(255, 77, 109, 0.12);
+  border: 1px solid rgba(255, 77, 109, 0.45);
+}
+.result__status--fail i {
+  background: #ff4d6d; box-shadow: 0 0 10px #ff4d6d;
+}
+.result__status--warn {
+  color: #fcd34d; background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+}
+.result__status--warn i {
+  background: #f59e0b; box-shadow: 0 0 10px #f59e0b;
+}
+.result__status--pass {
+  color: var(--neon); background: var(--neon-soft);
+  border: 1px solid var(--neon-line);
+}
+.result__status--pass i {
+  background: var(--neon); box-shadow: 0 0 10px var(--neon);
+}
+
 .result__label {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -507,7 +549,7 @@ body.admin-bar .qtop { padding-top: 48px; }
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text-3);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .result__score {
   font-family: var(--font-display);
@@ -517,35 +559,49 @@ body.admin-bar .qtop { padding-top: 48px; }
   line-height: 1;
   color: var(--neon);
   text-shadow: 0 0 34px rgba(43, 255, 136, 0.4);
+  margin-bottom: 12px;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+.result__score.is-fail {
+  color: #ff4d6d;
+  text-shadow: 0 0 34px rgba(255, 77, 109, 0.45);
+}
+.result__score.is-warn {
+  color: #f59e0b;
+  text-shadow: 0 0 34px rgba(245, 158, 11, 0.45);
+}
+.result__score.is-pass {
+  color: var(--neon);
+  text-shadow: 0 0 34px rgba(43, 255, 136, 0.4);
+}
+
+.result__title {
+  font-family: var(--font-display);
+  font-size: clamp(21px, 4.4vw, 26px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text-1);
   margin-bottom: 10px;
 }
-.result__tier {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 12px;
-}
 .result__desc {
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 14.5px;
+  line-height: 1.6;
   color: var(--text-2);
-  max-width: 52ch;
-  margin: 0 auto 24px;
+  max-width: 48ch;
+  margin: 0 auto 20px;
 }
 .result__chips {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 .result__chips li {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 14px 8px;
+  padding: 12px 8px;
 }
 .result__chips span {
   display: block;
@@ -555,7 +611,7 @@ body.admin-bar .qtop { padding-top: 48px; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-3);
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 .result__chips strong {
   font-family: var(--font-mono);
@@ -563,10 +619,65 @@ body.admin-bar .qtop { padding-top: 48px; }
   font-weight: 700;
   color: var(--text-1);
 }
+
+/* Card da Solução Pomaroli */
+.result__solution {
+  text-align: left;
+  background:
+    linear-gradient(to right, rgba(43, 255, 136, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(43, 255, 136, 0.04) 1px, transparent 1px),
+    var(--surface-solid);
+  background-size: 32px 32px, 32px 32px, auto;
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  padding: 20px 20px 22px;
+  margin-bottom: 22px;
+  box-shadow: 0 0 30px rgba(43, 255, 136, 0.1);
+}
+.solution__badge {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--neon); background: var(--neon-soft);
+  border: 1px solid var(--neon-line);
+  border-radius: 999px; padding: 0.3rem 0.75rem;
+  margin-bottom: 10px;
+}
+.solution__title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 3.8vw, 22px);
+  font-weight: 800; line-height: 1.25; letter-spacing: -0.02em;
+  color: var(--text-1); margin-bottom: 8px;
+}
+.solution__title em {
+  font-style: normal; color: var(--neon);
+  text-shadow: 0 0 20px rgba(43, 255, 136, 0.35);
+}
+.solution__desc {
+  font-size: 13.5px; line-height: 1.55; color: var(--text-2);
+  margin-bottom: 14px;
+}
+.solution__list {
+  display: grid; gap: 10px; list-style: none; margin: 0; padding: 0;
+}
+.solution__list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; line-height: 1.45; color: var(--text-2);
+  background: rgba(43, 255, 136, 0.04);
+  border: 1px solid rgba(43, 255, 136, 0.14);
+  border-radius: 10px; padding: 10px 12px;
+}
+.solution__list li::before {
+  content: "▸"; flex-shrink: 0;
+  font-family: var(--font-mono); font-weight: 700; color: var(--neon);
+  font-size: 14px; line-height: 1.3;
+}
+.solution__list li strong { color: var(--text-1); font-weight: 600; }
+
 .result__cta {
   display: flex; align-items: center; justify-content: center; gap: 0.55rem;
   width: 100%;
-  padding: 16px 20px;
+  padding: 17px 20px;
   background: var(--neon);
   color: #03140a;
   font-family: var(--font-mono);
@@ -576,17 +687,23 @@ body.admin-bar .qtop { padding-top: 48px; }
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 0 0 0 rgba(43, 255, 136, 0);
-  transition: background 0.15s ease, box-shadow 0.25s var(--ease);
+  border-radius: 10px;
+  box-shadow: 0 10px 24px -10px rgba(43, 255, 136, 0.5);
+  transition: background 0.15s ease, box-shadow 0.25s var(--ease), transform 0.15s ease;
 }
 .result__cta:hover {
   background: #5cffa5;
-  box-shadow: 0 0 28px rgba(43, 255, 136, 0.45);
+  box-shadow: 0 14px 28px -10px rgba(43, 255, 136, 0.65);
+  transform: translateY(-1px);
+}
+.result__cta svg { width: 16px; height: 16px; flex-shrink: 0; }
+.result__safe {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em;
+  color: var(--text-3); margin-top: 10px; text-align: center;
 }
 .result__restart {
   display: inline-block;
-  margin-top: 16px;
+  margin-top: 14px;
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.05em;
@@ -615,6 +732,287 @@ body.admin-bar .qtop { padding-top: 48px; }
 .qfoot a:hover { color: var(--neon); }
 .qfoot i { font-style: normal; margin: 0 6px; opacity: 0.55; }
 
+/* ============ ETAPA DE ANÁLISE / CORREÇÃO DAS QUESTÕES ============ */
+.analyzing { text-align: center; padding: 48px 12px 60px; width: 100%; }
+.analyzing__radar {
+  position: relative; width: 88px; height: 88px; margin: 0 auto 24px;
+  display: flex; align-items: center; justify-content: center;
+}
+.analyzing__circle {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid rgba(43, 255, 136, 0.15);
+  border-top-color: var(--neon);
+  animation: spin 0.9s linear infinite;
+}
+.analyzing__pulse {
+  position: absolute; inset: 12px; border-radius: 50%;
+  background: rgba(43, 255, 136, 0.08);
+  border: 1px solid rgba(43, 255, 136, 0.35);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+.analyzing__icon {
+  position: relative; z-index: 2; font-size: 28px; line-height: 1;
+}
+.analyzing__badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--neon); background: var(--neon-soft);
+  border: 1px solid var(--neon-line);
+  border-radius: 999px; padding: 0.35rem 0.95rem;
+  margin-bottom: 14px;
+}
+.analyzing__badge i {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--neon);
+  box-shadow: 0 0 10px var(--neon); animation: pulse 1.2s infinite;
+}
+.analyzing__title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4.4vw, 28px);
+  font-weight: 800; line-height: 1.22; letter-spacing: -0.025em;
+  color: var(--text-1); margin-bottom: 12px;
+}
+.analyzing__title em {
+  font-style: normal; color: var(--neon);
+  text-shadow: 0 0 24px rgba(43, 255, 136, 0.35);
+}
+.analyzing__status {
+  font-family: var(--font-mono); font-size: 13.5px;
+  color: var(--cyan); min-height: 24px; margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+.analyzing__meter {
+  width: 100%; max-width: 320px; height: 8px; margin: 0 auto;
+  background: rgba(43, 255, 136, 0.08);
+  border: 1px solid var(--border); border-radius: 999px;
+  overflow: hidden;
+}
+.analyzing__fill {
+  display: block; height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--neon-dim), var(--neon));
+  box-shadow: 0 0 12px rgba(43, 255, 136, 0.6);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* ============ ETAPA DOS 3 PLANOS ============ */
+.plans { width: 100%; text-align: center; }
+.plans__header { margin-bottom: 22px; }
+.plans__badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--neon); background: var(--neon-soft);
+  border: 1px solid var(--neon-line);
+  border-radius: 999px; padding: 0.35rem 0.9rem;
+  margin-bottom: 12px;
+}
+.plans__badge i {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--neon);
+  box-shadow: 0 0 10px var(--neon); animation: pulse 1.4s ease-in-out infinite;
+}
+.plans__title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4.6vw, 28px);
+  font-weight: 800; line-height: 1.22; letter-spacing: -0.025em;
+  color: var(--text-1); margin-bottom: 10px;
+}
+.plans__title em {
+  font-style: normal; color: var(--neon);
+  text-shadow: 0 0 24px rgba(43, 255, 136, 0.35);
+}
+.plans__desc {
+  font-size: 14px; line-height: 1.55; color: var(--text-2);
+  max-width: 46ch; margin: 0 auto;
+}
+
+/* Grid/Stack de Cards */
+.plans__grid {
+  display: grid; gap: 16px; margin-bottom: 22px; text-align: left;
+}
+.plancard {
+  position: relative;
+  background:
+    linear-gradient(to right, rgba(43, 255, 136, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(43, 255, 136, 0.03) 1px, transparent 1px),
+    var(--surface-solid);
+  background-size: 32px 32px, 32px 32px, auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 20px;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.plancard:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -10px rgba(0, 0, 0, 0.5);
+}
+.plancard--featured {
+  border-color: var(--neon);
+  box-shadow: 0 0 35px rgba(43, 255, 136, 0.2), 0 14px 34px -10px rgba(0, 0, 0, 0.6);
+  background:
+    linear-gradient(to right, rgba(43, 255, 136, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(43, 255, 136, 0.06) 1px, transparent 1px),
+    #0c1812;
+  background-size: 32px 32px, 32px 32px, auto;
+}
+.plancard--featured:hover {
+  border-color: #5cffa5;
+  box-shadow: 0 0 45px rgba(43, 255, 136, 0.3);
+}
+
+.plancard__tag {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #03140a; background: var(--neon);
+  border-radius: 999px; padding: 0.3rem 0.75rem;
+  margin-bottom: 10px;
+}
+.plancard__name {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 800; line-height: 1.2;
+  color: var(--text-1); margin-bottom: 4px;
+}
+.plancard__for {
+  font-size: 12.5px; color: var(--text-2); line-height: 1.4;
+  margin-bottom: 14px;
+}
+.plancard__price {
+  font-family: var(--font-display);
+  font-size: 34px; font-weight: 800; line-height: 1;
+  color: var(--text-1); margin-bottom: 16px;
+  display: flex; align-items: baseline; gap: 3px;
+}
+.plancard__price small {
+  font-size: 14px; font-weight: 600; color: var(--text-2);
+}
+.plancard__price span {
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 500; color: var(--text-3);
+  margin-left: 2px;
+}
+
+.plancard__list {
+  list-style: none; margin: 0 0 20px; padding: 0;
+  display: grid; gap: 9px;
+}
+.plancard__list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; line-height: 1.45; color: var(--text-2);
+}
+.plancard__list li::before {
+  content: "✓"; flex-shrink: 0;
+  font-family: var(--font-mono); font-weight: 700; color: var(--neon);
+  font-size: 13px; line-height: 1.4;
+}
+.plancard__list li strong { color: var(--text-1); font-weight: 600; }
+
+/* BLINDAGEM TOTAL DOS BOTOES DOS PLANOS (MOBILE & DESKTOP) */
+.plancard__btn,
+a.plancard__btn,
+button.plancard__btn,
+.plancard-btn-action {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  min-height: 52px !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 999 !important;
+  margin: 14px 0 10px !important;
+  padding: 14px 20px !important;
+  font-family: var(--font-mono) !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  overflow: visible !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4) !important;
+}
+
+.plancard__btn--featured,
+.plancard__btn--primary,
+a.plancard__btn--featured,
+a.plancard__btn--primary,
+button.plancard__btn--featured,
+button.plancard__btn--primary {
+  background: #2bff88 !important;
+  color: #03140a !important;
+  border: 2px solid #2bff88 !important;
+  box-shadow: 0 0 28px rgba(43, 255, 136, 0.55), 0 4px 16px rgba(0,0,0,0.4) !important;
+}
+
+.plancard__btn--featured:hover,
+.plancard__btn--primary:hover,
+button.plancard__btn--featured:hover,
+button.plancard__btn--primary:hover {
+  background: #5cffa5 !important;
+  border-color: #5cffa5 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 0 36px rgba(43, 255, 136, 0.75) !important;
+}
+
+.plancard__btn--ghost,
+a.plancard__btn--ghost,
+button.plancard__btn--ghost {
+  background: #11281c !important;
+  color: #2bff88 !important;
+  border: 2px solid #2bff88 !important;
+  box-shadow: 0 0 18px rgba(43, 255, 136, 0.22) !important;
+}
+
+.plancard__btn--ghost:hover,
+button.plancard__btn--ghost:hover {
+  background: #193d2b !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 28px rgba(43, 255, 136, 0.4) !important;
+}
+
+.plancard__btn svg {
+  width: 17px !important;
+  height: 17px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Box de Garantia */
+.plans__warranty {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(43, 255, 136, 0.06);
+  border: 1px solid rgba(43, 255, 136, 0.28);
+  border-radius: 12px; padding: 16px 18px;
+  text-align: left; margin-bottom: 18px;
+}
+.plans__warranty svg {
+  width: 32px; height: 32px; flex-shrink: 0; color: var(--neon);
+}
+.plans__warranty strong {
+  display: block; font-size: 13px; color: var(--text-1); margin-bottom: 2px;
+}
+.plans__warranty span {
+  display: block; font-size: 12px; line-height: 1.45; color: var(--text-2);
+}
+
+.plans__back {
+  display: inline-block;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em;
+  color: var(--text-3); text-decoration: underline; text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+.plans__back:hover { color: var(--neon); }
+
 /* ============ RESPONSIVO ============ */
 @media (max-width: 600px) {
   .qtop { padding-left: 44px; }
@@ -622,9 +1020,17 @@ body.admin-bar .qtop { padding-top: 48px; }
   .qback { left: 8px; top: 12px; width: 36px; height: 36px; }
   body.admin-bar .qback { top: 44px; }
   .qmain { padding: 24px 0 32px; }
-  .qopt { padding: 14px 15px; font-size: 14.5px; }
+  .qtext { font-size: 15px; line-height: 1.45; margin-bottom: 14px; }
+  .qopts { gap: 9px; }
+  .qopt { padding: 11px 13px; font-size: 13.5px; gap: 10px; border-radius: 10px; }
+  .qopt__key { width: 24px; height: 24px; font-size: 11.5px; }
+  .qopt__em { font-size: 16px; }
+  .qsubmit { padding: 13px 16px; font-size: 13px; margin-top: 14px; }
   .result__chips { gap: 8px; }
   .result__chips li { padding: 12px 6px; }
+  .result__solution { padding: 16px 14px 18px; }
+  .solution__list li { padding: 9px 10px; font-size: 12.5px; }
+  .result__title { font-size: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -640,7 +1046,7 @@ body.admin-bar .qtop { padding-top: 48px; }
 <div class="qapp" id="quizApp">
   <h1 class="sr-only">Quiz de conhecimentos — PC MG 2026</h1>
 
-  <button type="button" class="qback" id="quizBack" aria-label="Pergunta anterior" hidden>
+  <button type="button" class="qback" id="quizBack" aria-label="Pergunta anterior" onclick="window.pomaroliBack(event)" hidden>
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
@@ -663,20 +1069,20 @@ body.admin-bar .qtop { padding-top: 48px; }
             <span>Preparação para o concurso PC MG 2026</span>
           </div>
         </div>
-        <span class="intro__badge"><i aria-hidden="true"></i> Quiz gratuito · 10 perguntas</span>
+        <span class="intro__badge"><i aria-hidden="true"></i> Simulado FGV · 10 questões de alto nível</span>
         <h2 class="intro__title">Teste seus conhecimentos para o <em>PC MG 2026</em></h2>
         <p class="intro__desc">
-          10 questões de português, direito, raciocínio lógico e atualidades
-          no nível das provas de concurso. Responda com calma — a nota aparece
-          só no final.
+          10 questões difíceis no padrão clássico da FGV (Português, Penal,
+          Processo Penal, Constitucional, Administrativo e RLM).
+          Responda com calma — a nota aparece só no final.
         </p>
         <ul class="intro__meta">
-          <li>10 perguntas</li>
-          <li>5 alternativas</li>
+          <li>padrão FGV</li>
+          <li>casos práticos</li>
           <li>nota na hora</li>
           <li>sem cadastro</li>
         </ul>
-        <button type="button" class="intro__cta" id="quizStart">
+        <button type="button" class="intro__cta" id="quizStart" onclick="window.pomaroliStart(event)">
           Começar o quiz
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
@@ -688,13 +1094,13 @@ body.admin-bar .qtop { padding-top: 48px; }
         <p class="qcount" id="quizCount">Pergunta <b>01 / 10</b></p>
         <h2 class="qtext" id="quizQ"></h2>
         <div class="qopts" id="quizOpts"></div>
-        <button type="button" class="qsubmit" id="quizSubmit" disabled>Responder</button>
+        <button type="button" class="qsubmit" id="quizSubmit" onclick="window.pomaroliSubmit(event)" disabled>Responder</button>
       </div>
 
       <!-- Isca digital: entre Q4 e Q5 (Raio X do último edital) -->
       <div class="qstage lead" id="quizLead" hidden>
         <p class="qcount">Conteúdo <b>exclusivo</b></p>
-        <span class="lead__badge"><i aria-hidden="true"></i> Isca · Raio X do edital</span>
+        <span class="lead__badge"><i aria-hidden="true"></i> Bônus Exclusivo · Raio X do Edital</span>
         <h2 class="lead__title">As matérias mais cobradas no <em>último edital da PC MG</em></h2>
         <p class="lead__desc">
           Antes de seguir, desbloqueie o raio X com o peso real das disciplinas
@@ -723,11 +1129,30 @@ body.admin-bar .qtop { padding-top: 48px; }
         </p>
       </div>
 
-      <!-- Etapa 2: resultado -->
+      <!-- Etapa 2: Animação de Correção das Questões -->
+      <div class="qstage analyzing" id="quizAnalyzing" hidden>
+        <div class="analyzing__radar">
+          <div class="analyzing__circle"></div>
+          <div class="analyzing__pulse"></div>
+          <span class="analyzing__icon">⚡</span>
+        </div>
+        <span class="analyzing__badge"><i aria-hidden="true"></i> correção_em_tempo_real</span>
+        <h2 class="analyzing__title">Corrigindo suas questões com o <em>gabarito FGV</em></h2>
+        <p class="analyzing__status" id="analyzingStatus">Iniciando análise das 10 respostas...</p>
+        <div class="analyzing__meter">
+          <i class="analyzing__fill" id="analyzingFill"></i>
+        </div>
+      </div>
+
+      <!-- Etapa 3: Diagnóstico das Questões (sem os planos embutidos) -->
       <div class="qstage result" id="quizResult" hidden>
-        <p class="result__label">Sua nota no quiz</p>
+        <p class="result__status" id="resStatus">
+          <i aria-hidden="true"></i>
+          <span id="resStatusText">DIAGNÓSTICO PC MG</span>
+        </p>
+        <p class="result__label">Sua nota no simulado</p>
         <p class="result__score" id="resScore">0 / 10</p>
-        <p class="result__tier" id="resTier">—</p>
+        <h2 class="result__title" id="resTitle">—</h2>
         <p class="result__desc" id="resDesc"></p>
 
         <ul class="result__chips">
@@ -736,8 +1161,128 @@ body.admin-bar .qtop { padding-top: 48px; }
           <li><span>Aproveitamento</span><strong id="resPct">—</strong></li>
         </ul>
 
-        <a href="https://questoes.pomaroli.com.br/lp/" class="result__cta" id="resCta">Começar preparação</a>
-        <button type="button" class="result__restart" id="quizRestart">Refazer quiz</button>
+        <!-- Card da Solução Pomaroli focada na PC MG -->
+        <div class="result__solution" id="resSolution">
+          <div class="solution__head">
+            <span class="solution__badge">A Solução Pomaroli</span>
+            <h3 class="solution__title">Estude pouco tempo por dia, mas <em>100% focado no PC MG</em></h3>
+            <p class="solution__desc">
+              Você não precisa devorar apostilas de 800 páginas nem largar o seu emprego.
+              Nossa plataforma foi construída sob medida para a Polícia Civil de MG:
+            </p>
+          </div>
+          <ul class="solution__list">
+            <li>
+              <strong>Foco cirúrgico na sua banca:</strong> nada de teoria desnecessária. Só o que tem probabilidade real de cair no edital da PC MG.
+            </li>
+            <li>
+              <strong>Estudo enxuto (45 a 60 min/dia):</strong> ideal para quem trabalha ou tem rotina puxada e precisa de rendimento máximo.
+            </li>
+            <li>
+              <strong>Tutor IA 24/7 nas questões:</strong> errou a questão? A inteligência artificial desmonta a pegadinha na hora e cita a jurisprudência.
+            </li>
+            <li>
+              <strong>Engenharia reversa das questões:</strong> mapeamos suas maiores fraquezas e treinamos seu cérebro até o padrão da banca virar reflexo.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Botão principal que avança para a próxima etapa (Planos) -->
+        <button type="button" class="result__cta" id="resCta" onclick="window.pomaroliShowPlans(event)">
+          <span id="resCtaText">Conhecer os 3 planos & liberar acesso</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="result__safe">Acesso imediato · Focado no edital PC MG · Cancele quando quiser</p>
+        <button type="button" class="result__restart" id="quizRestart" onclick="window.pomaroliRestart(event)">Refazer simulado FGV</button>
+      </div>
+
+            <!-- Etapa 4: Próxima Etapa do Funil — Os 3 Planos & Checkout Direto -->
+      <div class="qstage plans" id="quizPlans" hidden>
+        <div class="plans__header">
+          <span class="plans__badge"><i aria-hidden="true"></i> liberar_acesso_pcmg</span>
+          <h2 class="plans__title">Escolha seu plano e estude <em>focado na PC MG</em></h2>
+          <p class="plans__desc">
+            Acesso imediato à plataforma com 96 mil+ questões, engenharia reversa da banca e Tutor IA 24/7. Cancele quando quiser.
+          </p>
+        </div>
+
+                        <div class="plans__grid">
+          <!-- Plano 1: Carreira -->
+          <article class="plancard" data-plan="carreira">
+            <h3 class="plancard__name">Protocolo Carreira</h3>
+            <p class="plancard__for">Para quem foca em apenas uma carreira</p>
+            <div class="plancard__price"><small>R$</small>29,90<span>/mês</span></div>
+
+            <ul class="plancard__list">
+              <li>Banco completo com <strong>96 mil+ questões</strong></li>
+              <li>Acesso focado na carreira da <strong>PC MG</strong></li>
+              <li>Tutor IA com até 50 consultas/mês</li>
+              <li>Flashcards com repetição espaçada</li>
+              <li>Gabaritos comentados com pegadinhas</li>
+              <li>App para celular e computador</li>
+              <li>Garantia incondicional de 7 dias</li>
+            </ul>
+
+            <a href="https://pay.hotmart.com/F107350441I?off=02e1pyg9" target="_blank" rel="noopener noreferrer" class="plancard__btn plancard__btn--ghost" onclick="window.pomaroliCheckout('https://pay.hotmart.com/F107350441I?off=02e1pyg9', 'Protocolo Carreira', 29.90, event)" style="display:flex !important;visibility:visible !important;opacity:1 !important;width:100% !important;min-height:52px !important;margin-top:16px !important;background:#11281c !important;color:#2bff88 !important;border:2px solid #2bff88 !important;border-radius:10px !important;font-family:var(--font-mono) !important;font-size:13.5px !important;font-weight:800 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;align-items:center !important;justify-content:center !important;gap:8px !important;cursor:pointer !important;box-shadow:0 0 18px rgba(43,255,136,0.25) !important;text-decoration:none !important;">
+              <span>Liberar Protocolo Carreira</span>
+              <svg viewBox="0 0 24 24" fill="none" style="width:17px;height:17px;" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+
+          <!-- Plano 2: Policial (MAIS ESCOLHIDO) -->
+          <article class="plancard plancard--featured" data-plan="policial">
+            <span class="plancard__tag">★ Recomendado PC MG · Mais Escolhido</span>
+            <h3 class="plancard__name">Protocolo Policial</h3>
+            <p class="plancard__for">Preparação cirúrgica com IA ilimitada e editais</p>
+            <div class="plancard__price"><small>R$</small>49,90<span>/mês</span></div>
+
+            <ul class="plancard__list">
+              <li><strong>Tudo do Protocolo Carreira</strong></li>
+              <li><strong>Tutor IA ILIMITADO 24/7</strong> (pergunte sem travas)</li>
+              <li><strong>Editais verticalizados</strong> da PC MG</li>
+              <li>Simulados cronometrados no estilo da prova</li>
+              <li>Decks de flashcards prontos por disciplina</li>
+              <li>Diagnóstico inteligente de pontos fracos e nota</li>
+              <li>Garantia incondicional de 7 dias</li>
+            </ul>
+
+            <a href="https://pay.hotmart.com/F107350441I?off=9ubsopfi" target="_blank" rel="noopener noreferrer" class="plancard__btn plancard__btn--primary" onclick="window.pomaroliCheckout('https://pay.hotmart.com/F107350441I?off=9ubsopfi', 'Protocolo Policial', 49.90, event)" style="display:flex !important;visibility:visible !important;opacity:1 !important;width:100% !important;min-height:54px !important;margin-top:16px !important;background:#2bff88 !important;color:#03140a !important;border:2px solid #2bff88 !important;border-radius:10px !important;font-family:var(--font-mono) !important;font-size:14px !important;font-weight:800 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;align-items:center !important;justify-content:center !important;gap:8px !important;cursor:pointer !important;box-shadow:0 0 28px rgba(43,255,136,0.6) !important;text-decoration:none !important;">
+              <span>Liberar Policial &amp; Carreiras</span>
+              <svg viewBox="0 0 24 24" fill="none" style="width:17px;height:17px;" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+
+          <!-- Plano 3: Black IA -->
+          <article class="plancard" data-plan="black">
+            <h3 class="plancard__name">Protocolo Black IA</h3>
+            <p class="plancard__for">Acesso total a todas as carreiras + IA prioritária</p>
+            <div class="plancard__price"><small>R$</small>79,90<span>/mês</span></div>
+
+            <ul class="plancard__list">
+              <li><strong>Acesso ilimitado a TODAS as carreiras</strong> (PC, PF, PRF, PMMG)</li>
+              <li>Tutor IA prioritário em alta velocidade</li>
+              <li>Geração automática de flashcards via IA</li>
+              <li>Editais pós-edital atualizados no mesmo dia</li>
+              <li>Suporte prioritário via WhatsApp</li>
+              <li>Garantia incondicional de 7 dias</li>
+            </ul>
+
+            <a href="https://pay.hotmart.com/F107350441I?off=jk7zhfg1" target="_blank" rel="noopener noreferrer" class="plancard__btn plancard__btn--ghost" onclick="window.pomaroliCheckout('https://pay.hotmart.com/F107350441I?off=jk7zhfg1', 'Protocolo Black IA', 79.90, event)" style="display:flex !important;visibility:visible !important;opacity:1 !important;width:100% !important;min-height:52px !important;margin-top:16px !important;background:#11281c !important;color:#2bff88 !important;border:2px solid #2bff88 !important;border-radius:10px !important;font-family:var(--font-mono) !important;font-size:13.5px !important;font-weight:800 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;align-items:center !important;justify-content:center !important;gap:8px !important;cursor:pointer !important;box-shadow:0 0 18px rgba(43,255,136,0.25) !important;text-decoration:none !important;">
+              <span>Liberar Black IA</span>
+              <svg viewBox="0 0 24 24" fill="none" style="width:17px;height:17px;" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+        </div>
+
+        <div class="plans__warranty">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <strong>Garantia incondicional de 7 dias</strong>
+            <span>Acesse a plataforma, estude as questões e use o Tutor IA. Se não gostar, devolvemos 100% do seu dinheiro sem burocracia.</span>
+          </div>
+        </div>
+
+        <button type="button" class="plans__back" id="plansBack" onclick="window.pomaroliPlansBack(event)">← Voltar ao meu diagnóstico</button>
       </div>
     </div>
   </main>
@@ -760,112 +1305,112 @@ body.admin-bar .qtop { padding-top: 48px; }
 
   var QUESTIONS = [
     {
-      q: "O termo \"altruísta\" indica a pessoa que:",
+      q: "(FGV — Português) Assinale a opção em que a frase apresenta ambiguidade estrutural não intencional decorrente da posição do pronome ou adjunto:",
       opts: [
-        { e: "\u{1F91D}", t: "Age em benefício dos outros" },
-        { e: "\u{1F64B}", t: "Age só em benefício próprio" },
-        { e: "\u{1F981}", t: "É extremamente ambiciosa" },
-        { e: "\u{1F6E1}️", t: "Evita qualquer risco" },
-        { e: "\u{1F9D0}", t: "Nunca aceita ajuda de ninguém" }
+        { e: "⚖️", t: "O delegado prendeu o suspeito em seu gabinete." },
+        { e: "🚔", t: "Os policiais chegaram à delegacia após o término do plantão." },
+        { e: "🔬", t: "Constatou-se a presença de vestígios de sangue na cena do crime." },
+        { e: "📋", t: "O perito examinou minuciosamente todas as armas apreendidas." },
+        { e: "⏳", t: "O interrogatório dos acusados durou aproximadamente quatro horas." }
       ],
       a: 0
     },
     {
-      q: "Conforme a Constituição Federal de 1988, é considerado direito social:",
+      q: "(FGV — Direito Penal) Marcos, com dolo de matar, efetua três disparos de arma de fogo contra Lucas. Ao vê-lo caído ferido, Marcos constata que ainda possui três munições intactas no tambor, mas decide voluntariamente não atirar mais e vai embora. Lucas é socorrido por terceiros e sobrevive com lesões corporais graves. No caso narrado, Marcos responderá por:",
       opts: [
-        { e: "\u{1F393}", t: "A educação, a saúde e a assistência aos desamparados" },
-        { e: "\u{1F54A}️", t: "A liberdade de consciência e de crença" },
-        { e: "\u{1F512}", t: "A inviolabilidade da intimidade e da vida privada" },
-        { e: "\u{1F3E0}", t: "O direito de propriedade" },
-        { e: "\u{1F5F3}️", t: "O direito de voto e a participação em plebiscito" }
-      ],
-      a: 0
-    },
-    {
-      q: "Qual é o próximo número da sequência: 2, 6, 12, 20, 30, ...?",
-      opts: [
-        { e: "\u{1F422}", t: "36" },
-        { e: "\u{1F680}", t: "40" },
-        { e: "\u{1F3AF}", t: "42" },
-        { e: "\u{1F419}", t: "44" },
-        { e: "\u{1F522}", t: "46" }
-      ],
-      a: 2
-    },
-    {
-      q: "Assinale a frase com uso correto da crase:",
-      opts: [
-        { e: "✍️", t: "Ele chegou à festa cedo." },
-        { e: "\u{1F6AA}", t: "Ele chegou ao festa cedo." },
-        { e: "\u{1F4C5}", t: "Ele chegou à festas ontem." },
-        { e: "\u{1F937}", t: "Ele chegou á festa cedo." },
-        { e: "\u{1F6AB}", t: "Ele chegou as festa cedo." }
-      ],
-      a: 0
-    },
-    {
-      q: "O prazo para a Administração Pública anular ato administrativo ilegal é de:",
-      opts: [
-        { e: "\u{1F4C5}", t: "2 anos" },
-        { e: "\u{1F4C6}", t: "3 anos" },
-        { e: "⏳", t: "5 anos" },
-        { e: "\u{1F570}️", t: "10 anos" },
-        { e: "⏱️", t: "1 ano" }
-      ],
-      a: 2
-    },
-    {
-      q: "Se todos os estudantes preparam a prova e João é estudante, então:",
-      opts: [
-        { e: "\u{1F645}", t: "João não prepara a prova" },
-        { e: "\u{1F6B6}", t: "João prepara a prova" },
-        { e: "\u{1F6AB}", t: "Nenhum estudante prepara a prova" },
-        { e: "\u{1F937}‍♂️", t: "Não é possível concluir nada" },
-        { e: "\u{1F468}‍\u{1F3EB}", t: "João é professor da turma" }
+        { e: "🚨", t: "Tentativa de homicídio qualificado" },
+        { e: "🎯", t: "Desistência voluntária, respondendo apenas por lesão corporal grave" },
+        { e: "🛡️", t: "Arrependimento eficaz, sendo isento de qualquer responsabilização penal" },
+        { e: "📉", t: "Arrependimento posterior, com redução obrigatória de pena de 1 a 2 terços" },
+        { e: "⚠️", t: "Tentativa de homicídio simples com causa de diminuição da pena" }
       ],
       a: 1
     },
     {
-      q: "Um produto de R$ 200,00 recebe desconto de 15%. Qual é o valor final?",
+      q: "(FGV — Processo Penal) Policiais civis recebem denúncia de tráfico em uma praça. Um policial disfarça-se de usuário, aproxima-se de Caio e insiste reiteradamente para que ele lhe consiga cocaína. Caio, que não praticava comércio no local, atende à insistência e, ao entregar a substância ao policial, recebe voz de prisão. À luz da Súmula 145 do STF, trata-se de flagrante:",
       opts: [
-        { e: "\u{1F4B8}", t: "R$ 170,00" },
-        { e: "\u{1F4B5}", t: "R$ 175,00" },
-        { e: "\u{1F4B0}", t: "R$ 180,00" },
-        { e: "\u{1FA99}", t: "R$ 185,00" },
-        { e: "\u{1F4B3}", t: "R$ 165,00" }
-      ],
-      a: 0
-    },
-    {
-      q: "Assinale a opção em que a vírgula é obrigatória e está corretamente empregada:",
-      opts: [
-        { e: "\u{1F4DD}", t: "Ao chegar em casa, ligou para a mãe." },
-        { e: "✍️", t: "Ao chegar em casa ligou para a mãe." },
-        { e: "\u{1F4AC}", t: "Ao chegar, em casa ligou para a mãe." },
-        { e: "\u{1F58A}️", t: "Ao chegar em casa, ligou, para a mãe." },
-        { e: "\u{1F4CB}", t: "Ao chegar em casa ligou, para a mãe." }
-      ],
-      a: 0
-    },
-    {
-      q: "Quantos deputados estaduais compõem a Assembleia Legislativa de Minas Gerais (ALE-MG)?",
-      opts: [
-        { e: "\u{1F426}", t: "52" },
-        { e: "\u{1F989}", t: "63" },
-        { e: "\u{1F985}", t: "77" },
-        { e: "\u{1F99A}", t: "85" },
-        { e: "\u{1F426}️", t: "60" }
+        { e: "✅", t: "Legal (flagrante esperado), pois o tráfico é crime permanente" },
+        { e: "❌", t: "Forjado, praticado diretamente com dolo por terceiro estranho à polícia" },
+        { e: "⛔", t: "Preparado (provocado), caracterizando hipótese de crime impossível" },
+        { e: "⚖️", t: "Diferido, admitido em virtude da técnica especial de ação controlada" },
+        { e: "📝", t: "Válido, admitindo a conversão de ofício da prisão em preventiva" }
       ],
       a: 2
     },
     {
-      q: "Na hierarquia das normas do ordenamento brasileiro, qual prevalece em caso de conflito?",
+      q: "(FGV — Direito Constitucional) Durante patrulhamento noturno, policiais militares avistam um suspeito em frente a um imóvel. Ao notar a aproximação da viatura, o indivíduo corre para dentro da casa. Sem mandado judicial e sem outros elementos prévios, os policiais invadem o domicílio e apreendem drogas. De acordo com o STF (Tema 280 de Repercussão Geral):",
       opts: [
-        { e: "\u{1FDC}️", t: "A lei ordinária" },
-        { e: "\u{1F4D5}", t: "O Código Civil" },
-        { e: "\u{1F4D7}", t: "A Constituição Federal" },
-        { e: "\u{1F4D9}", t: "A súmula do STJ" },
-        { e: "\u{1F4DC}", t: "A emenda constitucional" }
+        { e: "🚨", t: "A busca foi lícita, pois a fuga isolada do suspeito gera justa causa automática" },
+        { e: "📦", t: "A busca é sempre legal se confirmada a apreensão de drogas em flagrante" },
+        { e: "🛑", t: "A busca foi ilícita, pois a mera fuga não constitui fundada razão prévia" },
+        { e: "📋", t: "A prova é válida caso o morador assine autorização em momento posterior" },
+        { e: "⚖️", t: "O flagrante é legal, ensejando apenas responsabilidade civil do Estado" }
+      ],
+      a: 2
+    },
+    {
+      q: "(FGV — Direito Administrativo) Roberto, delegado de polícia, por manifesta negligência e falta de atenção na guarda, permitiu que terceiro extraviasse bem apreendido em cartório. Restou comprovada a total ausência de dolo ou conluio. Conforme a Lei de Improbidade Administrativa atualizada pela Lei nº 14.230/2021, a conduta de Roberto:",
+      opts: [
+        { e: "⚠️", t: "Configura ato de improbidade na modalidade culposa por lesão ao erário" },
+        { e: "🛡️", t: "Não configura improbidade administrativa, pois a lei atual exige dolo específico" },
+        { e: "🏛️", t: "Constitui infração de improbidade que atenta contra os princípios da administração" },
+        { e: "📉", t: "Gera suspensão compulsória de direitos políticos por culpa gravosa" },
+        { e: "📑", t: "Equipara-se a prevaricação administrativa de natureza objetiva" }
+      ],
+      a: 1
+    },
+    {
+      q: "(FGV — Português) \"O delegado reuniu fortes indícios contra o acusado, não obstante o laudo pericial tenha apresentado divergências técnicas.\" No texto, a locução conjuntiva em destaque expressa valor semântico de:",
+      opts: [
+        { e: "🔄", t: "Concessão" },
+        { e: "⚡", t: "Consequência" },
+        { e: "🔍", t: "Causa" },
+        { e: "📐", t: "Proporcionalidade" },
+        { e: "🎯", t: "Condição" }
+      ],
+      a: 0
+    },
+    {
+      q: "(FGV — Direito Penal) Gabriel, funcionário público, concorreu culposamente para que terceiro subtraísse dinheiro da repartição. Antes de proferida a sentença penal condenatória irrecorrível, Gabriel repara voluntária e integralmente o dano causado ao erário. Nos termos do Código Penal, a reparação do dano:",
+      opts: [
+        { e: "🕊️", t: "Extingue a punibilidade de Gabriel" },
+        { e: "📉", t: "Reduz a pena imposta a Gabriel de um a dois terços" },
+        { e: "⚖️", t: "Reduz a pena de Gabriel pela metade" },
+        { e: "📝", t: "Funciona apenas como circunstância atenuante de pena" },
+        { e: "🚫", t: "Não produz efeito penal, gerando apenas quitação na esfera civil" }
+      ],
+      a: 0
+    },
+    {
+      q: "(FGV — Raciocínio Lógico) Um perito criminal afirmou em juízo: \"Se a arma foi disparada recentemente, então há vestígios de pólvora nas mãos do suspeito.\" A negação lógica dessa afirmação é formalmente equivalente a:",
+      opts: [
+        { e: "❌", t: "Se a arma não foi disparada, não há vestígios de pólvora nas mãos do suspeito." },
+        { e: "🔄", t: "A arma não foi disparada recentemente ou há vestígios de pólvora nas mãos." },
+        { e: "🎯", t: "A arma foi disparada recentemente e não há vestígios de pólvora nas mãos do suspeito." },
+        { e: "➡️", t: "Se há vestígios de pólvora nas mãos do suspeito, a arma foi disparada." },
+        { e: "⚡", t: "A arma não foi disparada recentemente e há vestígios de pólvora nas mãos." }
+      ],
+      a: 2
+    },
+    {
+      q: "(FGV — Processo Penal) Em audiência de custódia, o Ministério Público opina pela liberdade provisória com cautelares e a defesa pede a soltura. O juiz, entendendo estarem presentes os requisitos da ordem pública, decreta de ofício a prisão preventiva. Segundo o CPP e a jurisprudência atual do STF e STJ, a decisão judicial é:",
+      opts: [
+        { e: "✅", t: "Válida, pois o juiz mantém poder cautelar geral na audiência de custódia" },
+        { e: "⛔", t: "Nula, pois é expressamente vedada a decretação de preventiva de ofício pelo magistrado" },
+        { e: "⚖️", t: "Legítima, desde que ratificada pelo Tribunal de Justiça em até 48 horas" },
+        { e: "📑", t: "Regular, pois o parecer ministerial não vincula a convicção do juiz" },
+        { e: "🏠", t: "Anulável, convertendo-se compulsoriamente em prisão domiciliar cautelar" }
+      ],
+      a: 1
+    },
+    {
+      q: "(FGV — Direito Constitucional) De acordo com a jurisprudência pacificada do Supremo Tribunal Federal (STF), assinale a hipótese em que é cabível a impetração de Habeas Corpus:",
+      opts: [
+        { e: "💼", t: "Para anular ato demissório aplicado a policial civil em processo disciplinar" },
+        { e: "💰", t: "Para questionar a imposição isolada de pena de multa em condenação criminal" },
+        { e: "⚔️", t: "Para exercer o controle de estrita legalidade formal sobre punição disciplinar militar" },
+        { e: "🗳️", t: "Para impugnar decisão judicial que suspende direitos políticos por improbidade" },
+        { e: "📄", t: "Para discutir a fixação de valor mínimo de reparação civil em sentença penal" }
       ],
       a: 2
     }
@@ -876,6 +1421,8 @@ body.admin-bar .qtop { padding-top: 48px; }
   var STAGE_QUIZ = "quiz";
   var STAGE_LEAD = "lead";
   var STAGE_RESULT = "result";
+  var STAGE_ANALYZING = "analyzing";
+  var STAGE_PLANS = "plans";
 
   /* Cole a URL /exec do Apps Script (aba "Implantar → Aplicativo da Web").
      Ex.: https://script.google.com/macros/s/AKfyc.../exec
@@ -885,7 +1432,13 @@ body.admin-bar .qtop { padding-top: 48px; }
   var stageIntro = document.getElementById("quizIntro");
   var stageQuiz = document.getElementById("quizStage");
   var stageLead = document.getElementById("quizLead");
+  var stageAnalyzing = document.getElementById("quizAnalyzing");
   var stageResult = document.getElementById("quizResult");
+  var stagePlans = document.getElementById("quizPlans");
+  var elAnalyzingStatus = document.getElementById("analyzingStatus");
+  var elAnalyzingFill = document.getElementById("analyzingFill");
+  var elResCta = document.getElementById("resCta");
+  var elPlansBack = document.getElementById("plansBack");
   var elBar = document.getElementById("quizBar");
   var elQ = document.getElementById("quizQ");
   var elOpts = document.getElementById("quizOpts");
@@ -904,6 +1457,66 @@ body.admin-bar .qtop { padding-top: 48px; }
   var current = 0;
   var stage = STAGE_INTRO;
   var leadDone = false;
+
+  /* Dados do lead capturado para passagem direta ao checkout da Hotmart */
+  var capturedLead = {
+    email: "",
+    phone: "",
+    phoneac: "",
+    phonenumber: ""
+  };
+
+  /* Extrai DDD e número limpos sem caracteres especiais */
+  function extractPhoneParts(raw) {
+    var d = (raw || "").replace(/\D/g, "");
+    if (d.indexOf("55") === 0) {
+      if (d.length === 12 || d.length === 13) {
+        d = d.slice(2);
+      }
+    }
+    var ac = "";
+    var num = "";
+    if (d.length >= 10) {
+      ac = d.slice(0, 2);
+      num = d.slice(2);
+    }
+    return { phoneac: ac, phonenumber: num };
+  }
+
+  /* Constrói URL da Hotmart enriquecida com os dados do lead */
+  function buildCheckoutUrl(baseUrl) {
+    if (!baseUrl) return "";
+    var url = baseUrl;
+    var sep = url.indexOf("?") === -1 ? "?" : "&";
+
+    if (url.indexOf("sck=") === -1) {
+      url = url + sep + "sck=quiz_pcmg";
+      sep = "&";
+    }
+
+    if (capturedLead.email) {
+      if (url.indexOf("email=") === -1) {
+        url = url + sep + "email=" + encodeURIComponent(capturedLead.email);
+        sep = "&";
+      }
+    }
+
+    if (capturedLead.phoneac) {
+      if (url.indexOf("phoneac=") === -1) {
+        url = url + sep + "phoneac=" + encodeURIComponent(capturedLead.phoneac);
+        sep = "&";
+      }
+    }
+
+    if (capturedLead.phonenumber) {
+      if (url.indexOf("phonenumber=") === -1) {
+        url = url + sep + "phonenumber=" + encodeURIComponent(capturedLead.phonenumber);
+        sep = "&";
+      }
+    }
+
+    return url;
+  }
 
   function pad(n) { return n < 10 ? "0" + n : String(n); }
 
@@ -951,37 +1564,50 @@ body.admin-bar .qtop { padding-top: 48px; }
   }
 
   /* ---- Tela inicial ---- */
+  /* ---- Auxiliar seguro para alternar estágios do quiz ---- */
+  function setVisible(el, visible) {
+    if (!el) return;
+    el.hidden = !visible;
+    if (visible) {
+      if (el.removeAttribute) el.removeAttribute("hidden");
+    } else {
+      if (el.setAttribute) el.setAttribute("hidden", "");
+    }
+  }
+
+  function hideStages() {
+    setVisible(stageIntro, false);
+    setVisible(stageQuiz, false);
+    setVisible(stageLead, false);
+    setVisible(stageAnalyzing, false);
+    setVisible(stageResult, false);
+    setVisible(stagePlans, false);
+  }
+
   function showIntro() {
     stage = STAGE_INTRO;
-    stageIntro.hidden = false;
-    stageQuiz.hidden = true;
-    stageLead.hidden = true;
-    stageResult.hidden = true;
-    elBack.hidden = true;
+    hideStages();
+    setVisible(stageIntro, true);
+    if (elBack) setVisible(elBack, false);
     setProgress(0);
     reenter(stageIntro);
     save();
   }
 
-  function hideStages() {
-    stageIntro.hidden = true;
-    stageQuiz.hidden = true;
-    stageLead.hidden = true;
-    stageResult.hidden = true;
-  }
-
-  /* ---- Isca digital (após Q4, antes de Q5) ---- */
+    /* ---- Etapa de captura do Lead (entre questão 4 e 5) ---- */
   function showLead() {
     stage = STAGE_LEAD;
+    trackEvent("quiz_lead_view", { from_step: 4 });
     hideStages();
-    stageLead.hidden = false;
-    elBack.hidden = false;
+    setVisible(stageLead, true);
+    if (elBack) setVisible(elBack, true);
     setProgress(4);
-    if (elLeadError) elLeadError.hidden = true;
+    if (elLeadError) setVisible(elLeadError, false);
     if (elLeadEmail) elLeadEmail.classList.remove("is-invalid");
     if (elLeadPhone) elLeadPhone.classList.remove("is-invalid");
     reenter(stageLead);
     save();
+    try { window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" }); } catch (e) {}
   }
 
   function validEmail(v) {
@@ -1005,11 +1631,18 @@ body.admin-bar .qtop { padding-top: 48px; }
 
   function finishLead() {
     leadDone = true;
+    trackEvent("generate_lead", { lead_type: "raio_x_edital", source: "quiz-pcmg-raiox" });
     save();
     current = 4;
     renderQuiz();
-    scrollTo(stageQuiz);
+    try { window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" }); } catch (e) {}
   }
+
+  window.pomaroliSkipLead = function (ev) {
+    if (ev) { try { ev.preventDefault(); } catch (e) {} }
+    trackEvent("quiz_lead_skip", { question_number: 4 });
+    finishLead();
+  };
 
   function sendLead(email, phone) {
     if (!LEAD_ENDPOINT) {
@@ -1045,32 +1678,50 @@ body.admin-bar .qtop { padding-top: 48px; }
   if (elLeadForm) {
     elLeadForm.addEventListener("submit", function (ev) {
       ev.preventDefault();
-      var email = (elLeadEmail.value || "").trim();
-      var phone = (elLeadPhone.value || "").trim();
+      var email = (elLeadEmail ? (elLeadEmail.value || "") : "").trim();
+      var phone = (elLeadPhone ? (elLeadPhone.value || "") : "").trim();
       var ok = true;
+
       if (!validEmail(email)) {
-        elLeadEmail.classList.add("is-invalid");
+        if (elLeadEmail) elLeadEmail.classList.add("is-invalid");
         ok = false;
       } else {
-        elLeadEmail.classList.remove("is-invalid");
+        if (elLeadEmail) elLeadEmail.classList.remove("is-invalid");
       }
+
       if (!validPhone(phone)) {
-        elLeadPhone.classList.add("is-invalid");
+        if (elLeadPhone) elLeadPhone.classList.add("is-invalid");
         ok = false;
       } else {
-        elLeadPhone.classList.remove("is-invalid");
+        if (elLeadPhone) elLeadPhone.classList.remove("is-invalid");
       }
+
       if (!ok) {
-        if (elLeadError) elLeadError.hidden = false;
+        if (elLeadError) setVisible(elLeadError, true);
         return;
       }
-      if (elLeadError) elLeadError.hidden = true;
+
+      if (elLeadError) setVisible(elLeadError, false);
       if (elLeadSubmit) {
         elLeadSubmit.disabled = true;
-        elLeadSubmit.textContent = "Enviando…";
+        elLeadSubmit.textContent = "Liberando questão 05...";
       }
+      /* Salva os dados do lead para pré-preenchimento no checkout Hotmart */
+      capturedLead.email = email;
+      capturedLead.phone = phone;
+      var phoneParts = extractPhoneParts(phone);
+      capturedLead.phoneac = phoneParts.phoneac;
+      capturedLead.phonenumber = phoneParts.phonenumber;
+
+      try {
+        sessionStorage.setItem("pomaroli_lead_data", JSON.stringify(capturedLead));
+        localStorage.setItem("pomaroli_lead_data", JSON.stringify(capturedLead));
+      } catch (e) {}
+
+      ensureCheckoutButtons();
       sendLead(email, phone);
     });
+
     if (elLeadPhone) {
       elLeadPhone.addEventListener("input", function () {
         elLeadPhone.value = formatPhone(elLeadPhone.value);
@@ -1084,17 +1735,16 @@ body.admin-bar .qtop { padding-top: 48px; }
     if (!q) return;
     stage = STAGE_QUIZ;
 
-    stageIntro.hidden = true;
-    stageResult.hidden = true;
-    stageLead.hidden = true;
-    stageQuiz.hidden = false;
+    hideStages();
+    setVisible(stageQuiz, true);
 
     setProgress(current + 1);
+    trackEvent("quiz_question_view", { question_number: current + 1, total_questions: QUESTIONS.length });
     if (elCount) {
       elCount.innerHTML = "Pergunta <b>" + pad(current + 1) + " / " + pad(QUESTIONS.length) + "</b>";
     }
-    elQ.textContent = q.q;
-    elBack.hidden = false;
+    if (elQ) elQ.textContent = q.q;
+    if (elBack) setVisible(elBack, true);
     if (elSubmit) {
       var answered = false;
       if (answers[current] !== null) {
@@ -1103,29 +1753,32 @@ body.admin-bar .qtop { padding-top: 48px; }
       elSubmit.disabled = !answered;
     }
 
-    elOpts.innerHTML = "";
-    for (var i = 0; i < q.opts.length; i++) {
-      (function (idx) {
-        var b = document.createElement("button");
-        b.type = "button";
-        b.className = "qopt" + (answers[current] === idx ? " is-selected" : "");
-        var key = document.createElement("span");
-        key.className = "qopt__key";
-        key.setAttribute("aria-hidden", "true");
-        key.textContent = String.fromCharCode(65 + idx);
-        var em = document.createElement("span");
-        em.className = "qopt__em";
-        em.setAttribute("aria-hidden", "true");
-        em.textContent = q.opts[idx].e;
-        var txt = document.createElement("span");
-        txt.className = "qopt__tx";
-        txt.textContent = q.opts[idx].t;
-        b.appendChild(key);
-        b.appendChild(em);
-        b.appendChild(txt);
-        b.addEventListener("click", function () { select(idx); });
-        elOpts.appendChild(b);
-      })(i);
+    if (elOpts) {
+      elOpts.innerHTML = "";
+      for (var i = 0; i < q.opts.length; i++) {
+        (function (idx) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "qopt" + (answers[current] === idx ? " is-selected" : "");
+          var key = document.createElement("span");
+          key.className = "qopt__key";
+          key.setAttribute("aria-hidden", "true");
+          key.textContent = String.fromCharCode(65 + idx);
+          var em = document.createElement("span");
+          em.className = "qopt__em";
+          em.setAttribute("aria-hidden", "true");
+          em.textContent = q.opts[idx].e;
+          var txt = document.createElement("span");
+          txt.className = "qopt__tx";
+          txt.textContent = q.opts[idx].t;
+          b.appendChild(key);
+          b.appendChild(em);
+          b.appendChild(txt);
+          b.setAttribute("onclick", "window.pomaroliSelect(" + idx + ")");
+          b.addEventListener("click", function () { select(idx); });
+          elOpts.appendChild(b);
+        })(i);
+      }
     }
     reenter(stageQuiz);
   }
@@ -1164,9 +1817,47 @@ body.admin-bar .qtop { padding-top: 48px; }
         renderQuiz();
         save();
       } else {
-        showResult(true);
+        startAnalyzing();
       }
     }, delay);
+  }
+
+  
+  /* ---- Animação de Correção em tempo real ---- */
+  function startAnalyzing() {
+    stage = STAGE_ANALYZING;
+    trackEvent("quiz_analyzing_start", { total_questions: QUESTIONS.length });
+    hideStages();
+    setVisible(stageAnalyzing, true);
+    if (elBack) setVisible(elBack, false);
+    setProgress(QUESTIONS.length);
+    reenter(stageAnalyzing);
+    try { window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" }); } catch (e) {}
+
+    if (elAnalyzingFill) elAnalyzingFill.style.width = "0%";
+    if (elAnalyzingStatus) elAnalyzingStatus.textContent = "Processando 10 respostas...";
+
+    var steps = [
+      { t: 600, pct: "40%", msg: "Cruzando com o gabarito oficial da banca FGV..." },
+      { t: 1400, pct: "75%", msg: "Mapeando pegadinhas e jurisprudência..." },
+      { t: 2100, pct: "95%", msg: "Calculando probabilidade de aprovação na PC MG..." },
+      { t: 2600, pct: "100%", msg: "Diagnóstico final concluído!" }
+    ];
+
+    for (var s = 0; s < steps.length; s++) {
+      (function (item) {
+        setTimeout(function () {
+          if (stage !== STAGE_ANALYZING) return;
+          if (elAnalyzingStatus) elAnalyzingStatus.textContent = item.msg;
+          if (elAnalyzingFill) elAnalyzingFill.style.width = item.pct;
+        }, item.t);
+      })(steps[s]);
+    }
+
+    setTimeout(function () {
+      if (stage !== STAGE_ANALYZING) return;
+      showResult(true);
+    }, 2900);
   }
 
   /* ---- Nota final ---- */
@@ -1181,18 +1872,27 @@ body.admin-bar .qtop { padding-top: 48px; }
   var TIERS = [
     {
       min: 8,
-      name: "Nível de aprovado",
-      desc: "Você mandou bem: domínio sólido de português, direito e raciocínio lógico. É esse nível que a banca do PC MG espera no dia da prova — agora é manter o ritmo com questões e simulados."
+      status: "pass",
+      badge: "Diagnóstico PC MG: Potencial de Aprovação",
+      title: "Ótimo rendimento! Você tem base para passar na PC MG.",
+      desc: "Você acertou a maioria, mas a nota de corte policial se decide nos décimos. Nossa plataforma permite que você estude pouco tempo por dia para manter o ritmo e lapidar apenas os pontos cegos com IA.",
+      cta: "Ver os 3 planos & garantir minha vaga"
     },
     {
-      min: 5,
-      name: "Bom nível",
-      desc: "Você já tem uma base sólida, mas ainda escorrega em alguns pontos. Com revisão orientada e questões da sua banca, você fecha essas lacunas e chega afiado no dia da prova do PC MG."
+      min: 7,
+      status: "warn",
+      badge: "Diagnóstico PC MG: Zona de Risco",
+      title: "Você atingiu o corte mínimo, mas qualquer pegadinha te eliminaria.",
+      desc: "70% de acerto é a linha tênue da eliminação na Polícia Civil de MG. Uma única questão mal interpretada coloca centenas de concorrentes na sua frente. Com a Pomaroli, você fecha essas brechas estudando direto no alvo.",
+      cta: "Ver os 3 planos & blindar minha nota"
     },
     {
       min: 0,
-      name: "Hora de começar",
-      desc: "Sem drama: todo aprovado já esteve aqui. O que separa você do PC MG é método — trilha organizada, questões comentadas e revisão. A plataforma monta esse caminho pra você começar hoje."
+      status: "fail",
+      badge: "Diagnóstico PC MG: Reprovado",
+      title: "Com essa pontuação, você NÃO passaria na prova de hoje.",
+      desc: "A nota de corte real da PC MG fica acima de 70% a 75%. Com esse resultado, seu nome estaria fora da lista de convocados. Mas você não precisa perder meses lendo PDFs gigantescos de 800 páginas para virar o jogo.",
+      cta: "Ver os 3 planos & liberar acesso"
     }
   ];
 
@@ -1208,64 +1908,270 @@ body.admin-bar .qtop { padding-top: 48px; }
     var tier = tierFor(hits);
 
     stage = STAGE_RESULT;
-    document.getElementById("resScore").textContent = hits + " / " + QUESTIONS.length;
-    document.getElementById("resTier").textContent = tier.name;
-    document.getElementById("resDesc").textContent = tier.desc;
-    document.getElementById("resHits").textContent = String(hits);
-    document.getElementById("resMiss").textContent = String(QUESTIONS.length - hits);
-    document.getElementById("resPct").textContent = Math.round((hits / QUESTIONS.length) * 100) + "%";
+    trackEvent("quiz_result_view", { score: hits, total: QUESTIONS.length, status: tier.status });
+    hideStages();
 
-    stageIntro.hidden = true;
-    stageQuiz.hidden = true;
-    stageLead.hidden = true;
-    stageResult.hidden = false;
-    elBack.hidden = true;
+    var elScore = document.getElementById("resScore");
+    if (elScore) {
+      elScore.textContent = hits + " / " + QUESTIONS.length;
+      elScore.classList.remove("is-fail", "is-warn", "is-pass");
+      elScore.classList.add("is-" + tier.status);
+    }
+
+    var elStatus = document.getElementById("resStatus");
+    if (elStatus) {
+      elStatus.classList.remove("result__status--fail", "result__status--warn", "result__status--pass");
+      elStatus.classList.add("result__status--" + tier.status);
+    }
+
+    var elStatusText = document.getElementById("resStatusText");
+    if (elStatusText) elStatusText.textContent = tier.badge;
+
+    var elTitle = document.getElementById("resTitle");
+    if (elTitle) elTitle.textContent = tier.title;
+
+    var elDesc = document.getElementById("resDesc");
+    if (elDesc) elDesc.textContent = tier.desc;
+
+    var elHits = document.getElementById("resHits");
+    if (elHits) elHits.textContent = String(hits);
+
+    var elMiss = document.getElementById("resMiss");
+    if (elMiss) elMiss.textContent = String(QUESTIONS.length - hits);
+
+    var elPct = document.getElementById("resPct");
+    if (elPct) elPct.textContent = Math.round((hits / QUESTIONS.length) * 100) + "%";
+
+    var elCtaText = document.getElementById("resCtaText");
+    if (elCtaText) elCtaText.textContent = tier.cta;
+
+    setVisible(stageResult, true);
+    setVisible(stagePlans, false);
+    if (elBack) setVisible(elBack, false);
     setProgress(QUESTIONS.length);
     reenter(stageResult);
     if (animate) scrollTo(stageResult);
     save();
+    ensureCheckoutButtons();
+  }
+
+  function showPlans(animate) {
+    stage = STAGE_PLANS;
+    trackEvent("quiz_plans_view", { from_tier: "diagnostico_fgv" });
+    hideStages();
+    setVisible(stagePlans, true);
+    if (elBack) setVisible(elBack, false);
+    setProgress(QUESTIONS.length);
+    reenter(stagePlans);
+    try { window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" }); } catch (e) {}
+    ensureCheckoutButtons();
+    save();
   }
 
   function restart() {
+    trackEvent("quiz_restart", {});
     current = 0;
     for (var i = 0; i < QUESTIONS.length; i++) answers[i] = null;
-    stageResult.hidden = true;
-    stageIntro.hidden = true;
-    stageLead.hidden = true;
-    stageQuiz.hidden = false;
+    hideStages();
     renderQuiz();
     save();
-    scrollTo(stageQuiz);
+    try { window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" }); } catch (e) {}
   }
 
-  /* ---- Iniciar / voltar / reiniciar ---- */
-  if (elStart) {
-    elStart.addEventListener("click", function () {
-      current = 0;
-      for (var i = 0; i < QUESTIONS.length; i++) answers[i] = null;
+  /* ---- Funções globais de navegação à prova de falhas (HTML inline + listeners) ---- */
+  window.pomaroliSelect = function (idx) { select(idx); };
+
+  /* ---- Rastreamento oficial GA4 (Funil PC MG) ---- */
+  function trackEvent(name, params) {
+    var p = params || {};
+    if (typeof window.gtag === "function") {
+      try {
+        window.gtag("event", name, p);
+      } catch (e) {}
+    }
+    if (window.dataLayer) {
+      if (Array.isArray(window.dataLayer)) {
+        try {
+          var payload = { event: name };
+          for (var k in p) {
+            if (Object.prototype.hasOwnProperty.call(p, k)) {
+              payload[k] = p[k];
+            }
+          }
+          window.dataLayer.push(payload);
+        } catch (e) {}
+      }
+    }
+  }
+
+    /* ---- Redirecionamento blindado para checkout Hotmart (com dados do lead) ---- */
+  window.pomaroliCheckout = function (baseUrl, planName, planPrice, ev) {
+    if (ev) {
+      try {
+        if (ev.preventDefault) ev.preventDefault();
+      } catch (e) {}
+    }
+    if (!baseUrl) return;
+    var finalUrl = buildCheckoutUrl(baseUrl);
+    trackEvent("begin_checkout", {
+      item_name: planName || "Plano PC MG",
+      value: planPrice || 0,
+      currency: "BRL",
+      destination: finalUrl
+    });
+    try {
+      window.location.href = finalUrl;
+    } catch (e) {
+      try {
+        window.open(finalUrl, "_blank", "noopener,noreferrer");
+      } catch (err) {
+        window.location = finalUrl;
+      }
+    }
+  };
+
+  window.pomaroliStart = function (ev) {
+    if (ev) { try { ev.preventDefault(); } catch (e) {} }
+    trackEvent("quiz_start", { quiz_name: "PC MG 2026 Simulado FGV" });
+    current = 0;
+    for (var i = 0; i < QUESTIONS.length; i++) answers[i] = null;
+    hideStages();
+    renderQuiz();
+    save();
+    try { window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" }); } catch (e) {}
+  };
+
+  window.pomaroliBack = function (ev) {
+    if (ev) { try { ev.preventDefault(); } catch (e) {} }
+    if (stage === STAGE_LEAD) {
+      current = 3;
       renderQuiz();
       save();
-      scrollTo(stageQuiz);
-    });
-  }
-  if (elBack) {
-    elBack.addEventListener("click", function () {
-      if (stage === STAGE_LEAD) {
-        current = 3;
-        renderQuiz();
-        save();
-        return;
+      return;
+    }
+    if (current > 0) {
+      current--;
+      renderQuiz();
+      save();
+    } else {
+      showIntro();
+      try { window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" }); } catch (e) {}
+    }
+  };
+
+  window.pomaroliSubmit = function (ev) {
+    if (ev) { try { ev.preventDefault(); } catch (e) {} }
+    submitAnswer();
+  };
+
+  window.pomaroliShowPlans = function (ev) {
+    if (ev) { try { ev.preventDefault(); } catch (e) {} }
+    showPlans(true);
+  };
+
+  window.pomaroliPlansBack = function (ev) {
+    if (ev) { try { ev.preventDefault(); } catch (e) {} }
+    showResult(false);
+    try { window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" }); } catch (e) {}
+  };
+
+  window.pomaroliRestart = function (ev) {
+    if (ev) { try { ev.preventDefault(); } catch (e) {} }
+    restart();
+  };
+
+  /* Event listeners tradicionais */
+  if (elStart) elStart.addEventListener("click", window.pomaroliStart);
+  if (elBack) elBack.addEventListener("click", window.pomaroliBack);
+  if (elSubmit) elSubmit.addEventListener("click", window.pomaroliSubmit);
+  if (elResCta) elResCta.addEventListener("click", window.pomaroliShowPlans);
+  if (elPlansBack) elPlansBack.addEventListener("click", window.pomaroliPlansBack);
+  if (elRestart) elRestart.addEventListener("click", window.pomaroliRestart);
+
+  /* Delegação de eventos no document com captura para garantir resposta a qualquer clique */
+  document.addEventListener("click", function (e) {
+    var target = e.target;
+    if (!target) return;
+
+    var startBtn = target.closest ? target.closest("#quizStart, .intro__cta") : null;
+    if (startBtn) {
+      if (e.preventDefault) e.preventDefault();
+      window.pomaroliStart();
+      return;
+    }
+
+    var resCtaBtn = target.closest ? target.closest("#resCta, .result__cta") : null;
+    if (resCtaBtn) {
+      if (e.preventDefault) e.preventDefault();
+      window.pomaroliShowPlans();
+      return;
+    }
+
+    var plansBackBtn = target.closest ? target.closest("#plansBack, .plans__back") : null;
+    if (plansBackBtn) {
+      if (e.preventDefault) e.preventDefault();
+      window.pomaroliPlansBack();
+      return;
+    }
+
+    var restartBtn = target.closest ? target.closest("#quizRestart, .result__restart") : null;
+    if (restartBtn) {
+      if (e.preventDefault) e.preventDefault();
+      window.pomaroliRestart();
+      return;
+    }
+  }, true);
+
+  /* ---- Garantia absoluta de funcionamento dos botões de checkout Hotmart ---- */
+  function ensureCheckoutButtons() {
+    var checkouts = {
+      carreira: { url: "https://pay.hotmart.com/F107350441I?off=02e1pyg9", name: "Protocolo Carreira", price: 29.90 },
+      policial: { url: "https://pay.hotmart.com/F107350441I?off=9ubsopfi", name: "Protocolo Policial", price: 49.90 },
+      black: { url: "https://pay.hotmart.com/F107350441I?off=jk7zhfg1", name: "Protocolo Black IA", price: 79.90 }
+    };
+
+    var btns = document.querySelectorAll(".plancard button.plancard__btn, .plancard a.plancard__btn");
+    for (var i = 0; i < btns.length; i++) {
+      var btn = btns[i];
+      var card = btn.closest(".plancard");
+      var planType = card ? card.getAttribute("data-plan") : null;
+      var target = planType ? (checkouts[planType] || null) : null;
+
+      if (target) {
+        var finalUrl = buildCheckoutUrl(target.url);
+        if (btn.tagName.toLowerCase() === "a") {
+          btn.setAttribute("href", finalUrl);
+          btn.setAttribute("target", "_blank");
+          btn.setAttribute("rel", "noopener noreferrer");
+        }
+        btn.setAttribute("data-hotmart-link", finalUrl);
+        btn.setAttribute("onclick", "window.pomaroliCheckout('" + target.url + "', '" + target.name + "', " + target.price + ", event)");
+        btn.style.setProperty("display", "flex", "important");
+        btn.style.setProperty("visibility", "visible", "important");
+        btn.style.setProperty("opacity", "1", "important");
+        btn.style.setProperty("min-height", "52px", "important");
       }
-      if (current > 0) {
-        current--;
-        renderQuiz();
-        save();
-      } else {
-        showIntro();
-        scrollTo(stageIntro);
-      }
-    });
+    }
   }
+
+  ensureCheckoutButtons();
+  window.addEventListener("load", ensureCheckoutButtons);
+
+  /* Clique direto com fallback resiliente para mobile/adblock */
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest ? e.target.closest(".plancard-btn-action, a[href*='hotmart.com'], [data-hotmart-link]") : null;
+    if (!btn) return;
+    var rawUrl = btn.getAttribute("data-hotmart-link") || btn.getAttribute("href");
+    if (!rawUrl) return;
+    var finalUrl = buildCheckoutUrl(rawUrl);
+    if (e.preventDefault) e.preventDefault();
+    try {
+      window.location.href = finalUrl;
+    } catch (err) {
+      window.open(finalUrl, "_blank");
+    }
+  }, false);
+
   if (elRestart) {
     elRestart.addEventListener("click", restart);
   }
@@ -1275,6 +2181,18 @@ body.admin-bar .qtop { padding-top: 48px; }
 
   /* ---- Restaurar sessão (refresh não zera o quiz) ---- */
   function restore() {
+    try {
+      var savedLead = sessionStorage.getItem("pomaroli_lead_data") || localStorage.getItem("pomaroli_lead_data");
+      if (savedLead) {
+        var parsedLead = JSON.parse(savedLead);
+        if (parsedLead) {
+          if (parsedLead.email) capturedLead.email = parsedLead.email;
+          if (parsedLead.phone) capturedLead.phone = parsedLead.phone;
+          if (parsedLead.phoneac) capturedLead.phoneac = parsedLead.phoneac;
+          if (parsedLead.phonenumber) capturedLead.phonenumber = parsedLead.phonenumber;
+        }
+      }
+    } catch (e) {}
     try {
       var raw = sessionStorage.getItem(STORE_KEY);
       if (!raw) return false;
@@ -1303,6 +2221,12 @@ body.admin-bar .qtop { padding-top: 48px; }
           showLead();
         }
         return true;
+      }
+      if (st.s === STAGE_PLANS) {
+        if (complete()) {
+          showPlans(false);
+          return true;
+        }
       }
       if (st.s === STAGE_RESULT) {
         if (complete()) {
