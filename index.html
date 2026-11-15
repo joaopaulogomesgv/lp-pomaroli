@@ -33,7 +33,7 @@
       --wp--style--root--padding-bottom: 0 !important;
     }
 
-    /* 2) Containers em largura total estática imediata (sem esperar JavaScript) */
+    /* 2) Containers em largura total estática imediata e fundo oficial #f5f6f1 */
     html, body,
     .wp-site-blocks,
     .entry-content,
@@ -50,6 +50,8 @@
       padding-left: 0 !important;
       padding-right: 0 !important;
       box-sizing: border-box !important;
+      background: #f5f6f1 !important;
+      background-color: #f5f6f1 !important;
     }
 
     /* 3) Anula margem vertical em blocos internos do tema para eliminar Cumulative Layout Shift */
@@ -60,14 +62,31 @@
       margin-block-end: 0 !important;
     }
 
-    /* 4) Esconde cabeçalho e rodapé do tema WordPress para evitar duplicidade */
+    /* 4) Esconde QUALQUER cabeçalho, rodapé ou barra externa do tema WordPress */
+    header:not(.nav),
+    footer:not(.footer),
+    #masthead,
+    #site-header,
+    .site-header,
+    .site-footer,
     .wp-site-blocks > header,
-    .wp-site-blocks > footer,
-    .wp-site-blocks > .wp-block-template-part,
-    header.wp-block-template-part,
-    footer.wp-block-template-part,
-    .wp-block-post-title {
+    .wp-site-blocks header:not(.nav),
+    .wp-block-template-part,
+    .wp-block-post-title,
+    .site-title,
+    .custom-logo-link {
       display: none !important;
+      height: 0 !important;
+      min-height: 0 !important;
+      max-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      background: transparent !important;
+      overflow: hidden !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
     }
   </style>
   <script id="pomaroli-fullwidth-wp">
@@ -79,6 +98,23 @@
           nodes[i].style.margin = "0";
           nodes[i].style.padding = "0";
           nodes[i].style.maxWidth = "none";
+        }
+        var root = document.getElementById("pomaroliRoot");
+        if (root) {
+          var p = root.parentElement;
+          if (p) {
+            for (var k = 0; k < p.children.length; k++) {
+              var el = p.children[k];
+              if (el !== root) {
+                if (el.tagName === "HEADER" || el.tagName === "FOOTER" || el.classList.contains("wp-block-template-part") || el.id === "masthead" || el.classList.contains("site-header")) {
+                  el.style.display = "none";
+                  el.style.height = "0";
+                  el.style.margin = "0";
+                  el.style.padding = "0";
+                }
+              }
+            }
+          }
         }
       }
       if (document.readyState === "loading") {
@@ -3096,7 +3132,13 @@ html, body {
 
 .pomaroli-root main,
 main {
-  padding-top: 80px !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.pomaroli-root .hero,
+.hero {
+  padding-top: 88px !important;
 }
 
 .pomaroli-root .nav__inner,
