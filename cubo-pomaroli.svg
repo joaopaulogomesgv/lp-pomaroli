@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 36" fill="none" stroke="#10120a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="logo__img" aria-label="Pomaroli">
+  <path d="M16 2 L30 10.1 V25.9 L16 34 L2 25.9 V10.1 Z" />
+  <path d="M16 6 L23 10 L16 14 L9 10 Z" />
+  <path d="M2 10.1 L16 18.2 L30 10.1" />
+  <path d="M16 18.2 V34" />
+  <path d="M9 10 L9 18.2" />
+</svg>
