@@ -9,6 +9,133 @@
         cabeçalho, título e rodapé do tema WordPress.
      ==================================================================== -->
 
+<!-- Dados Estruturados Schema.org / JSON-LD (Google Sitelinks & SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://pomaroli.com.br/#website",
+      "url": "https://pomaroli.com.br/",
+      "name": "Pomaroli",
+      "alternateName": ["Pomaroli Questões", "Plataforma Pomaroli"],
+      "description": "Plataforma white-label de questões para cursos preparatórios de concurso."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://pomaroli.com.br/#organization",
+      "name": "Pomaroli",
+      "url": "https://pomaroli.com.br/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pomaroli.com.br/wp-content/uploads/2026/07/cubo-pomaroli-preto.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Plataforma white-label de questões para cursos de concurso."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://pomaroli.com.br/plataforma-de-questoes/#software",
+      "name": "Pomaroli — Plataforma de Questões White-Label",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "url": "https://pomaroli.com.br/plataforma-de-questoes/",
+      "description": "Banco de questões completo, simulados e métricas com o nome e a marca do seu curso preparatório."
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://pomaroli.com.br/plataforma-de-questoes/#sitelinks",
+      "name": "Navegação da Plataforma Pomaroli",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Funções da Plataforma",
+          "description": "Recursos e ferramentas do banco de questões white-label.",
+          "url": "https://pomaroli.com.br/plataforma-de-questoes/#funcoes"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Sua Marca",
+          "description": "Personalização visual completa com suas cores, logo e identidade.",
+          "url": "https://pomaroli.com.br/plataforma-de-questoes/#marca"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Planos e Preços",
+          "description": "Conheça os planos e contrate a plataforma para o seu curso.",
+          "url": "https://pomaroli.com.br/plataforma-de-questoes/#planos"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Dúvidas Frequentes",
+          "description": "Perguntas e respostas sobre implementação, migração e prazos.",
+          "url": "https://pomaroli.com.br/plataforma-de-questoes/#faq"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": "Demonstração Interativa",
+          "description": "Teste o painel interativo da plataforma em tempo real.",
+          "url": "https://pomaroli.com.br/plataforma-de-questoes/#demoApp"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://pomaroli.com.br/plataforma-de-questoes/#faqpage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Em quanto tempo a plataforma fica no ar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Planos pagos entram em produção em até 7 dias úteis, contando a partir do envio da sua marca e do domínio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Consigo migrar minhas questões de outra plataforma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Importamos bancos em PDF, DOCX, CSV e exportações de sistemas concorrentes. Migração acompanhada pela nossa equipe está incluída nos planos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O aluno vai saber que a tecnologia é de vocês?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Marca, domínio, e-mails e app são 100% do seu curso. Não exibimos nenhum selo ou menção à Pomaroli dentro da plataforma."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês cobram comissão sobre minhas vendas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Você paga apenas a mensalidade da plataforma. As vendas do checkout caem direto na sua conta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Os dados dos meus alunos ficam no Brasil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Todo o dado é armazenado em servidores no Brasil, em conformidade com a LGPD, e pode ser exportado a qualquer momento."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 <!-- Fontes do Google -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
